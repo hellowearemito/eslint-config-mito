@@ -1,0 +1,29 @@
+{
+  "name": "eslint-config-mito",
+  "version": "0.0.1",
+  "description": "Mito's ESLint config, following our styleguide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ggkovacs/eslint-config-mito"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "mito",
+    "javascript",
+    "styleguide",
+    "ES5"
+  ],
+  "author": "Gergely Kovács",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ggkovacs/eslint-config-mito/issues"
+  },
+  "homepage": "https://github.com/ggkovacs/eslint-config-mito",
+  "devDependencies": {}
+}
