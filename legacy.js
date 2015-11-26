@@ -1,3 +1,4 @@
+// Legacy
 module.exports = {
   'extends': [
     'eslint-config-mito/rules/best-practices',

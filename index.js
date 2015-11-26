@@ -1,3 +1,4 @@
+// Index
 module.exports = {
   'extends': [
     'eslint-config-mito/legacy',

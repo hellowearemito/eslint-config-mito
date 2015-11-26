@@ -1,12 +1,16 @@
 // Best practices
 module.exports = {
   'rules': {
+    'accessor-pairs': 0,
+    'block-scoped-var': 2,
+    'complexity': [0, 11],
     'consistent-return': 2,
     'curly': [2, 'multi-line'],
     'default-case': 2,
     'dot-notation': [2, {
       'allowKeywords': true
     }],
+    'dot-location': 0,
     'eqeqeq': 2,
     'guard-for-in': 2,
     'no-caller': 2,
@@ -19,9 +23,14 @@ module.exports = {
     'no-extra-bind': 2,
     'no-fallthrough': 2,
     'no-floating-decimal': 2,
+    'no-implicit-coercion': 0,
     'no-implied-eval': 2,
+    'no-invalid-this': 0,
+    'no-iterator': 2,
+    'no-labels': 2,
     'no-lone-blocks': 2,
     'no-loop-func': 2,
+    'no-multi-spaces': 2,
     'no-multi-str': 2,
     'no-native-reassign': 2,
     'no-new': 2,
@@ -38,12 +47,20 @@ module.exports = {
     'no-self-compare': 2,
     'no-sequences': 2,
     'no-throw-literal': 2,
+    'no-unused-expressions': 2,
+    'no-useless-call': 2,
+    'no-void': 2,
+    'no-warning-comments': [0, {
+      'terms': ['todo', 'fixme', 'xxx'],
+      'location': 'start'
+    }],
     'no-undef': 2,
     'no-undef-init': 2,
     'no-undefined': 1,
     'no-with': 2,
     'handle-callback-err': 1,
     'radix': 2,
+    'vars-on-top': 2,
     'wrap-iife': [2, 'any'],
     'yoda': 2,
   }

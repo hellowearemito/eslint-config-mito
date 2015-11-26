@@ -1,7 +1,7 @@
 // Style
 module.exports = {
   'rules': {
-    'indent': [2, 2],
+    'indent': [2, 4],
     'brace-style': [2,
       '1tbs', {
         'allowSingleLine': true

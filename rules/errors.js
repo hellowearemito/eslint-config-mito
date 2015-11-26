@@ -3,7 +3,7 @@ module.exports = {
   'rules': {
     'comma-dangle': [2, 'never'],
     'no-cond-assign': [2, 'always'],
-    'no-console': 1,
+    'no-console': 0,
     'no-debugger': 1,
     'no-alert': 1,
     'no-constant-condition': 1,

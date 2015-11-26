@@ -1,5 +1,5 @@
 # eslint-config-mito
-Version: **0.0.1**
+Version: **0.0.0**
 
 This package provides Mito's .eslintrc as an extensible shared config.
 
@@ -33,13 +33,13 @@ Lints EcmaScript 5 and below. Only requires `eslint`.
 
 ### eslint-config-mito/angular
 
-Lints EcmaScript 6+ and Angular. It requires eslint and `eslint-plugin-angular`.
+Lints EcmaScript 6+ and Angular 1.x. It requires eslint and `eslint-plugin-angular`.
 
-1. `npm install --save-dev eslint-config-mito eslint`
-2. add `"extends": "mito/legacy"` to your .eslintrc
+1. `npm install --save-dev eslint-config-mito eslint-plugin-angular eslint`
+2. add `"extends": "mito/angular"` to your .eslintrc
 ```js
 {
-  "extends": "mito/legacy"
+  "extends": "mito/angular"
 }
 ```
 
