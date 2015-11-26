@@ -18,7 +18,8 @@
     "javascript",
     "styleguide",
     "ES5",
-    "ES6"
+    "ES6",
+    "angular"
   ],
   "author": "Gergely Kovács",
   "license": "MIT",
