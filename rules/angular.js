@@ -5,6 +5,7 @@ module.exports = {
   ],
   'rules': {
     'angular/angularelement': 1,
+    'angular/component-limit': 1,
     'angular/controller-as': 2,
     'angular/controller-as-route': 2,
     'angular/controller-as-vm': [2, 'vm'],
@@ -13,6 +14,7 @@ module.exports = {
     'angular/definedundefined': 2,
     'angular/di': [2, 'function'],
     'angular/di-order': [0, true],
+    'angular/di-unused': 2,
     'angular/directive-name': 0,
     'angular/directive-restrict': [0, {
       'restrict': 'AE',
@@ -38,7 +40,6 @@ module.exports = {
     'angular/no-angular-mock': 0,
     'angular/no-controller': 0,
     'angular/no-cookiestore': 2,
-    'angular/no-digest': 2,
     'angular/no-http-callback': 2,
     'angular/no-inline-template': [0, {
       'allowSimple': true
@@ -57,7 +58,6 @@ module.exports = {
     'angular/typecheck-function': 2,
     'angular/typecheck-number': 2,
     'angular/typecheck-object': 2,
-    'angular/typecheck-regexp': 2,
     'angular/typecheck-string': 2,
     'angular/watchers-execution': [0, '$digest'],
     'angular/window-service': 2
