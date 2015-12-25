@@ -26,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/ggkovacs/eslint-config-mito/issues"
   },
-  "homepage": "https://github.com/ggkovacs/eslint-config-mito"
+  "homepage": "https://github.com/ggkovacs/eslint-config-mito",
+  "dependencies": {}
 }

@@ -1,6 +1,6 @@
 // Strict
 module.exports = {
   'rules': {
-    'strict': 2
+    'strict': 0
   }
 };
