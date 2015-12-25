@@ -18,8 +18,7 @@
     "javascript",
     "styleguide",
     "ES5",
-    "ES6",
-    "angular"
+    "ES6"
   ],
   "author": "Gergely Kovács",
   "license": "MIT",
@@ -27,5 +26,7 @@
     "url": "https://github.com/ggkovacs/eslint-config-mito/issues"
   },
   "homepage": "https://github.com/ggkovacs/eslint-config-mito",
-  "dependencies": {}
+  "peerDependencies": {
+    "eslint": ">=1.0.0"
+  }
 }
