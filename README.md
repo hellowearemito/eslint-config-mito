@@ -1,4 +1,4 @@
-# [eslint](http://eslint.org)-config-mito
+# [eslint](http://eslint.org)-config-mito [![NPM version][npm-image]][npm-url]
 Version: **1.0.0-beta.0**
 
 This package provides Mito's .eslintrc as an extensible shared config.
@@ -33,3 +33,6 @@ Lints EcmaScript 5 and below. Only requires `eslint`.
 
 ## License
 MIT © 2015 Gergely Kovács (gg.kovacs@gmail.com)
+
+[npm-image]: https://badge.fury.io/js/eslint-config-mito.svg
+[npm-url]: https://npmjs.org/package/eslint-config-mito
