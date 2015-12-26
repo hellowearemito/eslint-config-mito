@@ -17,7 +17,7 @@ module.exports = {
     'computed-property-spacing': 0,
     'consistent-this': 0,
     'eol-last': 2,
-    'func-names': 1,
+    'func-names': 0,
     'func-style': 0,
     'id-length': 0,
     'key-spacing': [2, {
