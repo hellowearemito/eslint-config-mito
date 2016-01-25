@@ -32,7 +32,7 @@ Lints EcmaScript 5 and below. Only requires `eslint`.
 ```
 
 ## License
-MIT © 2015 Gergely Kovács (gg.kovacs@gmail.com)
+MIT © 2016 Gergely Kovács (gg.kovacs@gmail.com)
 
 [npm-image]: https://badge.fury.io/js/eslint-config-mito.svg
 [npm-url]: https://npmjs.org/package/eslint-config-mito
