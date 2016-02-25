@@ -63,13 +63,11 @@ module.exports = {
       'after': true
     }],
     'sort-vars': 0,
-    'space-before-keywords': [2, 'always'],
-    'space-after-keywords': [2, 'always'],
+    'keyword-spacing': 2,
     'space-before-blocks': 2,
     'space-before-function-paren': [2, 'never'],
     'space-in-parens': 0,
     'space-infix-ops': 2,
-    'space-return-throw-case': 2,
     'space-unary-ops': 2,
     'spaced-comment': [2, 'always', {
       'exceptions': ['-', '+'],

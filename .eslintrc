@@ -1,0 +1,6 @@
+{
+  "extends": "mito",
+  "rules": {
+    "indent": [2, 2],
+  }
+}
