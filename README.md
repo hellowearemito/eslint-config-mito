@@ -1,5 +1,5 @@
 # [eslint](http://eslint.org)-config-mito [![NPM version][npm-image]][npm-url]
-Version: **2.0.0**
+Version: **2.0.1**
 
 This package provides Mito's .eslintrc as an extensible shared config.
 

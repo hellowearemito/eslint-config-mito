@@ -1,3 +1,10 @@
+2.0.1 / 2016-02-25
+==================
+  - Rename postinstall.js to symlink.js
+  - Remove npm `postinstall` script
+  - Add `node ./symlink.js` to npm `test` script
+  - Update .gitignore and remove .DS_Store
+
 2.0.0 / 2016-02-25
 ==================
   - Migrating to eslint v2.0.0
