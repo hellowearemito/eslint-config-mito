@@ -1,3 +1,7 @@
+2.0.2 / 2016-02-29
+==================
+  - [fix] add ecmaFeatures modules
+
 2.0.1 / 2016-02-25
 ==================
   - Rename postinstall.js to symlink.js
