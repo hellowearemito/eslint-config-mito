@@ -3,6 +3,9 @@ module.exports = {
   'env': {
     'es6': false
   },
+  parserOptions: {
+    sourceType: 'module'
+  },
   'ecmaFeatures': {
     'arrowFunctions': true,
     'blockBindings': true,
