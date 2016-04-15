@@ -1,3 +1,8 @@
+2.0.3 / 2016-04-15
+==================
+  - Add docgen script
+  - Add documentation
+
 2.0.2 / 2016-02-29
 ==================
   - [fix] add ecmaFeatures modules

@@ -132,7 +132,7 @@ function main() {
 
       tableOfContents += '* [' + rulename + ']' + '(' + hash + ')' + '\n';
 
-      md += '\n##' + firstLine + '\n\n';
+      md += '\n#' + firstLine + '\n\n';
       md += '**Key:** ' + rulename + ' ([docs](http://eslint.org/docs/rules/' + rulename + '))\n\n';
       md += '**Value:** ';
 
@@ -143,7 +143,7 @@ function main() {
         md += '``' + value + '``\n';
       }
 
-      md += '\n**[⬆ back to top](#table-of-contents)**\n'
+      md += '\n**[&#8679; back to top](#table-of-contents)**\n'
 
       bar.tick();
     }

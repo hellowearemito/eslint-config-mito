@@ -1,5 +1,5 @@
 # [eslint](http://eslint.org)-config-mito `legacy` configurations
-> Generated: Fri Apr 15 2016 11:26:23 GMT+0200 (CEST)
+> Generated: Fri Apr 15 2016 11:51:44 GMT+0200 (CEST)
 
 ## Table of contents
 
@@ -163,23 +163,23 @@
 
 ---
 
-### Enforces getter/setter pairs in objects (accessor-pairs)
+## Enforces getter/setter pairs in objects (accessor-pairs)
 
 **Key:** accessor-pairs ([docs](http://eslint.org/docs/rules/accessor-pairs))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Treat var as Block Scoped (block-scoped-var)
+## Treat var as Block Scoped (block-scoped-var)
 
 **Key:** block-scoped-var ([docs](http://eslint.org/docs/rules/block-scoped-var))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Limit Cyclomatic Complexity (complexity)
+## Limit Cyclomatic Complexity (complexity)
 
 **Key:** complexity ([docs](http://eslint.org/docs/rules/complexity))
 
@@ -191,17 +191,17 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Consistent Returns (consistent-return)
+## Require Consistent Returns (consistent-return)
 
 **Key:** consistent-return ([docs](http://eslint.org/docs/rules/consistent-return))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Following Curly Brace Conventions (curly)
+## Require Following Curly Brace Conventions (curly)
 
 **Key:** curly ([docs](http://eslint.org/docs/rules/curly))
 
@@ -213,17 +213,17 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Default Case in Switch Statements (default-case)
+## Require Default Case in Switch Statements (default-case)
 
 **Key:** default-case ([docs](http://eslint.org/docs/rules/default-case))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Dot Notation (dot-notation)
+## Require Dot Notation (dot-notation)
 
 **Key:** dot-notation ([docs](http://eslint.org/docs/rules/dot-notation))
 
@@ -237,321 +237,321 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce newline before and after dot (dot-location)
+## Enforce newline before and after dot (dot-location)
 
 **Key:** dot-location ([docs](http://eslint.org/docs/rules/dot-location))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require === and !== (eqeqeq)
+## Require === and !== (eqeqeq)
 
 **Key:** eqeqeq ([docs](http://eslint.org/docs/rules/eqeqeq))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Guarding for-in (guard-for-in)
+## Require Guarding for-in (guard-for-in)
 
 **Key:** guard-for-in ([docs](http://eslint.org/docs/rules/guard-for-in))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Use of caller/callee (no-caller)
+## Disallow Use of caller/callee (no-caller)
 
 **Key:** no-caller ([docs](http://eslint.org/docs/rules/no-caller))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Regexs That Look Like Division (no-div-regex)
+## Disallow Regexs That Look Like Division (no-div-regex)
 
 **Key:** no-div-regex ([docs](http://eslint.org/docs/rules/no-div-regex))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow return before else (no-else-return)
+## Disallow return before else (no-else-return)
 
 **Key:** no-else-return ([docs](http://eslint.org/docs/rules/no-else-return))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Null Comparisons (no-eq-null)
+## Disallow Null Comparisons (no-eq-null)
 
 **Key:** no-eq-null ([docs](http://eslint.org/docs/rules/no-eq-null))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow eval() (no-eval)
+## Disallow eval() (no-eval)
 
 **Key:** no-eval ([docs](http://eslint.org/docs/rules/no-eval))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Extending of Native Objects (no-extend-native)
+## Disallow Extending of Native Objects (no-extend-native)
 
 **Key:** no-extend-native ([docs](http://eslint.org/docs/rules/no-extend-native))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow unnecessary function binding (no-extra-bind)
+## Disallow unnecessary function binding (no-extra-bind)
 
 **Key:** no-extra-bind ([docs](http://eslint.org/docs/rules/no-extra-bind))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Case Statement Fallthrough (no-fallthrough)
+## Disallow Case Statement Fallthrough (no-fallthrough)
 
 **Key:** no-fallthrough ([docs](http://eslint.org/docs/rules/no-fallthrough))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Floating Decimals (no-floating-decimal)
+## Disallow Floating Decimals (no-floating-decimal)
 
 **Key:** no-floating-decimal ([docs](http://eslint.org/docs/rules/no-floating-decimal))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow the type conversion with shorter notations. (no-implicit-coercion)
+## Disallow the type conversion with shorter notations. (no-implicit-coercion)
 
 **Key:** no-implicit-coercion ([docs](http://eslint.org/docs/rules/no-implicit-coercion))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Implied eval() (no-implied-eval)
+## Disallow Implied eval() (no-implied-eval)
 
 **Key:** no-implied-eval ([docs](http://eslint.org/docs/rules/no-implied-eval))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow `this` keywords outside of classes or class-like objects. (no-invalid-this)
+## Disallow `this` keywords outside of classes or class-like objects. (no-invalid-this)
 
 **Key:** no-invalid-this ([docs](http://eslint.org/docs/rules/no-invalid-this))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Iterator (no-iterator)
+## Disallow Iterator (no-iterator)
 
 **Key:** no-iterator ([docs](http://eslint.org/docs/rules/no-iterator))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Labeled Statements (no-labels)
+## Disallow Labeled Statements (no-labels)
 
 **Key:** no-labels ([docs](http://eslint.org/docs/rules/no-labels))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Unnecessary Nested Blocks (no-lone-blocks)
+## Disallow Unnecessary Nested Blocks (no-lone-blocks)
 
 **Key:** no-lone-blocks ([docs](http://eslint.org/docs/rules/no-lone-blocks))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Functions in Loops (no-loop-func)
+## Disallow Functions in Loops (no-loop-func)
 
 **Key:** no-loop-func ([docs](http://eslint.org/docs/rules/no-loop-func))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow multiple spaces (no-multi-spaces)
+## Disallow multiple spaces (no-multi-spaces)
 
 **Key:** no-multi-spaces ([docs](http://eslint.org/docs/rules/no-multi-spaces))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Multiline Strings (no-multi-str)
+## Disallow Multiline Strings (no-multi-str)
 
 **Key:** no-multi-str ([docs](http://eslint.org/docs/rules/no-multi-str))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Reassignment of Native Objects (no-native-reassign)
+## Disallow Reassignment of Native Objects (no-native-reassign)
 
 **Key:** no-native-reassign ([docs](http://eslint.org/docs/rules/no-native-reassign))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow new For Side Effects (no-new)
+## Disallow new For Side Effects (no-new)
 
 **Key:** no-new ([docs](http://eslint.org/docs/rules/no-new))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Function Constructor (no-new-func)
+## Disallow Function Constructor (no-new-func)
 
 **Key:** no-new-func ([docs](http://eslint.org/docs/rules/no-new-func))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Primitive Wrapper Instances (no-new-wrappers)
+## Disallow Primitive Wrapper Instances (no-new-wrappers)
 
 **Key:** no-new-wrappers ([docs](http://eslint.org/docs/rules/no-new-wrappers))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Octal Literals (no-octal)
+## Disallow Octal Literals (no-octal)
 
 **Key:** no-octal ([docs](http://eslint.org/docs/rules/no-octal))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Octal Escapes (no-octal-escape)
+## Disallow Octal Escapes (no-octal-escape)
 
 **Key:** no-octal-escape ([docs](http://eslint.org/docs/rules/no-octal-escape))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Reassignment of Function Parameters (no-param-reassign)
+## Disallow Reassignment of Function Parameters (no-param-reassign)
 
 **Key:** no-param-reassign ([docs](http://eslint.org/docs/rules/no-param-reassign))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow process.exit() (no-process-exit)
+## Disallow process.exit() (no-process-exit)
 
 **Key:** no-process-exit ([docs](http://eslint.org/docs/rules/no-process-exit))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Use of `__proto__` (no-proto)
+## Disallow Use of `__proto__` (no-proto)
 
 **Key:** no-proto ([docs](http://eslint.org/docs/rules/no-proto))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Redeclaring Variables (no-redeclare)
+## Disallow Redeclaring Variables (no-redeclare)
 
 **Key:** no-redeclare ([docs](http://eslint.org/docs/rules/no-redeclare))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Assignment in return Statement (no-return-assign)
+## Disallow Assignment in return Statement (no-return-assign)
 
 **Key:** no-return-assign ([docs](http://eslint.org/docs/rules/no-return-assign))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Script URLs (no-script-url)
+## Disallow Script URLs (no-script-url)
 
 **Key:** no-script-url ([docs](http://eslint.org/docs/rules/no-script-url))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Self Compare (no-self-compare)
+## Disallow Self Compare (no-self-compare)
 
 **Key:** no-self-compare ([docs](http://eslint.org/docs/rules/no-self-compare))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Use of the Comma Operator (no-sequences)
+## Disallow Use of the Comma Operator (no-sequences)
 
 **Key:** no-sequences ([docs](http://eslint.org/docs/rules/no-sequences))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Restrict what can be thrown as an exception (no-throw-literal)
+## Restrict what can be thrown as an exception (no-throw-literal)
 
 **Key:** no-throw-literal ([docs](http://eslint.org/docs/rules/no-throw-literal))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Unused Expressions (no-unused-expressions)
+## Disallow Unused Expressions (no-unused-expressions)
 
 **Key:** no-unused-expressions ([docs](http://eslint.org/docs/rules/no-unused-expressions))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow unnecessary `.call()` and `.apply()`. (no-useless-call)
+## Disallow unnecessary `.call()` and `.apply()`. (no-useless-call)
 
 **Key:** no-useless-call ([docs](http://eslint.org/docs/rules/no-useless-call))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow use of the void operator. (no-void)
+## Disallow use of the void operator. (no-void)
 
 **Key:** no-void ([docs](http://eslint.org/docs/rules/no-void))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Warning Comments (no-warning-comments)
+## Disallow Warning Comments (no-warning-comments)
 
 **Key:** no-warning-comments ([docs](http://eslint.org/docs/rules/no-warning-comments))
 
@@ -570,65 +570,65 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Undeclared Variables (no-undef)
+## Disallow Undeclared Variables (no-undef)
 
 **Key:** no-undef ([docs](http://eslint.org/docs/rules/no-undef))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Initializing to undefined (no-undef-init)
+## Disallow Initializing to undefined (no-undef-init)
 
 **Key:** no-undef-init ([docs](http://eslint.org/docs/rules/no-undef-init))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Use of `undefined` Variable (no-undefined)
+## Disallow Use of `undefined` Variable (no-undefined)
 
 **Key:** no-undefined ([docs](http://eslint.org/docs/rules/no-undefined))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### No with Statements (no-with)
+## No with Statements (no-with)
 
 **Key:** no-with ([docs](http://eslint.org/docs/rules/no-with))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce Callback Error Handling (handle-callback-err)
+## Enforce Callback Error Handling (handle-callback-err)
 
 **Key:** handle-callback-err ([docs](http://eslint.org/docs/rules/handle-callback-err))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Radix Parameter (radix)
+## Require Radix Parameter (radix)
 
 **Key:** radix ([docs](http://eslint.org/docs/rules/radix))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Variable Declarations to be at the top of their scope (vars-on-top)
+## Require Variable Declarations to be at the top of their scope (vars-on-top)
 
 **Key:** vars-on-top ([docs](http://eslint.org/docs/rules/vars-on-top))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require IIFEs to be Wrapped (wrap-iife)
+## Require IIFEs to be Wrapped (wrap-iife)
 
 **Key:** wrap-iife ([docs](http://eslint.org/docs/rules/wrap-iife))
 
@@ -640,17 +640,17 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require or disallow Yoda Conditions (yoda)
+## Require or disallow Yoda Conditions (yoda)
 
 **Key:** yoda ([docs](http://eslint.org/docs/rules/yoda))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow or Enforce Dangling Commas (comma-dangle)
+## Disallow or Enforce Dangling Commas (comma-dangle)
 
 **Key:** comma-dangle ([docs](http://eslint.org/docs/rules/comma-dangle))
 
@@ -662,9 +662,9 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Assignment in Conditional Statements (no-cond-assign)
+## Disallow Assignment in Conditional Statements (no-cond-assign)
 
 **Key:** no-cond-assign ([docs](http://eslint.org/docs/rules/no-cond-assign))
 
@@ -676,105 +676,105 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Use of console (no-console)
+## Disallow Use of console (no-console)
 
 **Key:** no-console ([docs](http://eslint.org/docs/rules/no-console))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow debugger (no-debugger)
+## Disallow debugger (no-debugger)
 
 **Key:** no-debugger ([docs](http://eslint.org/docs/rules/no-debugger))
 
 **Value:** ``1``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Use of Alert (no-alert)
+## Disallow Use of Alert (no-alert)
 
 **Key:** no-alert ([docs](http://eslint.org/docs/rules/no-alert))
 
 **Value:** ``1``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow use of constant expressions in conditions (no-constant-condition)
+## Disallow use of constant expressions in conditions (no-constant-condition)
 
 **Key:** no-constant-condition ([docs](http://eslint.org/docs/rules/no-constant-condition))
 
 **Value:** ``1``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Controls Characters in Regular Expressions (no-control-regex)
+## Disallow Controls Characters in Regular Expressions (no-control-regex)
 
 **Key:** no-control-regex ([docs](http://eslint.org/docs/rules/no-control-regex))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### No duplicate arguments (no-dupe-args)
+## No duplicate arguments (no-dupe-args)
 
 **Key:** no-dupe-args ([docs](http://eslint.org/docs/rules/no-dupe-args))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Duplicate Keys (no-dupe-keys)
+## Disallow Duplicate Keys (no-dupe-keys)
 
 **Key:** no-dupe-keys ([docs](http://eslint.org/docs/rules/no-dupe-keys))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Rule to disallow a duplicate case label (no-duplicate-case)
+## Rule to disallow a duplicate case label (no-duplicate-case)
 
 **Key:** no-duplicate-case ([docs](http://eslint.org/docs/rules/no-duplicate-case))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Empty Block Statements (no-empty)
+## Disallow Empty Block Statements (no-empty)
 
 **Key:** no-empty ([docs](http://eslint.org/docs/rules/no-empty))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Empty Character Classes (no-empty-character-class)
+## Disallow Empty Character Classes (no-empty-character-class)
 
 **Key:** no-empty-character-class ([docs](http://eslint.org/docs/rules/no-empty-character-class))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Assignment of the Exception Parameter (no-ex-assign)
+## Disallow Assignment of the Exception Parameter (no-ex-assign)
 
 **Key:** no-ex-assign ([docs](http://eslint.org/docs/rules/no-ex-assign))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Extra Boolean Casts (no-extra-boolean-cast)
+## Disallow Extra Boolean Casts (no-extra-boolean-cast)
 
 **Key:** no-extra-boolean-cast ([docs](http://eslint.org/docs/rules/no-extra-boolean-cast))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Extra Parens (no-extra-parens)
+## Disallow Extra Parens (no-extra-parens)
 
 **Key:** no-extra-parens ([docs](http://eslint.org/docs/rules/no-extra-parens))
 
@@ -786,137 +786,137 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Extra Semicolons (no-extra-semi)
+## Disallow Extra Semicolons (no-extra-semi)
 
 **Key:** no-extra-semi ([docs](http://eslint.org/docs/rules/no-extra-semi))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Function Assignment (no-func-assign)
+## Disallow Function Assignment (no-func-assign)
 
 **Key:** no-func-assign ([docs](http://eslint.org/docs/rules/no-func-assign))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Declarations in Program or Function Body (no-inner-declarations)
+## Declarations in Program or Function Body (no-inner-declarations)
 
 **Key:** no-inner-declarations ([docs](http://eslint.org/docs/rules/no-inner-declarations))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Invalid Regular Expressions (no-invalid-regexp)
+## Disallow Invalid Regular Expressions (no-invalid-regexp)
 
 **Key:** no-invalid-regexp ([docs](http://eslint.org/docs/rules/no-invalid-regexp))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### No irregular whitespace (no-irregular-whitespace)
+## No irregular whitespace (no-irregular-whitespace)
 
 **Key:** no-irregular-whitespace ([docs](http://eslint.org/docs/rules/no-irregular-whitespace))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow negated left operand of `in` operator (no-negated-in-lhs)
+## Disallow negated left operand of `in` operator (no-negated-in-lhs)
 
 **Key:** no-negated-in-lhs ([docs](http://eslint.org/docs/rules/no-negated-in-lhs))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow new require (no-new-require)
+## Disallow new require (no-new-require)
 
 **Key:** no-new-require ([docs](http://eslint.org/docs/rules/no-new-require))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Global Object Function Calls (no-obj-calls)
+## Disallow Global Object Function Calls (no-obj-calls)
 
 **Key:** no-obj-calls ([docs](http://eslint.org/docs/rules/no-obj-calls))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow string concatenation when using `__dirname` and `__filename` (no-path-concat)
+## Disallow string concatenation when using `__dirname` and `__filename` (no-path-concat)
 
 **Key:** no-path-concat ([docs](http://eslint.org/docs/rules/no-path-concat))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Spaces in Regular Expressions (no-regex-spaces)
+## Disallow Spaces in Regular Expressions (no-regex-spaces)
 
 **Key:** no-regex-spaces ([docs](http://eslint.org/docs/rules/no-regex-spaces))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Sparse Arrays (no-sparse-arrays)
+## Disallow Sparse Arrays (no-sparse-arrays)
 
 **Key:** no-sparse-arrays ([docs](http://eslint.org/docs/rules/no-sparse-arrays))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Unreachable Code (no-unreachable)
+## Disallow Unreachable Code (no-unreachable)
 
 **Key:** no-unreachable ([docs](http://eslint.org/docs/rules/no-unreachable))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require isNaN() (use-isnan)
+## Require isNaN() (use-isnan)
 
 **Key:** use-isnan ([docs](http://eslint.org/docs/rules/use-isnan))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Validates JSDoc comments are syntactically correct (valid-jsdoc)
+## Validates JSDoc comments are syntactically correct (valid-jsdoc)
 
 **Key:** valid-jsdoc ([docs](http://eslint.org/docs/rules/valid-jsdoc))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Ensures that the results of typeof are compared against a valid string (valid-typeof)
+## Ensures that the results of typeof are compared against a valid string (valid-typeof)
 
 **Key:** valid-typeof ([docs](http://eslint.org/docs/rules/valid-typeof))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Avoid unexpected multiline expressions (no-unexpected-multiline)
+## Avoid unexpected multiline expressions (no-unexpected-multiline)
 
 **Key:** no-unexpected-multiline ([docs](http://eslint.org/docs/rules/no-unexpected-multiline))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Limit Maximum Depth (max-depth)
+## Limit Maximum Depth (max-depth)
 
 **Key:** max-depth ([docs](http://eslint.org/docs/rules/max-depth))
 
@@ -928,9 +928,9 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Limit Maximum Length of Line (max-len)
+## Limit Maximum Length of Line (max-len)
 
 **Key:** max-len ([docs](http://eslint.org/docs/rules/max-len))
 
@@ -943,9 +943,9 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Limit Maximum Number of Parameters (max-params)
+## Limit Maximum Number of Parameters (max-params)
 
 **Key:** max-params ([docs](http://eslint.org/docs/rules/max-params))
 
@@ -957,9 +957,9 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Limit Maximum Number of Statements (max-statements)
+## Limit Maximum Number of Statements (max-statements)
 
 **Key:** max-statements ([docs](http://eslint.org/docs/rules/max-statements))
 
@@ -971,33 +971,33 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Bitwise Operators (no-bitwise)
+## Disallow Bitwise Operators (no-bitwise)
 
 **Key:** no-bitwise ([docs](http://eslint.org/docs/rules/no-bitwise))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow ++ and -- (no-plusplus)
+## Disallow ++ and -- (no-plusplus)
 
 **Key:** no-plusplus ([docs](http://eslint.org/docs/rules/no-plusplus))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce Return After Callback (callback-return)
+## Enforce Return After Callback (callback-return)
 
 **Key:** callback-return ([docs](http://eslint.org/docs/rules/callback-return))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Mixed Requires (no-mixed-requires)
+## Disallow Mixed Requires (no-mixed-requires)
 
 **Key:** no-mixed-requires ([docs](http://eslint.org/docs/rules/no-mixed-requires))
 
@@ -1009,33 +1009,33 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Node.js modules (no-restricted-modules)
+## Disallow Node.js modules (no-restricted-modules)
 
 **Key:** no-restricted-modules ([docs](http://eslint.org/docs/rules/no-restricted-modules))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Synchronous Methods (no-sync)
+## Disallow Synchronous Methods (no-sync)
 
 **Key:** no-sync ([docs](http://eslint.org/docs/rules/no-sync))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Strict Mode Directives (strict)
+## Strict Mode Directives (strict)
 
 **Key:** strict ([docs](http://eslint.org/docs/rules/strict))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow or enforce spaces inside of brackets (array-bracket-spacing)
+## Disallow or enforce spaces inside of brackets (array-bracket-spacing)
 
 **Key:** array-bracket-spacing ([docs](http://eslint.org/docs/rules/array-bracket-spacing))
 
@@ -1047,9 +1047,9 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Validate Indentation (indent)
+## Validate Indentation (indent)
 
 **Key:** indent ([docs](http://eslint.org/docs/rules/indent))
 
@@ -1061,9 +1061,9 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Brace Style (brace-style)
+## Require Brace Style (brace-style)
 
 **Key:** brace-style ([docs](http://eslint.org/docs/rules/brace-style))
 
@@ -1078,9 +1078,9 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Camelcase (camelcase)
+## Require Camelcase (camelcase)
 
 **Key:** camelcase ([docs](http://eslint.org/docs/rules/camelcase))
 
@@ -1094,9 +1094,9 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforces spacing around commas (comma-spacing)
+## Enforces spacing around commas (comma-spacing)
 
 **Key:** comma-spacing ([docs](http://eslint.org/docs/rules/comma-spacing))
 
@@ -1111,9 +1111,9 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Comma style (comma-style)
+## Comma style (comma-style)
 
 **Key:** comma-style ([docs](http://eslint.org/docs/rules/comma-style))
 
@@ -1125,57 +1125,57 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow or enforce spaces inside of computed properties (computed-property-spacing)
+## Disallow or enforce spaces inside of computed properties (computed-property-spacing)
 
 **Key:** computed-property-spacing ([docs](http://eslint.org/docs/rules/computed-property-spacing))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Consistent This (consistent-this)
+## Require Consistent This (consistent-this)
 
 **Key:** consistent-this ([docs](http://eslint.org/docs/rules/consistent-this))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require file to end with single newline (eol-last)
+## Require file to end with single newline (eol-last)
 
 **Key:** eol-last ([docs](http://eslint.org/docs/rules/eol-last))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Function Expressions to have a Name (func-names)
+## Require Function Expressions to have a Name (func-names)
 
 **Key:** func-names ([docs](http://eslint.org/docs/rules/func-names))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce Function Style (func-style)
+## Enforce Function Style (func-style)
 
 **Key:** func-style ([docs](http://eslint.org/docs/rules/func-style))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Limit minimum and maximum length for identifiers (id-length)
+## Limit minimum and maximum length for identifiers (id-length)
 
 **Key:** id-length ([docs](http://eslint.org/docs/rules/id-length))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce Property Spacing (key-spacing)
+## Enforce Property Spacing (key-spacing)
 
 **Key:** key-spacing ([docs](http://eslint.org/docs/rules/key-spacing))
 
@@ -1190,33 +1190,33 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce empty lines around comments (lines-around-comment)
+## Enforce empty lines around comments (lines-around-comment)
 
 **Key:** lines-around-comment ([docs](http://eslint.org/docs/rules/lines-around-comment))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce linebreak style (linebreak-style)
+## Enforce linebreak style (linebreak-style)
 
 **Key:** linebreak-style ([docs](http://eslint.org/docs/rules/linebreak-style))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Set Maximum Depth of Nested Callbacks (max-nested-callbacks)
+## Set Maximum Depth of Nested Callbacks (max-nested-callbacks)
 
 **Key:** max-nested-callbacks ([docs](http://eslint.org/docs/rules/max-nested-callbacks))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Constructors to Use Initial Caps (new-cap)
+## Require Constructors to Use Initial Caps (new-cap)
 
 **Key:** new-cap ([docs](http://eslint.org/docs/rules/new-cap))
 
@@ -1230,65 +1230,65 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Parens for Constructors (new-parens)
+## Require Parens for Constructors (new-parens)
 
 **Key:** new-parens ([docs](http://eslint.org/docs/rules/new-parens))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require or disallow an empty newline after variable declarations (newline-after-var)
+## Require or disallow an empty newline after variable declarations (newline-after-var)
 
 **Key:** newline-after-var ([docs](http://eslint.org/docs/rules/newline-after-var))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow creation of dense arrays using the `Array` constructor (no-array-constructor)
+## Disallow creation of dense arrays using the `Array` constructor (no-array-constructor)
 
 **Key:** no-array-constructor ([docs](http://eslint.org/docs/rules/no-array-constructor))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow continue (no-continue)
+## Disallow continue (no-continue)
 
 **Key:** no-continue ([docs](http://eslint.org/docs/rules/no-continue))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallows comments after code. Comments must come on their own lines (no-inline-comments)
+## Disallows comments after code. Comments must come on their own lines (no-inline-comments)
 
 **Key:** no-inline-comments ([docs](http://eslint.org/docs/rules/no-inline-comments))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow `if` as the Only Statement in an `else` Block (no-lonely-if)
+## Disallow `if` as the Only Statement in an `else` Block (no-lonely-if)
 
 **Key:** no-lonely-if ([docs](http://eslint.org/docs/rules/no-lonely-if))
 
 **Value:** ``1``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow mixed spaces and tabs for indentation (no-mixed-spaces-and-tabs)
+## Disallow mixed spaces and tabs for indentation (no-mixed-spaces-and-tabs)
 
 **Key:** no-mixed-spaces-and-tabs ([docs](http://eslint.org/docs/rules/no-mixed-spaces-and-tabs))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallows multiple blank lines (no-multiple-empty-lines)
+## Disallows multiple blank lines (no-multiple-empty-lines)
 
 **Key:** no-multiple-empty-lines ([docs](http://eslint.org/docs/rules/no-multiple-empty-lines))
 
@@ -1303,73 +1303,73 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Nested Ternaries (no-nested-ternary)
+## Disallow Nested Ternaries (no-nested-ternary)
 
 **Key:** no-nested-ternary ([docs](http://eslint.org/docs/rules/no-nested-ternary))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow the use of the Object constructor (no-new-object)
+## Disallow the use of the Object constructor (no-new-object)
 
 **Key:** no-new-object ([docs](http://eslint.org/docs/rules/no-new-object))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Spaces in Function Calls (no-spaced-func)
+## Disallow Spaces in Function Calls (no-spaced-func)
 
 **Key:** no-spaced-func ([docs](http://eslint.org/docs/rules/no-spaced-func))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Ternary Operators (no-ternary)
+## Disallow Ternary Operators (no-ternary)
 
 **Key:** no-ternary ([docs](http://eslint.org/docs/rules/no-ternary))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow trailing spaces at the end of lines (no-trailing-spaces)
+## Disallow trailing spaces at the end of lines (no-trailing-spaces)
 
 **Key:** no-trailing-spaces ([docs](http://eslint.org/docs/rules/no-trailing-spaces))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Dangling Underscores in Identifiers (no-underscore-dangle)
+## Disallow Dangling Underscores in Identifiers (no-underscore-dangle)
 
 **Key:** no-underscore-dangle ([docs](http://eslint.org/docs/rules/no-underscore-dangle))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow conditional expressions that can be expressed with simpler constructs (no-unneeded-ternary)
+## Disallow conditional expressions that can be expressed with simpler constructs (no-unneeded-ternary)
 
 **Key:** no-unneeded-ternary ([docs](http://eslint.org/docs/rules/no-unneeded-ternary))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow or enforce spaces inside of curly braces in objects. (object-curly-spacing)
+## Disallow or enforce spaces inside of curly braces in objects. (object-curly-spacing)
 
 **Key:** object-curly-spacing ([docs](http://eslint.org/docs/rules/object-curly-spacing))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require or Disallow One Variable Declaration per Scope (one-var)
+## Require or Disallow One Variable Declaration per Scope (one-var)
 
 **Key:** one-var ([docs](http://eslint.org/docs/rules/one-var))
 
@@ -1381,33 +1381,33 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Operator Assignment Shorthand (operator-assignment)
+## Operator Assignment Shorthand (operator-assignment)
 
 **Key:** operator-assignment ([docs](http://eslint.org/docs/rules/operator-assignment))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Operator Linebreak (operator-linebreak)
+## Operator Linebreak (operator-linebreak)
 
 **Key:** operator-linebreak ([docs](http://eslint.org/docs/rules/operator-linebreak))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Quoting Style for Property Names (quote-props)
+## Quoting Style for Property Names (quote-props)
 
 **Key:** quote-props ([docs](http://eslint.org/docs/rules/quote-props))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce Quote Style (quotes)
+## Enforce Quote Style (quotes)
 
 **Key:** quotes ([docs](http://eslint.org/docs/rules/quotes))
 
@@ -1420,17 +1420,17 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require IDs to match a pattern (id-match)
+## Require IDs to match a pattern (id-match)
 
 **Key:** id-match ([docs](http://eslint.org/docs/rules/id-match))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce padding within blocks (padded-blocks)
+## Enforce padding within blocks (padded-blocks)
 
 **Key:** padded-blocks ([docs](http://eslint.org/docs/rules/padded-blocks))
 
@@ -1442,9 +1442,9 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce or Disallow Semicolons (semi)
+## Enforce or Disallow Semicolons (semi)
 
 **Key:** semi ([docs](http://eslint.org/docs/rules/semi))
 
@@ -1456,9 +1456,9 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce spacing before and after semicolons (semi-spacing)
+## Enforce spacing before and after semicolons (semi-spacing)
 
 **Key:** semi-spacing ([docs](http://eslint.org/docs/rules/semi-spacing))
 
@@ -1473,33 +1473,33 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Variable Sorting (sort-vars)
+## Variable Sorting (sort-vars)
 
 **Key:** sort-vars ([docs](http://eslint.org/docs/rules/sort-vars))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce spacing before and after keywords (keyword-spacing)
+## Enforce spacing before and after keywords (keyword-spacing)
 
 **Key:** keyword-spacing ([docs](http://eslint.org/docs/rules/keyword-spacing))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Or Disallow Space Before Blocks (space-before-blocks)
+## Require Or Disallow Space Before Blocks (space-before-blocks)
 
 **Key:** space-before-blocks ([docs](http://eslint.org/docs/rules/space-before-blocks))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require or disallow a space before function parenthesis (space-before-function-paren)
+## Require or disallow a space before function parenthesis (space-before-function-paren)
 
 **Key:** space-before-function-paren ([docs](http://eslint.org/docs/rules/space-before-function-paren))
 
@@ -1511,33 +1511,33 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow or enforce spaces inside of parentheses (space-in-parens)
+## Disallow or enforce spaces inside of parentheses (space-in-parens)
 
 **Key:** space-in-parens ([docs](http://eslint.org/docs/rules/space-in-parens))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Spaces Around Infix Operators (space-infix-ops)
+## Require Spaces Around Infix Operators (space-infix-ops)
 
 **Key:** space-infix-ops ([docs](http://eslint.org/docs/rules/space-infix-ops))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require or disallow spaces before/after unary operators (space-unary-ops)
+## Require or disallow spaces before/after unary operators (space-unary-ops)
 
 **Key:** space-unary-ops ([docs](http://eslint.org/docs/rules/space-unary-ops))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Requires or disallows a whitespace (space or tab) beginning a comment (spaced-comment)
+## Requires or disallows a whitespace (space or tab) beginning a comment (spaced-comment)
 
 **Key:** spaced-comment ([docs](http://eslint.org/docs/rules/spaced-comment))
 
@@ -1559,65 +1559,65 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Require Regex Literals to be Wrapped (wrap-regex)
+## Require Regex Literals to be Wrapped (wrap-regex)
 
 **Key:** wrap-regex ([docs](http://eslint.org/docs/rules/wrap-regex))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Enforce/Disallow Variable Initializations (init-declarations)
+## Enforce/Disallow Variable Initializations (init-declarations)
 
 **Key:** init-declarations ([docs](http://eslint.org/docs/rules/init-declarations))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Shadowing of Variables Inside of catch (no-catch-shadow)
+## Disallow Shadowing of Variables Inside of catch (no-catch-shadow)
 
 **Key:** no-catch-shadow ([docs](http://eslint.org/docs/rules/no-catch-shadow))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Variables Deletion (no-delete-var)
+## Disallow Variables Deletion (no-delete-var)
 
 **Key:** no-delete-var ([docs](http://eslint.org/docs/rules/no-delete-var))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Labels That Are Variables Names (no-label-var)
+## Disallow Labels That Are Variables Names (no-label-var)
 
 **Key:** no-label-var ([docs](http://eslint.org/docs/rules/no-label-var))
 
 **Value:** ``0``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Shadowing (no-shadow)
+## Disallow Shadowing (no-shadow)
 
 **Key:** no-shadow ([docs](http://eslint.org/docs/rules/no-shadow))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Shadowing of Restricted Names (no-shadow-restricted-names)
+## Disallow Shadowing of Restricted Names (no-shadow-restricted-names)
 
 **Key:** no-shadow-restricted-names ([docs](http://eslint.org/docs/rules/no-shadow-restricted-names))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Unused Variables (no-unused-vars)
+## Disallow Unused Variables (no-unused-vars)
 
 **Key:** no-unused-vars ([docs](http://eslint.org/docs/rules/no-unused-vars))
 
@@ -1632,15 +1632,15 @@
 ]
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
-### Disallow Early Use (no-use-before-define)
+## Disallow Early Use (no-use-before-define)
 
 **Key:** no-use-before-define ([docs](http://eslint.org/docs/rules/no-use-before-define))
 
 **Value:** ``2``
 
-**[⬆ back to top](#table-of-contents)**
+**[&#8679; back to top](#table-of-contents)**
 
 ## License
 MIT © 2016 Gergely Kovács (gg.kovacs@gmail.com)
