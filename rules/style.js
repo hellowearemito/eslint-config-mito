@@ -2,7 +2,9 @@
 module.exports = {
   'rules': {
     'array-bracket-spacing': [2, 'never'],
-    'indent': [2, 4],
+    'indent': [2, 4, {
+      "SwitchCase": 1
+    }],
     'brace-style': [2, '1tbs', {
       'allowSingleLine': true
     }],
@@ -25,7 +27,7 @@ module.exports = {
       'afterColon': true
     }],
     'lines-around-comment': 0,
-    'linebreak-style': 0,
+    'linebreak-style': 2,
     'max-nested-callbacks': 0,
     'new-cap': [2, {
       'newIsCap': true

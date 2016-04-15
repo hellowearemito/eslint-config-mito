@@ -1,5 +1,5 @@
 # [eslint](http://eslint.org)-config-mito `default` configurations
-> Generated: Fri Apr 15 2016 11:51:44 GMT+0200 (CEST)
+> Generated: Fri Apr 15 2016 15:10:33 GMT+0200 (CEST)
 
 ## Table of contents
 
@@ -174,8 +174,6 @@
 * [prefer-reflect](#suggest-using-reflect-methods-where-applicable-prefer-reflect)
 * [require-yield](#disallow-generator-functions-that-do-not-have-yield-require-yield)
 
----
-
 ## Enforces getter/setter pairs in objects (accessor-pairs)
 
 **Key:** accessor-pairs ([docs](http://eslint.org/docs/rules/accessor-pairs))
@@ -218,13 +216,7 @@
 
 **Key:** curly ([docs](http://eslint.org/docs/rules/curly))
 
-**Value:** 
-```javascript
-[
-  2,
-  "multi-line"
-]
-```
+**Value:** ``2``
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -272,7 +264,7 @@
 
 **Key:** guard-for-in ([docs](http://eslint.org/docs/rules/guard-for-in))
 
-**Value:** ``2``
+**Value:** ``0``
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -368,7 +360,7 @@
 
 **Key:** no-invalid-this ([docs](http://eslint.org/docs/rules/no-invalid-this))
 
-**Value:** ``0``
+**Value:** ``2``
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -472,7 +464,7 @@
 
 **Key:** no-param-reassign ([docs](http://eslint.org/docs/rules/no-param-reassign))
 
-**Value:** ``2``
+**Value:** ``0``
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -659,7 +651,15 @@
 
 **Key:** yoda ([docs](http://eslint.org/docs/rules/yoda))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+[
+  2,
+  {
+    "expectRange": true
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1070,7 +1070,10 @@
 ```javascript
 [
   2,
-  4
+  4,
+  {
+    "SwitchCase": 1
+  }
 ]
 ```
 
@@ -1217,7 +1220,7 @@
 
 **Key:** linebreak-style ([docs](http://eslint.org/docs/rules/linebreak-style))
 
-**Value:** ``0``
+**Value:** ``2``
 
 **[&#8679; back to top](#table-of-contents)**
 

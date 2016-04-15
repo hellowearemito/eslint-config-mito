@@ -5,14 +5,14 @@ module.exports = {
     'block-scoped-var': 2,
     'complexity': [0, 11],
     'consistent-return': 2,
-    'curly': [2, 'multi-line'],
+    'curly': 2,
     'default-case': 2,
     'dot-notation': [2, {
       'allowKeywords': true
     }],
     'dot-location': 0,
     'eqeqeq': 2,
-    'guard-for-in': 2,
+    'guard-for-in': 0,
     'no-caller': 2,
     'no-div-regex': 2,
     'no-else-return': 2,
@@ -24,7 +24,7 @@ module.exports = {
     'no-floating-decimal': 2,
     'no-implicit-coercion': 0,
     'no-implied-eval': 2,
-    'no-invalid-this': 0,
+    'no-invalid-this': 2,
     'no-iterator': 2,
     'no-labels': 2,
     'no-lone-blocks': 2,
@@ -37,7 +37,7 @@ module.exports = {
     'no-new-wrappers': 2,
     'no-octal': 2,
     'no-octal-escape': 2,
-    'no-param-reassign': 2,
+    'no-param-reassign': 0,
     'no-process-exit': 2,
     'no-proto': 2,
     'no-redeclare': 2,
@@ -61,6 +61,8 @@ module.exports = {
     'radix': 2,
     'vars-on-top': 2,
     'wrap-iife': [2, 'any'],
-    'yoda': 2
+    'yoda': [2, {
+      'expectRange': true
+    }]
   }
 };

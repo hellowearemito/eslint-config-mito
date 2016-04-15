@@ -148,7 +148,7 @@ function main() {
       bar.tick();
     }
 
-    md = tableOfContents + '\n---\n' + md + LICENSE;
+    md = tableOfContents + md + LICENSE;
 
     bar.tick();
 
