@@ -31,7 +31,7 @@ Lints EcmaScript 5 and below. Only requires `eslint`.
 }
 ```
 
-See [Mito's documentation](https://github.com/ggkovacs/eslint-config-mito/docs) and
+See [Mito's documentation](https://github.com/ggkovacs/eslint-config-mito/tree/master/docs) and
 the [ESlint config docs](http://eslint.org/docs/user-guide/configuring#extending-configuration-files)
 for more information.
 

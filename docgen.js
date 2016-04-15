@@ -63,7 +63,7 @@ function getFirstLine(str) {
 }
 
 function markdownHeaderToHash(str) {
-  return '#' + str.substr(2).replace(/[^\w\s]/gi, '').replace(/ /g, '-').toLowerCase();
+  return '#' + str.substr(2).replace(/[^\w\s!-]/gi, '').replace(/ /g, '-').toLowerCase();
 }
 
 function getRuleMarkdown(rulename) {
@@ -142,6 +142,8 @@ function main() {
       } else {
         md += '``' + value + '``\n';
       }
+
+      md += '\n**[⬆ back to top](#table-of-contents)**\n'
 
       bar.tick();
     }
