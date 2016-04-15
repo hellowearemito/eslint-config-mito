@@ -3,7 +3,7 @@ module.exports = {
   'rules': {
     'array-bracket-spacing': [2, 'never'],
     'indent': [2, 4, {
-      "SwitchCase": 1
+      'SwitchCase': 1
     }],
     'brace-style': [2, '1tbs', {
       'allowSingleLine': true
