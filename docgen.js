@@ -4,8 +4,6 @@ var fs = require('fs');
 var path = require('path');
 var ProgressBar = require('progress')
 
-var GENERATED_DATETIME = (new Date()).toString();
-
 var EXTEND_FILES = [{
   name: 'default',
   path: './index.js'
@@ -14,9 +12,9 @@ var EXTEND_FILES = [{
   path: './legacy.js'
 }];
 
+var GENERATED_DATETIME = (new Date()).toString();
 var README_START = '# [eslint](http://eslint.org)-config-mito documentation\n> Generated: ' + GENERATED_DATETIME + '\n\n';
 var LICENSE = '\n## License\nMIT © 2016 Gergely Kovács (gg.kovacs@gmail.com)\n';
-
 var ESLINT_DOCS_URL = 'https://raw.githubusercontent.com/eslint/eslint/master/docs/rules/';
 
 function isExists(path) {
@@ -30,9 +28,8 @@ function isExists(path) {
 
 function objectLength(obj) {
   var size = 0
-  var key;
 
-  for (key in obj) {
+  for (var key in obj) {
     if (obj.hasOwnProperty(key)) {
       size++;
     }
@@ -54,37 +51,26 @@ function parseFile(contents) {
   return rules;
 }
 
-function writeFile(file, data) {
-  fs.writeFile(path.join(__dirname, file), data, 'utf8');
-}
-
-function getFirstLine(str) {
-  return /^.?(.*)/g.exec(str)[0];
-}
-
-function markdownHeaderToHash(str) {
-  return '#' + str.substr(2).replace(/[^\w\s!-]/gi, '').replace(/ /g, '-').toLowerCase();
-}
-
-function getRuleMarkdown(rulename) {
-  var filename = path.join('.cache', rulename + '.md');
+function getMarkdownByRulename(rulename) {
+  var cachePath = path.join(__dirname, '.cache');
+  var filename = rulename + '.md';
+  var filePath = path.join(cachePath, filename);
   var res = null;
   var body = null;
 
-  if (!isExists(path.join(__dirname, '.cache'))) {
-    fs.mkdirSync(path.join(__dirname, '.cache'));
+  if (!isExists(cachePath)) {
+    fs.mkdirSync(cachePath);
   }
 
-  if (isExists(path.join(__dirname, filename))) {
-    return fs.readFileSync(path.join(__dirname, filename), 'utf8');
+  if (isExists(filePath)) {
+    body = fs.readFileSync(filePath, 'utf8');
   } else {
     res = syncRequest('GET', ESLINT_DOCS_URL + rulename + '.md');
     body = res.getBody('utf8');
-
-    writeFile(filename, body);
-
-    return body;
+    fs.writeFileSync(filePath, body, 'utf8');
   }
+
+  return body;
 }
 
 function main() {
@@ -93,9 +79,10 @@ function main() {
   var readme = README_START;
   var total = 0;
 
-  for (var i = 0, l = EXTEND_FILES.length; i < l; i++) {
-    EXTEND_FILES[i].rules = parseFile(require(EXTEND_FILES[i].path));
-    total += objectLength(EXTEND_FILES[i].rules);
+  var j = EXTEND_FILES.length;
+  while (j--) {
+    EXTEND_FILES[j].rules = parseFile(require(EXTEND_FILES[j].path));
+    total += objectLength(EXTEND_FILES[j].rules);
   }
 
   var bar = new ProgressBar('generate documentation [:bar] :percent :etas', {
@@ -106,8 +93,9 @@ function main() {
   });
 
   for (i = 0, l = EXTEND_FILES.length; i < l; i++) {
-    var name = EXTEND_FILES[i].name;
-    var rules = EXTEND_FILES[i].rules;
+    var item = EXTEND_FILES[i];
+    var name = item.name;
+    var rules = item.rules;
 
     readme += '* [`' + name + '` configurations](' + name + '.md)\n';
 
@@ -125,14 +113,14 @@ function main() {
     bar.tick();
 
     for (var rulename in rules) {
-      var ruleMarkdown = getRuleMarkdown(rulename);
-      var firstLine = getFirstLine(ruleMarkdown);
-      var hash = markdownHeaderToHash(firstLine);
+      var ruleMarkdown = getMarkdownByRulename(rulename);
+      var firstLine = /^.?(.*)/g.exec(ruleMarkdown)[0].substr(2);
+      var hash = '#' + firstLine.replace(/[^\w\s!-]/gi, '').replace(/ /g, '-').toLowerCase();
       var value = JSON.stringify(rules[rulename], null, 2);
 
-      tableOfContents += '* [' + rulename + ']' + '(' + hash + ')' + '\n';
+      tableOfContents += '1. [' + rulename + ']' + '(' + hash + ')' + '\n';
 
-      md += '\n#' + firstLine + '\n\n';
+      md += '\n## ' + firstLine.substr(0, 1).toUpperCase() + firstLine.substr(1) + '\n\n';
       md += '**Key:** ' + rulename + ' ([docs](http://eslint.org/docs/rules/' + rulename + '))\n\n';
       md += '**Value:** ';
 
@@ -152,12 +140,12 @@ function main() {
 
     bar.tick();
 
-    writeFile(path.join('docs', name + '.md'), md);
+    fs.writeFileSync(path.join(__dirname, 'docs', name + '.md'), md, 'utf8');
 
     bar.tick();
   }
 
-  writeFile(path.join('docs', 'README.md'), readme);
+  fs.writeFileSync(path.join(__dirname, 'docs', 'README.md'), readme, 'utf8');
 
   bar.tick();
 }

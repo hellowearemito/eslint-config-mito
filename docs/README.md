@@ -1,5 +1,5 @@
 # [eslint](http://eslint.org)-config-mito documentation
-> Generated: Fri Apr 15 2016 15:10:33 GMT+0200 (CEST)
+> Generated: Sat Apr 16 2016 08:06:06 GMT+0200 (CEST)
 
 * [`default` configurations](default.md)
 * [`legacy` configurations](legacy.md)
