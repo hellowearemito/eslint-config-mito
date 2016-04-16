@@ -2,7 +2,7 @@ var xtend = require('xtend');
 var syncRequest = require('sync-request');
 var fs = require('fs');
 var path = require('path');
-var ProgressBar = require('progress')
+var ProgressBar = require('progress');
 
 var EXTEND_FILES = [{
   name: 'default',
@@ -27,7 +27,7 @@ function isExists(path) {
 }
 
 function objectLength(obj) {
-  var size = 0
+  var size = 0;
 
   for (var key in obj) {
     if (obj.hasOwnProperty(key)) {
@@ -36,7 +36,7 @@ function objectLength(obj) {
   }
 
   return size;
-};
+}
 
 function parseFile(contents) {
   var rules = contents.rules || {};
@@ -92,7 +92,7 @@ function main() {
     total: total + 10
   });
 
-  for (i = 0, l = EXTEND_FILES.length; i < l; i++) {
+  for (var i = 0, l = EXTEND_FILES.length; i < l; i++) {
     var item = EXTEND_FILES[i];
     var name = item.name;
     var rules = item.rules;
@@ -131,7 +131,7 @@ function main() {
         md += '``' + value + '``\n';
       }
 
-      md += '\n**[&#8679; back to top](#table-of-contents)**\n'
+      md += '\n**[&#8679; back to top](#table-of-contents)**\n';
 
       bar.tick();
     }
