@@ -59,7 +59,7 @@ module.exports = {
     'no-with': 2,
     'handle-callback-err': 1,
     'radix': 2,
-    'vars-on-top': 2,
+    'vars-on-top': 0,
     'wrap-iife': [2, 'any'],
     'yoda': [2, 'never', {
       'exceptRange': true

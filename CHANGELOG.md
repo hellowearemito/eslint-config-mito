@@ -1,3 +1,9 @@
+4.0.0 / 2016-04-18
+==================
+  - Disable `vars-on-top`
+  - Disable `no-shadow`
+  - Disable `newline-after-var`
+
 3.0.0 / 2016-04-16
 ==================
   - Add docgen script

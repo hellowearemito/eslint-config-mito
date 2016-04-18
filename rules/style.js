@@ -33,7 +33,7 @@ module.exports = {
       'newIsCap': true
     }],
     'new-parens': 2,
-    'newline-after-var': 2,
+    'newline-after-var': 0,
     'no-array-constructor': 2,
     'no-continue': 0,
     'no-inline-comments': 0,
