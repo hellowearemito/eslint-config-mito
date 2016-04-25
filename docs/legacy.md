@@ -1,5 +1,5 @@
 # [eslint](http://eslint.org)-config-mito `legacy` configurations
-> Generated: Sat Apr 16 2016 08:06:06 GMT+0200 (CEST)
+> Generated: Mon Apr 25 2016 14:20:40 GMT+0200 (CEST)
 
 ## Table of contents
 
@@ -59,15 +59,15 @@
 1. [vars-on-top](#require-variable-declarations-to-be-at-the-top-of-their-scope-vars-on-top)
 1. [wrap-iife](#require-iifes-to-be-wrapped-wrap-iife)
 1. [yoda](#require-or-disallow-yoda-conditions-yoda)
-1. [comma-dangle](#disallow-or-enforce-dangling-commas-comma-dangle)
-1. [no-cond-assign](#disallow-assignment-in-conditional-statements-no-cond-assign)
-1. [no-console](#disallow-use-of-console-no-console)
-1. [no-debugger](#disallow-debugger-no-debugger)
+1. [comma-dangle](#require-or-disallow-trailing-commas-comma-dangle)
+1. [no-cond-assign](#disallow-assignment-operators-in-conditional-statements-no-cond-assign)
+1. [no-console](#disallow-the-use-of-console-no-console)
+1. [no-debugger](#disallow-the-use-of-debugger-no-debugger)
 1. [no-alert](#disallow-use-of-alert-no-alert)
-1. [no-constant-condition](#disallow-use-of-constant-expressions-in-conditions-no-constant-condition)
-1. [no-control-regex](#disallow-controls-characters-in-regular-expressions-no-control-regex)
-1. [no-dupe-args](#no-duplicate-arguments-no-dupe-args)
-1. [no-dupe-keys](#disallow-duplicate-keys-no-dupe-keys)
+1. [no-constant-condition](#disallow-constant-expressions-in-conditions-no-constant-condition)
+1. [no-control-regex](#disallow-control-characters-in-regular-expressions-no-control-regex)
+1. [no-dupe-args](#disallow-duplicate-arguments-in-function-definitions-no-dupe-args)
+1. [no-dupe-keys](#disallow-duplicate-keys-in-object-literals-no-dupe-keys)
 1. [no-duplicate-case](#rule-to-disallow-a-duplicate-case-label-no-duplicate-case)
 1. [no-empty](#disallow-empty-block-statements-no-empty)
 1. [no-empty-character-class](#disallow-empty-character-classes-no-empty-character-class)
@@ -90,10 +90,10 @@
 1. [valid-jsdoc](#validates-jsdoc-comments-are-syntactically-correct-valid-jsdoc)
 1. [valid-typeof](#ensures-that-the-results-of-typeof-are-compared-against-a-valid-string-valid-typeof)
 1. [no-unexpected-multiline](#avoid-unexpected-multiline-expressions-no-unexpected-multiline)
-1. [max-depth](#limit-maximum-depth-max-depth)
-1. [max-len](#limit-maximum-length-of-line-max-len)
-1. [max-params](#limit-maximum-number-of-parameters-max-params)
-1. [max-statements](#limit-maximum-number-of-statements-max-statements)
+1. [max-depth](#enforce-a-maximum-depth-that-blocks-can-be-nested-max-depth)
+1. [max-len](#enforce-a-maximum-line-length-max-len)
+1. [max-params](#enforce-a-maximum-number-of-parameters-in-function-definitions-max-params)
+1. [max-statements](#enforce-a-maximum-number-of-statements-allowed-in-function-blocks-max-statements)
 1. [no-bitwise](#disallow-bitwise-operators-no-bitwise)
 1. [no-plusplus](#disallow--and----no-plusplus)
 1. [callback-return](#enforce-return-after-callback-callback-return)
@@ -113,10 +113,10 @@
 1. [func-names](#require-function-expressions-to-have-a-name-func-names)
 1. [func-style](#enforce-the-consistent-use-of-either-function-declarations-or-expressions-func-style)
 1. [id-length](#enforce-minimum-and-maximum-identifier-lengths-id-length)
-1. [key-spacing](#enforce-property-spacing-key-spacing)
-1. [lines-around-comment](#enforce-empty-lines-around-comments-lines-around-comment)
-1. [linebreak-style](#enforce-linebreak-style-linebreak-style)
-1. [max-nested-callbacks](#set-maximum-depth-of-nested-callbacks-max-nested-callbacks)
+1. [key-spacing](#enforce-consistent-spacing-between-keys-and-values-in-object-literal-properties-key-spacing)
+1. [lines-around-comment](#require-empty-lines-around-comments-lines-around-comment)
+1. [linebreak-style](#enforce-consistent-linebreak-style-linebreak-style)
+1. [max-nested-callbacks](#enforce-a-maximum-depth-that-callbacks-can-be-nested-max-nested-callbacks)
 1. [new-cap](#require-constructors-to-use-initial-caps-new-cap)
 1. [new-parens](#require-parens-for-constructors-new-parens)
 1. [newline-after-var](#require-or-disallow-an-empty-newline-after-variable-declarations-newline-after-var)
@@ -144,7 +144,7 @@
 1. [semi](#enforce-or-disallow-semicolons-semi)
 1. [semi-spacing](#enforce-spacing-before-and-after-semicolons-semi-spacing)
 1. [sort-vars](#variable-sorting-sort-vars)
-1. [keyword-spacing](#enforce-spacing-before-and-after-keywords-keyword-spacing)
+1. [keyword-spacing](#enforce-consistent-spacing-before-and-after-keywords-keyword-spacing)
 1. [space-before-blocks](#require-or-disallow-space-before-blocks-space-before-blocks)
 1. [space-before-function-paren](#require-or-disallow-a-space-before-function-parenthesis-space-before-function-paren)
 1. [space-in-parens](#disallow-or-enforce-spaces-inside-of-parentheses-space-in-parens)
@@ -347,7 +347,7 @@
 
 **Key:** no-invalid-this ([docs](http://eslint.org/docs/rules/no-invalid-this))
 
-**Value:** ``2``
+**Value:** ``0``
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -616,7 +616,7 @@
 
 **Key:** vars-on-top ([docs](http://eslint.org/docs/rules/vars-on-top))
 
-**Value:** ``2``
+**Value:** ``0``
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -651,7 +651,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow or Enforce Dangling Commas (comma-dangle)
+## Require or disallow trailing commas (comma-dangle)
 
 **Key:** comma-dangle ([docs](http://eslint.org/docs/rules/comma-dangle))
 
@@ -665,7 +665,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Assignment in Conditional Statements (no-cond-assign)
+## Disallow assignment operators in conditional statements (no-cond-assign)
 
 **Key:** no-cond-assign ([docs](http://eslint.org/docs/rules/no-cond-assign))
 
@@ -679,7 +679,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Use of console (no-console)
+## Disallow the use of `console` (no-console)
 
 **Key:** no-console ([docs](http://eslint.org/docs/rules/no-console))
 
@@ -687,7 +687,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow debugger (no-debugger)
+## Disallow the use of `debugger` (no-debugger)
 
 **Key:** no-debugger ([docs](http://eslint.org/docs/rules/no-debugger))
 
@@ -703,7 +703,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow use of constant expressions in conditions (no-constant-condition)
+## Disallow constant expressions in conditions (no-constant-condition)
 
 **Key:** no-constant-condition ([docs](http://eslint.org/docs/rules/no-constant-condition))
 
@@ -711,7 +711,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Controls Characters in Regular Expressions (no-control-regex)
+## Disallow control characters in regular expressions (no-control-regex)
 
 **Key:** no-control-regex ([docs](http://eslint.org/docs/rules/no-control-regex))
 
@@ -719,7 +719,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## No duplicate arguments (no-dupe-args)
+## Disallow duplicate arguments in `function` definitions (no-dupe-args)
 
 **Key:** no-dupe-args ([docs](http://eslint.org/docs/rules/no-dupe-args))
 
@@ -727,7 +727,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Duplicate Keys (no-dupe-keys)
+## Disallow duplicate keys in object literals (no-dupe-keys)
 
 **Key:** no-dupe-keys ([docs](http://eslint.org/docs/rules/no-dupe-keys))
 
@@ -743,7 +743,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Empty Block Statements (no-empty)
+## Disallow empty block statements (no-empty)
 
 **Key:** no-empty ([docs](http://eslint.org/docs/rules/no-empty))
 
@@ -917,7 +917,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Limit Maximum Depth (max-depth)
+## Enforce a maximum depth that blocks can be nested (max-depth)
 
 **Key:** max-depth ([docs](http://eslint.org/docs/rules/max-depth))
 
@@ -931,7 +931,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Limit Maximum Length of Line (max-len)
+## Enforce a maximum line length (max-len)
 
 **Key:** max-len ([docs](http://eslint.org/docs/rules/max-len))
 
@@ -946,7 +946,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Limit Maximum Number of Parameters (max-params)
+## Enforce a maximum number of parameters in `function` definitions (max-params)
 
 **Key:** max-params ([docs](http://eslint.org/docs/rules/max-params))
 
@@ -960,7 +960,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Limit Maximum Number of Statements (max-statements)
+## Enforce a maximum number of statements allowed in `function` blocks (max-statements)
 
 **Key:** max-statements ([docs](http://eslint.org/docs/rules/max-statements))
 
@@ -1179,7 +1179,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce Property Spacing (key-spacing)
+## Enforce consistent spacing between keys and values in object literal properties (key-spacing)
 
 **Key:** key-spacing ([docs](http://eslint.org/docs/rules/key-spacing))
 
@@ -1196,7 +1196,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce empty lines around comments (lines-around-comment)
+## Require empty lines around comments (lines-around-comment)
 
 **Key:** lines-around-comment ([docs](http://eslint.org/docs/rules/lines-around-comment))
 
@@ -1204,7 +1204,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce linebreak style (linebreak-style)
+## Enforce consistent linebreak style (linebreak-style)
 
 **Key:** linebreak-style ([docs](http://eslint.org/docs/rules/linebreak-style))
 
@@ -1212,7 +1212,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Set Maximum Depth of Nested Callbacks (max-nested-callbacks)
+## Enforce a maximum depth that callbacks can be nested (max-nested-callbacks)
 
 **Key:** max-nested-callbacks ([docs](http://eslint.org/docs/rules/max-nested-callbacks))
 
@@ -1248,7 +1248,7 @@
 
 **Key:** newline-after-var ([docs](http://eslint.org/docs/rules/newline-after-var))
 
-**Value:** ``2``
+**Value:** ``0``
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1487,7 +1487,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce spacing before and after keywords (keyword-spacing)
+## Enforce consistent spacing before and after keywords (keyword-spacing)
 
 **Key:** keyword-spacing ([docs](http://eslint.org/docs/rules/keyword-spacing))
 
@@ -1609,7 +1609,7 @@
 
 **Key:** no-shadow ([docs](http://eslint.org/docs/rules/no-shadow))
 
-**Value:** ``2``
+**Value:** ``0``
 
 **[&#8679; back to top](#table-of-contents)**
 
