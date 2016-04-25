@@ -1,8 +1,9 @@
-4.0.0 / 2016-04-18
+4.0.0 / 2016-04-25
 ==================
   - Disable `vars-on-top`
   - Disable `no-shadow`
   - Disable `newline-after-var`
+  - Disable `no-invalid-this`
 
 3.0.0 / 2016-04-16
 ==================
