@@ -4,6 +4,7 @@
   - Disable `no-shadow`
   - Disable `newline-after-var`
   - Disable `no-invalid-this`
+  - Update documentation
 
 3.0.0 / 2016-04-16
 ==================
