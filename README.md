@@ -1,4 +1,4 @@
-# [eslint](http://eslint.org)-config-mito [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# [eslint](http://eslint.org)-config-mito [![NPM version][npm-image]][npm-url] [![devDependency Status][daviddm-image]][daviddm-url]
 Version: **4.0.0**
 
 This package provides Mito's .eslintrc as an extensible shared config.
@@ -40,5 +40,5 @@ MIT © 2016 Gergely Kovács (gg.kovacs@gmail.com)
 
 [npm-image]: https://badge.fury.io/js/eslint-config-mito.svg
 [npm-url]: https://npmjs.org/package/eslint-config-mito
-[daviddm-image]: https://david-dm.org/ggkovacs/eslint-config-mito.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/ggkovacs/eslint-config-mito
+[daviddm-image]: https://david-dm.org/ggkovacs/eslint-config-mito/dev-status.svg
+[daviddm-url]: https://david-dm.org/ggkovacs/eslint-config-mito#info=devDependencies
