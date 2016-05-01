@@ -31,10 +31,10 @@
     "eslint": ">=2.0.0"
   },
   "devDependencies": {
-    "eslint": "^2.2.0",
+    "eslint": "^2.9.0",
     "pre-commit": "^1.1.2",
     "progress": "^1.1.8",
-    "sync-request": "^3.0.0",
+    "sync-request": "^3.0.1",
     "xtend": "^4.0.1"
   },
   "pre-commit": [
