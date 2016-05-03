@@ -1,3 +1,55 @@
+4.1.0 / 2016-05-03
+==================
+  - Remove symlink.js
+  - Remove symlink.js from .eslintignore
+  - Absolute path to relative path in .eslintrc
+  - Add eslint-plugin-import to npm install in README.md
+  - Update documentation
+  - Absolute path to relative path in index.js
+  - Add `parserOptions` (`ecmaVersion`: 7, `sourceType`: 'module')
+  - Absolute path to relative path in legacy.js
+  - Disable `amd` in legacy.js
+  - Disable `mocha` in legacy.js
+  - Disable `jasmine` in legacy.js
+  - Update test command, update peerDependencies
+  - Enable `es6`
+  - Add `import` to plugins
+  - Enable `arrow-body-style`
+  - Enable `arrow-spacing`
+  - Enable `no-confusing-arrow`
+  - Enable `no-dupe-class-members`
+  - Enable `no-duplicate-imports`
+  - Enable `no-new-symbol`
+  - Disable `no-restricted-globals`
+  - Disable `no-restricted-imports`
+  - Enable `no-useless-computed-key`
+  - Enable `no-useless-constructor`
+  - Enable `object-shorthand`
+  - Enable `prefer-arrow-callback`
+  - Enable `prefer-rest-params`
+  - Enable `prefer-template`
+  - Disable `require-yield`
+  - Disable `sort-imports`
+  - Enable `template-curly-spacing`
+  - Enable `yield-star-spacing`
+  - Enable `import/export`
+  - Disable `import/default`
+  - Disable `import/extensions`
+  - Disable `import/named`
+  - Disable `import/namespace`
+  - Disable `import/no-extraneous-dependencies`
+  - Enable `import/no-unresolved`
+  - Disable `import/no-named-as-default`
+  - Disable `import/no-commonjs`
+  - Disable `import/no-amd`
+  - Disable `import/imports-first`
+  - Disable `import/no-duplicates`
+  - Disable `import/no-deprecated`
+  - Disable `import/no-namespace`
+  - Disable `import/no-named-as-default-member`
+  - Disable `import/no-nodejs-modules`
+  - Disable `import/order`
+
 4.0.0 / 2016-04-25
 ==================
   - Disable `vars-on-top`
