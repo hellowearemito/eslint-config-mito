@@ -1,5 +1,5 @@
 {
-  "extends": "mito",
+  "extends": "./index.js",
   "rules": {
     "indent": [2, 2],
   }
