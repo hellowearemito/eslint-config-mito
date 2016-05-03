@@ -1,8 +1,11 @@
 // Default
 module.exports = {
-  'extends': [
-    'eslint-config-mito/legacy',
-    'eslint-config-mito/rules/es6',
-  ],
-  'rules': {}
+  extends: [
+    './legacy',
+    './rules/es6'
+  ].map(require.resolve),
+  parserOptions: {
+    ecmaVersion: 7,
+    sourceType: 'module'
+  }
 };
