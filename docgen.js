@@ -20,8 +20,14 @@ var ESLINT_DOCS_URL = {
   import: 'https://raw.githubusercontent.com/benmosher/eslint-plugin-import/master/docs/rules/'
 };
 var RULE_LINKS = {
-  default: 'http://eslint.org/docs/rules/',
-  import: 'https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/'
+  default: {
+    start: 'http://eslint.org/docs/rules/',
+    end: ''
+  },
+  import: {
+    start: 'https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/',
+    end: '.md'
+  }
 }
 
 function isExists(path) {
@@ -139,12 +145,11 @@ function main() {
       var firstLine = /^.?(.*)/g.exec(ruleMarkdown)[0].substr(2);
       var hash = '#' + firstLine.replace(/[^\w\s!-]/gi, '').replace(/ /g, '-').toLowerCase();
       var value = JSON.stringify(rules[rulenameOrig], null, 2);
-      var linkHref = RULE_LINKS[pluginName];
 
       tableOfContents += '1. [' + rulenameOrig + ']' + '(' + hash + ')' + '\n';
 
       md += '\n## ' + firstLine.substr(0, 1).toUpperCase() + firstLine.substr(1) + '\n\n';
-      md += '**Key:** ' + rulenameOrig + ' ([docs](' + linkHref + rulename + '))\n\n';
+      md += '**Key:** ' + rulenameOrig + ' ([docs](' + RULE_LINKS[pluginName].start + rulename + RULE_LINKS[pluginName].end + '))\n\n';
       md += '**Value:** ';
 
       if (value.length > 1) {
