@@ -1,5 +1,5 @@
 # [eslint](http://eslint.org)-config-mito `default` configurations
-> Generated: Tue May 03 2016 17:07:55 GMT+0200 (CEST)
+> Generated: Tue May 03 2016 17:54:28 GMT+0200 (CEST)
 
 ## Table of contents
 
@@ -1961,7 +1961,7 @@
 
 ## Export
 
-**Key:** import/export ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/export))
+**Key:** import/export ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/export.md))
 
 **Value:** ``2``
 
@@ -1969,7 +1969,7 @@
 
 ## Default
 
-**Key:** import/default ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/default))
+**Key:** import/default ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/default.md))
 
 **Value:** ``0``
 
@@ -1977,7 +1977,7 @@
 
 ## Extensions - Ensure consistent use of file extension within the import path
 
-**Key:** import/extensions ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions))
+**Key:** import/extensions ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md))
 
 **Value:** 
 ```javascript
@@ -1991,7 +1991,7 @@
 
 ## Named
 
-**Key:** import/named ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named))
+**Key:** import/named ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md))
 
 **Value:** ``0``
 
@@ -1999,7 +1999,7 @@
 
 ## Namespace
 
-**Key:** import/namespace ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/namespace))
+**Key:** import/namespace ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/namespace.md))
 
 **Value:** ``0``
 
@@ -2007,7 +2007,7 @@
 
 ## Forbid the use of extraneous packages
 
-**Key:** import/no-extraneous-dependencies ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies))
+**Key:** import/no-extraneous-dependencies ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md))
 
 **Value:** 
 ```javascript
@@ -2023,7 +2023,7 @@
 
 ## No-unresolved
 
-**Key:** import/no-unresolved ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved))
+**Key:** import/no-unresolved ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md))
 
 **Value:** 
 ```javascript
@@ -2039,7 +2039,7 @@
 
 ## No-named-as-default
 
-**Key:** import/no-named-as-default ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default))
+**Key:** import/no-named-as-default ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md))
 
 **Value:** ``0``
 
@@ -2047,7 +2047,7 @@
 
 ## No-commonjs
 
-**Key:** import/no-commonjs ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-commonjs))
+**Key:** import/no-commonjs ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-commonjs.md))
 
 **Value:** ``0``
 
@@ -2055,7 +2055,7 @@
 
 ## No-amd
 
-**Key:** import/no-amd ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-amd))
+**Key:** import/no-amd ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-amd.md))
 
 **Value:** ``0``
 
@@ -2063,7 +2063,7 @@
 
 ## Imports-first
 
-**Key:** import/imports-first ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/imports-first))
+**Key:** import/imports-first ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/imports-first.md))
 
 **Value:** 
 ```javascript
@@ -2077,7 +2077,7 @@
 
 ## No-duplicates
 
-**Key:** import/no-duplicates ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates))
+**Key:** import/no-duplicates ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md))
 
 **Value:** ``0``
 
@@ -2085,7 +2085,7 @@
 
 ## No-deprecated
 
-**Key:** import/no-deprecated ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-deprecated))
+**Key:** import/no-deprecated ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-deprecated.md))
 
 **Value:** ``0``
 
@@ -2093,7 +2093,7 @@
 
 ## No-namespace
 
-**Key:** import/no-namespace ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace))
+**Key:** import/no-namespace ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace.md))
 
 **Value:** ``0``
 
@@ -2101,7 +2101,7 @@
 
 ## No-named-as-default-member
 
-**Key:** import/no-named-as-default-member ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member))
+**Key:** import/no-named-as-default-member ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md))
 
 **Value:** ``0``
 
@@ -2109,7 +2109,7 @@
 
 ## No Node.js builtin modules
 
-**Key:** import/no-nodejs-modules ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-nodejs-modules))
+**Key:** import/no-nodejs-modules ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-nodejs-modules.md))
 
 **Value:** ``0``
 
@@ -2117,7 +2117,7 @@
 
 ## Enforce a convention in module import order
 
-**Key:** import/order ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order))
+**Key:** import/order ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md))
 
 **Value:** 
 ```javascript
