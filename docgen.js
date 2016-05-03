@@ -15,7 +15,14 @@ var EXTEND_FILES = [{
 var GENERATED_DATETIME = (new Date()).toString();
 var README_START = '# [eslint](http://eslint.org)-config-mito documentation\n> Generated: ' + GENERATED_DATETIME + '\n\n';
 var LICENSE = '\n## License\nMIT © 2016 Gergely Kovács (gg.kovacs@gmail.com)\n';
-var ESLINT_DOCS_URL = 'https://raw.githubusercontent.com/eslint/eslint/master/docs/rules/';
+var ESLINT_DOCS_URL = {
+  default: 'https://raw.githubusercontent.com/eslint/eslint/master/docs/rules/',
+  import: 'https://raw.githubusercontent.com/benmosher/eslint-plugin-import/master/docs/rules/'
+};
+var RULE_LINKS = {
+  default: 'http://eslint.org/docs/rules/',
+  import: 'https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/'
+}
 
 function isExists(path) {
   try {
@@ -43,7 +50,7 @@ function parseFile(contents) {
 
   if (contents.extends) {
     for (var i = 0, l = contents.extends.length; i < l; i++) {
-      var subrules = parseFile(require(contents.extends[i].replace(/^eslint-config-mito/, '.') + '.js'));
+      var subrules = parseFile(require(contents.extends[i]));
       rules = xtend(rules, subrules);
     }
   }
@@ -51,21 +58,27 @@ function parseFile(contents) {
   return rules;
 }
 
-function getMarkdownByRulename(rulename) {
+function getMarkdownByRulename(pluginName, rulename) {
   var cachePath = path.join(__dirname, '.cache');
-  var filename = rulename + '.md';
-  var filePath = path.join(cachePath, filename);
-  var res = null;
   var body = null;
 
   if (!isExists(cachePath)) {
     fs.mkdirSync(cachePath);
   }
 
+  var pluginDocsPath = path.join(cachePath, pluginName);
+
+  if (!isExists(pluginDocsPath)) {
+    fs.mkdirSync(pluginDocsPath);
+  }
+
+  var filename = rulename + '.md';
+  var filePath = path.join(cachePath, pluginName, filename);
+
   if (isExists(filePath)) {
     body = fs.readFileSync(filePath, 'utf8');
   } else {
-    res = syncRequest('GET', ESLINT_DOCS_URL + rulename + '.md');
+    var res = syncRequest('GET', ESLINT_DOCS_URL[pluginName] + rulename + '.md');
     body = res.getBody('utf8');
     fs.writeFileSync(filePath, body, 'utf8');
   }
@@ -112,16 +125,26 @@ function main() {
 
     bar.tick();
 
-    for (var rulename in rules) {
-      var ruleMarkdown = getMarkdownByRulename(rulename);
+    for (var rulenameOrig in rules) {
+      var pluginName = 'default';
+      var rulename = rulenameOrig;
+
+      if (rulename.indexOf('/') !== -1) {
+        rulename = rulename.split('/');
+        pluginName = rulename[0];
+        rulename = rulename[1];
+      }
+
+      var ruleMarkdown = getMarkdownByRulename(pluginName, rulename);
       var firstLine = /^.?(.*)/g.exec(ruleMarkdown)[0].substr(2);
       var hash = '#' + firstLine.replace(/[^\w\s!-]/gi, '').replace(/ /g, '-').toLowerCase();
-      var value = JSON.stringify(rules[rulename], null, 2);
+      var value = JSON.stringify(rules[rulenameOrig], null, 2);
+      var linkHref = RULE_LINKS[pluginName];
 
-      tableOfContents += '1. [' + rulename + ']' + '(' + hash + ')' + '\n';
+      tableOfContents += '1. [' + rulenameOrig + ']' + '(' + hash + ')' + '\n';
 
       md += '\n## ' + firstLine.substr(0, 1).toUpperCase() + firstLine.substr(1) + '\n\n';
-      md += '**Key:** ' + rulename + ' ([docs](http://eslint.org/docs/rules/' + rulename + '))\n\n';
+      md += '**Key:** ' + rulenameOrig + ' ([docs](' + linkHref + rulename + '))\n\n';
       md += '**Value:** ';
 
       if (value.length > 1) {
