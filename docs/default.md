@@ -1,5 +1,5 @@
 # [eslint](http://eslint.org)-config-mito `default` configurations
-> Generated: Mon Apr 25 2016 14:20:40 GMT+0200 (CEST)
+> Generated: Tue May 03 2016 17:07:55 GMT+0200 (CEST)
 
 ## Table of contents
 
@@ -36,7 +36,7 @@
 1. [no-new-func](#disallow-function-constructor-no-new-func)
 1. [no-new-wrappers](#disallow-primitive-wrapper-instances-no-new-wrappers)
 1. [no-octal](#disallow-octal-literals-no-octal)
-1. [no-octal-escape](#disallow-octal-escapes-no-octal-escape)
+1. [no-octal-escape](#disallow-octal-escape-sequences-in-string-literals-no-octal-escape)
 1. [no-param-reassign](#disallow-reassignment-of-function-parameters-no-param-reassign)
 1. [no-process-exit](#disallow-processexit-no-process-exit)
 1. [no-proto](#disallow-use-of-__proto__-no-proto)
@@ -53,7 +53,7 @@
 1. [no-undef](#disallow-undeclared-variables-no-undef)
 1. [no-undef-init](#disallow-initializing-to-undefined-no-undef-init)
 1. [no-undefined](#disallow-use-of-undefined-variable-no-undefined)
-1. [no-with](#no-with-statements-no-with)
+1. [no-with](#disallow-with-statements-no-with)
 1. [handle-callback-err](#enforce-callback-error-handling-handle-callback-err)
 1. [radix](#require-radix-parameter-radix)
 1. [vars-on-top](#require-variable-declarations-to-be-at-the-top-of-their-scope-vars-on-top)
@@ -154,25 +154,57 @@
 1. [wrap-regex](#require-regex-literals-to-be-wrapped-wrap-regex)
 1. [init-declarations](#enforcedisallow-variable-initializations-init-declarations)
 1. [no-catch-shadow](#disallow-shadowing-of-variables-inside-of-catch-no-catch-shadow)
-1. [no-delete-var](#disallow-variables-deletion-no-delete-var)
+1. [no-delete-var](#disallow-deleting-variables-no-delete-var)
 1. [no-label-var](#disallow-labels-that-are-variables-names-no-label-var)
 1. [no-shadow](#disallow-shadowing-no-shadow)
 1. [no-shadow-restricted-names](#disallow-shadowing-of-restricted-names-no-shadow-restricted-names)
 1. [no-unused-vars](#disallow-unused-variables-no-unused-vars)
 1. [no-use-before-define](#disallow-early-use-no-use-before-define)
+1. [arrow-body-style](#require-braces-in-arrow-function-body-arrow-body-style)
 1. [arrow-parens](#require-parens-in-arrow-function-arguments-arrow-parens)
 1. [arrow-spacing](#require-space-beforeafter-arrow-functions-arrow-arrow-spacing)
 1. [constructor-super](#verify-calls-of-super-in-constructors-constructor-super)
 1. [generator-star-spacing](#enforce-spacing-around-the--in-generator-functions-generator-star-spacing)
 1. [no-class-assign](#disallow-modifying-variables-of-class-declarations-no-class-assign)
+1. [no-confusing-arrow](#disallow-arrow-functions-where-they-could-be-confused-with-comparisons-no-confusing-arrow)
 1. [no-const-assign](#disallow-modifying-variables-that-are-declared-using-const-no-const-assign)
+1. [no-dupe-class-members](#disallow-duplicate-name-in-class-members-no-dupe-class-members)
+1. [no-duplicate-imports](#disallow-duplicate-imports-no-duplicate-imports)
+1. [no-new-symbol](#disallow-symbol-constructor-no-new-symbol)
+1. [no-restricted-globals](#disallow-specific-global-variables-no-restricted-globals)
+1. [no-restricted-imports](#disallow-specific-imports-no-restricted-imports)
 1. [no-this-before-super](#disallow-use-of-thissuper-before-calling-super-in-constructors-no-this-before-super)
 1. [no-var](#require-let-or-const-instead-of-var-no-var)
+1. [no-useless-computed-key](#disallow-unnecessary-computed-property-keys-on-objects-no-useless-computed-key)
+1. [no-useless-constructor](#disallow-unnecessary-constructor-no-useless-constructor)
 1. [object-shorthand](#require-object-literal-shorthand-syntax-object-shorthand)
+1. [prefer-arrow-callback](#suggest-using-arrow-functions-as-callbacks-prefer-arrow-callback)
 1. [prefer-const](#suggest-using-const-prefer-const)
 1. [prefer-spread](#suggest-using-the-spread-operator-instead-of-apply-prefer-spread)
 1. [prefer-reflect](#suggest-using-reflect-methods-where-applicable-prefer-reflect)
+1. [prefer-rest-params](#suggest-using-the-rest-parameters-instead-of-arguments-prefer-rest-params)
+1. [prefer-template](#suggest-using-template-literals-instead-of-string-concatenation-prefer-template)
 1. [require-yield](#disallow-generator-functions-that-do-not-have-yield-require-yield)
+1. [sort-imports](#import-sorting-sort-imports)
+1. [template-curly-spacing](#enforce-usage-of-spacing-in-template-strings-template-curly-spacing)
+1. [yield-star-spacing](#enforce-spacing-around-the--in-yield-expressions-yield-star-spacing)
+1. [import/export](#export)
+1. [import/default](#default)
+1. [import/extensions](#extensions---ensure-consistent-use-of-file-extension-within-the-import-path)
+1. [import/named](#named)
+1. [import/namespace](#namespace)
+1. [import/no-extraneous-dependencies](#forbid-the-use-of-extraneous-packages)
+1. [import/no-unresolved](#no-unresolved)
+1. [import/no-named-as-default](#no-named-as-default)
+1. [import/no-commonjs](#no-commonjs)
+1. [import/no-amd](#no-amd)
+1. [import/imports-first](#imports-first)
+1. [import/no-duplicates](#no-duplicates)
+1. [import/no-deprecated](#no-deprecated)
+1. [import/no-namespace](#no-namespace)
+1. [import/no-named-as-default-member](#no-named-as-default-member)
+1. [import/no-nodejs-modules](#no-nodejs-builtin-modules)
+1. [import/order](#enforce-a-convention-in-module-import-order)
 
 ## Enforces getter/setter pairs in objects (accessor-pairs)
 
@@ -444,7 +476,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Octal Literals (no-octal)
+## Disallow octal literals (no-octal)
 
 **Key:** no-octal ([docs](http://eslint.org/docs/rules/no-octal))
 
@@ -452,7 +484,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Octal Escapes (no-octal-escape)
+## Disallow octal escape sequences in string literals (no-octal-escape)
 
 **Key:** no-octal-escape ([docs](http://eslint.org/docs/rules/no-octal-escape))
 
@@ -601,7 +633,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## No with Statements (no-with)
+## Disallow `with` statements (no-with)
 
 **Key:** no-with ([docs](http://eslint.org/docs/rules/no-with))
 
@@ -1602,7 +1634,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Variables Deletion (no-delete-var)
+## Disallow deleting variables (no-delete-var)
 
 **Key:** no-delete-var ([docs](http://eslint.org/docs/rules/no-delete-var))
 
@@ -1659,6 +1691,20 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
+## Require braces in arrow function body (arrow-body-style)
+
+**Key:** arrow-body-style ([docs](http://eslint.org/docs/rules/arrow-body-style))
+
+**Value:** 
+```javascript
+[
+  2,
+  "as-needed"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
 ## Require parens in arrow function arguments (arrow-parens)
 
 **Key:** arrow-parens ([docs](http://eslint.org/docs/rules/arrow-parens))
@@ -1671,7 +1717,16 @@
 
 **Key:** arrow-spacing ([docs](http://eslint.org/docs/rules/arrow-spacing))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  2,
+  {
+    "before": true,
+    "after": true
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1699,11 +1754,67 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
+## Disallow arrow functions where they could be confused with comparisons (no-confusing-arrow)
+
+**Key:** no-confusing-arrow ([docs](http://eslint.org/docs/rules/no-confusing-arrow))
+
+**Value:** 
+```javascript
+[
+  2,
+  {
+    "allowParens": true
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
 ## Disallow modifying variables that are declared using `const` (no-const-assign)
 
 **Key:** no-const-assign ([docs](http://eslint.org/docs/rules/no-const-assign))
 
 **Value:** ``2``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow duplicate name in class members (no-dupe-class-members)
+
+**Key:** no-dupe-class-members ([docs](http://eslint.org/docs/rules/no-dupe-class-members))
+
+**Value:** ``2``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow duplicate imports (no-duplicate-imports)
+
+**Key:** no-duplicate-imports ([docs](http://eslint.org/docs/rules/no-duplicate-imports))
+
+**Value:** ``2``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow Symbol Constructor (no-new-symbol)
+
+**Key:** no-new-symbol ([docs](http://eslint.org/docs/rules/no-new-symbol))
+
+**Value:** ``2``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow specific global variables (no-restricted-globals)
+
+**Key:** no-restricted-globals ([docs](http://eslint.org/docs/rules/no-restricted-globals))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow specific imports (no-restricted-imports)
+
+**Key:** no-restricted-imports ([docs](http://eslint.org/docs/rules/no-restricted-imports))
+
+**Value:** ``0``
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1723,11 +1834,50 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
+## Disallow unnecessary computed property keys on objects (no-useless-computed-key)
+
+**Key:** no-useless-computed-key ([docs](http://eslint.org/docs/rules/no-useless-computed-key))
+
+**Value:** ``2``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow unnecessary constructor (no-useless-constructor)
+
+**Key:** no-useless-constructor ([docs](http://eslint.org/docs/rules/no-useless-constructor))
+
+**Value:** ``2``
+
+**[&#8679; back to top](#table-of-contents)**
+
 ## Require Object Literal Shorthand Syntax (object-shorthand)
 
 **Key:** object-shorthand ([docs](http://eslint.org/docs/rules/object-shorthand))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  2,
+  "always"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Suggest using arrow functions as callbacks. (prefer-arrow-callback)
+
+**Key:** prefer-arrow-callback ([docs](http://eslint.org/docs/rules/prefer-arrow-callback))
+
+**Value:** 
+```javascript
+[
+  2,
+  {
+    "allowNamedFunctions": false,
+    "allowUnboundThis": true
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1755,11 +1905,236 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
+## Suggest using the rest parameters instead of `arguments` (prefer-rest-params)
+
+**Key:** prefer-rest-params ([docs](http://eslint.org/docs/rules/prefer-rest-params))
+
+**Value:** ``2``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Suggest using template literals instead of string concatenation. (prefer-template)
+
+**Key:** prefer-template ([docs](http://eslint.org/docs/rules/prefer-template))
+
+**Value:** ``2``
+
+**[&#8679; back to top](#table-of-contents)**
+
 ## Disallow generator functions that do not have `yield` (require-yield)
 
 **Key:** require-yield ([docs](http://eslint.org/docs/rules/require-yield))
 
 **Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Import Sorting (sort-imports)
+
+**Key:** sort-imports ([docs](http://eslint.org/docs/rules/sort-imports))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce Usage of Spacing in Template Strings (template-curly-spacing)
+
+**Key:** template-curly-spacing ([docs](http://eslint.org/docs/rules/template-curly-spacing))
+
+**Value:** ``2``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce spacing around the `*` in `yield*` expressions (yield-star-spacing)
+
+**Key:** yield-star-spacing ([docs](http://eslint.org/docs/rules/yield-star-spacing))
+
+**Value:** 
+```javascript
+[
+  2,
+  "after"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Export
+
+**Key:** import/export ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/export))
+
+**Value:** ``2``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Default
+
+**Key:** import/default ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/default))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Extensions - Ensure consistent use of file extension within the import path
+
+**Key:** import/extensions ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions))
+
+**Value:** 
+```javascript
+[
+  0,
+  "never"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Named
+
+**Key:** import/named ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Namespace
+
+**Key:** import/namespace ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/namespace))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Forbid the use of extraneous packages
+
+**Key:** import/no-extraneous-dependencies ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies))
+
+**Value:** 
+```javascript
+[
+  0,
+  {
+    "devDependencies": false
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-unresolved
+
+**Key:** import/no-unresolved ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved))
+
+**Value:** 
+```javascript
+[
+  2,
+  {
+    "commonjs": true
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-named-as-default
+
+**Key:** import/no-named-as-default ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-commonjs
+
+**Key:** import/no-commonjs ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-commonjs))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-amd
+
+**Key:** import/no-amd ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-amd))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Imports-first
+
+**Key:** import/imports-first ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/imports-first))
+
+**Value:** 
+```javascript
+[
+  0,
+  "absolute-first"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-duplicates
+
+**Key:** import/no-duplicates ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-deprecated
+
+**Key:** import/no-deprecated ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-deprecated))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-namespace
+
+**Key:** import/no-namespace ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-named-as-default-member
+
+**Key:** import/no-named-as-default-member ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No Node.js builtin modules
+
+**Key:** import/no-nodejs-modules ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-nodejs-modules))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce a convention in module import order
+
+**Key:** import/order ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order))
+
+**Value:** 
+```javascript
+[
+  0,
+  {
+    "groups": [
+      "builtin",
+      "external",
+      "internal",
+      "parent",
+      "sibling",
+      "index"
+    ]
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 

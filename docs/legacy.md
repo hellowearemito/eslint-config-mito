@@ -1,5 +1,5 @@
 # [eslint](http://eslint.org)-config-mito `legacy` configurations
-> Generated: Mon Apr 25 2016 14:20:40 GMT+0200 (CEST)
+> Generated: Tue May 03 2016 17:07:55 GMT+0200 (CEST)
 
 ## Table of contents
 
@@ -36,7 +36,7 @@
 1. [no-new-func](#disallow-function-constructor-no-new-func)
 1. [no-new-wrappers](#disallow-primitive-wrapper-instances-no-new-wrappers)
 1. [no-octal](#disallow-octal-literals-no-octal)
-1. [no-octal-escape](#disallow-octal-escapes-no-octal-escape)
+1. [no-octal-escape](#disallow-octal-escape-sequences-in-string-literals-no-octal-escape)
 1. [no-param-reassign](#disallow-reassignment-of-function-parameters-no-param-reassign)
 1. [no-process-exit](#disallow-processexit-no-process-exit)
 1. [no-proto](#disallow-use-of-__proto__-no-proto)
@@ -53,7 +53,7 @@
 1. [no-undef](#disallow-undeclared-variables-no-undef)
 1. [no-undef-init](#disallow-initializing-to-undefined-no-undef-init)
 1. [no-undefined](#disallow-use-of-undefined-variable-no-undefined)
-1. [no-with](#no-with-statements-no-with)
+1. [no-with](#disallow-with-statements-no-with)
 1. [handle-callback-err](#enforce-callback-error-handling-handle-callback-err)
 1. [radix](#require-radix-parameter-radix)
 1. [vars-on-top](#require-variable-declarations-to-be-at-the-top-of-their-scope-vars-on-top)
@@ -154,7 +154,7 @@
 1. [wrap-regex](#require-regex-literals-to-be-wrapped-wrap-regex)
 1. [init-declarations](#enforcedisallow-variable-initializations-init-declarations)
 1. [no-catch-shadow](#disallow-shadowing-of-variables-inside-of-catch-no-catch-shadow)
-1. [no-delete-var](#disallow-variables-deletion-no-delete-var)
+1. [no-delete-var](#disallow-deleting-variables-no-delete-var)
 1. [no-label-var](#disallow-labels-that-are-variables-names-no-label-var)
 1. [no-shadow](#disallow-shadowing-no-shadow)
 1. [no-shadow-restricted-names](#disallow-shadowing-of-restricted-names-no-shadow-restricted-names)
@@ -431,7 +431,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Octal Literals (no-octal)
+## Disallow octal literals (no-octal)
 
 **Key:** no-octal ([docs](http://eslint.org/docs/rules/no-octal))
 
@@ -439,7 +439,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Octal Escapes (no-octal-escape)
+## Disallow octal escape sequences in string literals (no-octal-escape)
 
 **Key:** no-octal-escape ([docs](http://eslint.org/docs/rules/no-octal-escape))
 
@@ -588,7 +588,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## No with Statements (no-with)
+## Disallow `with` statements (no-with)
 
 **Key:** no-with ([docs](http://eslint.org/docs/rules/no-with))
 
@@ -1589,7 +1589,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Variables Deletion (no-delete-var)
+## Disallow deleting variables (no-delete-var)
 
 **Key:** no-delete-var ([docs](http://eslint.org/docs/rules/no-delete-var))
 
