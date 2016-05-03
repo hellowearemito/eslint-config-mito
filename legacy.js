@@ -1,17 +1,20 @@
 // Legacy
 module.exports = {
-  'extends': [
-    'eslint-config-mito/rules/best-practices',
-    'eslint-config-mito/rules/errors',
-    'eslint-config-mito/rules/legacy',
-    'eslint-config-mito/rules/node',
-    'eslint-config-mito/rules/strict',
-    'eslint-config-mito/rules/style',
-    'eslint-config-mito/rules/variables'
-  ],
+  extends: [
+    './rules/best-practices',
+    './rules/errors',
+    './rules/legacy',
+    './rules/node',
+    './rules/strict',
+    './rules/style',
+    './rules/variables'
+  ].map(require.resolve),
   'env': {
     'browser': true,
-    'node': true
+    'node': true,
+    'amd': false,
+    'mocha': false,
+    'jasmine': false
   },
   'ecmaFeatures': {},
   'globals': {},
