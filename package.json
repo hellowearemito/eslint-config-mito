@@ -4,7 +4,7 @@
   "description": "This package provides Mito's .eslintrc as an extensible shared config.",
   "main": "index.js",
   "scripts": {
-    "test": "node ./symlink.js && eslint configurations rules",
+    "test": "eslint configurations rules",
     "docgen": "node ./docgen.js"
   },
   "repository": {
@@ -28,7 +28,8 @@
   },
   "homepage": "https://github.com/ggkovacs/eslint-config-mito",
   "peerDependencies": {
-    "eslint": ">=2.0.0"
+    "eslint": "^2.9.0",
+    "eslint-plugin-import": "^1.6.1"
   },
   "devDependencies": {
     "eslint": "^2.9.0",
