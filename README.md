@@ -1,5 +1,5 @@
-# [eslint](http://eslint.org)-config-mito [![NPM version][npm-image]][npm-url] [![devDependency Status][daviddm-image]][daviddm-url]
-Version: **4.0.0**
+# [eslint](http://eslint.org)-config-mito [![NPM version][npm-image]][npm-url]
+Version: **4.0.1**
 
 This package provides Mito's .eslintrc as an extensible shared config.
 
@@ -11,7 +11,7 @@ We export three ESLint configurations for your usage.
 
 Lints EcmaScript 6+. Only requires `eslint`.
 
-1. `npm install --save-dev eslint-config-mito eslint`
+1. `npm install --save-dev eslint-config-mito eslint-plugin-import eslint`
 2. add `"extends": "mito"` to your [.eslintrc](http://eslint.org/docs/user-guide/configuring.html#configuration-file-formats)
 ```js
 {
@@ -40,5 +40,3 @@ MIT © 2016 Gergely Kovács (gg.kovacs@gmail.com)
 
 [npm-image]: https://badge.fury.io/js/eslint-config-mito.svg
 [npm-url]: https://npmjs.org/package/eslint-config-mito
-[daviddm-image]: https://david-dm.org/ggkovacs/eslint-config-mito/dev-status.svg
-[daviddm-url]: https://david-dm.org/ggkovacs/eslint-config-mito#info=devDependencies
