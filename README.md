@@ -9,7 +9,7 @@ We export three ESLint configurations for your usage.
 
 ### eslint-config-mito
 
-Lints EcmaScript 6+. Only requires `eslint`.
+Lints EcmaScript 6+. Requires `eslint`, `eslint-plugin-import`.
 
 1. `npm install --save-dev eslint-config-mito eslint-plugin-import eslint`
 2. add `"extends": "mito"` to your [.eslintrc](http://eslint.org/docs/user-guide/configuring.html#configuration-file-formats)
