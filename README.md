@@ -36,7 +36,7 @@ the [ESlint config docs](http://eslint.org/docs/user-guide/configuring#extending
 for more information.
 
 ## License
-MIT © 2016 Gergely Kovács (gg.kovacs@gmail.com)
+MIT © 2016 Mito (info@mito.hu)
 
 [npm-image]: https://badge.fury.io/js/eslint-config-mito.svg
 [npm-url]: https://npmjs.org/package/eslint-config-mito
