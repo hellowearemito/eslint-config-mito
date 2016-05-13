@@ -1,5 +1,7 @@
-4.1.0 / 2016-05-03
+4.1.0 / 2016-05-13
 ==================
+  - Add code coverage tool
+  - Add .travis.yml
   - Remove symlink.js
   - Remove symlink.js from .eslintignore
   - Absolute path to relative path in .eslintrc
