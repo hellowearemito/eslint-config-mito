@@ -31,7 +31,7 @@ Lints EcmaScript 5 and below. Only requires `eslint`.
 }
 ```
 
-See [Mito's documentation](https://github.com/ggkovacs/eslint-config-mito/tree/master/docs) and
+See [Mito's documentation](https://github.com/hellowearemito/eslint-config-mito/tree/master/docs) and
 the [ESlint config docs](http://eslint.org/docs/user-guide/configuring#extending-configuration-files)
 for more information.
 
@@ -40,9 +40,9 @@ MIT © 2016 Gergely Kovács (gg.kovacs@gmail.com)
 
 [npm-image]: https://badge.fury.io/js/eslint-config-mito.svg
 [npm-url]: https://npmjs.org/package/eslint-config-mito
-[daviddm-image]: https://david-dm.org/ggkovacs/eslint-config-mito/dev-status.svg
-[daviddm-url]: https://david-dm.org/ggkovacs/eslint-config-mito#info=devDependencies
-[travis-image]: https://travis-ci.org/ggkovacs/eslint-config-mito.svg?branch=master
-[travis-url]: https://travis-ci.org/ggkovacs/eslint-config-mito
-[coverage-image]: https://coveralls.io/repos/ggkovacs/eslint-config-mito/badge.svg?service=github&branch=master
-[coverage-url]: https://coveralls.io/github/ggkovacs/eslint-config-mito?branch=master
+[daviddm-image]: https://david-dm.org/hellowearemito/eslint-config-mito/dev-status.svg
+[daviddm-url]: https://david-dm.org/hellowearemito/eslint-config-mito#info=devDependencies
+[travis-image]: https://travis-ci.org/hellowearemito/eslint-config-mito.svg?branch=master
+[travis-url]: https://travis-ci.org/hellowearemito/eslint-config-mito
+[coverage-image]: https://coveralls.io/repos/hellowearemito/eslint-config-mito/badge.svg?service=github&branch=master
+[coverage-url]: https://coveralls.io/github/hellowearemito/eslint-config-mito?branch=master
