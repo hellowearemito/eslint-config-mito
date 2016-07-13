@@ -1,3 +1,10 @@
+5.0.0 / 2016-07-13
+==================
+  - Update README.md
+  - Update eslint to version ^3.0.1
+  - Update nyc to version ^7.0.0
+  - Move peerDependencies to dependencies
+
 4.1.0 / 2016-05-13
 ==================
   - Add code coverage tool
