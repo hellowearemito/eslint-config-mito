@@ -1,8 +1,8 @@
 # [eslint](http://eslint.org)-config-mito documentation
-> Generated: Tue May 03 2016 17:54:28 GMT+0200 (CEST)
+> Generated: Wed Jul 13 2016 10:22:48 GMT+0200 (CEST)
 
 * [`default` configurations](default.md)
 * [`legacy` configurations](legacy.md)
 
 ## License
-MIT © 2016 Gergely Kovács (gg.kovacs@gmail.com)
+MIT © 2016 Mito (info@mito.hu)

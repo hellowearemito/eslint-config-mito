@@ -14,7 +14,7 @@ var EXTEND_FILES = [{
 
 var GENERATED_DATETIME = (new Date()).toString();
 var README_START = '# [eslint](http://eslint.org)-config-mito documentation\n> Generated: ' + GENERATED_DATETIME + '\n\n';
-var LICENSE = '\n## License\nMIT © 2016 Gergely Kovács (gg.kovacs@gmail.com)\n';
+var LICENSE = '\n## License\nMIT © 2016 Mito (info@mito.hu)\n';
 var ESLINT_DOCS_URL = {
   default: 'https://raw.githubusercontent.com/eslint/eslint/master/docs/rules/',
   import: 'https://raw.githubusercontent.com/benmosher/eslint-plugin-import/master/docs/rules/'

@@ -1,12 +1,12 @@
 # [eslint](http://eslint.org)-config-mito `legacy` configurations
-> Generated: Tue May 03 2016 17:54:28 GMT+0200 (CEST)
+> Generated: Wed Jul 13 2016 10:22:48 GMT+0200 (CEST)
 
 ## Table of contents
 
 1. [accessor-pairs](#enforces-gettersetter-pairs-in-objects-accessor-pairs)
 1. [block-scoped-var](#treat-var-as-block-scoped-block-scoped-var)
 1. [complexity](#limit-cyclomatic-complexity-complexity)
-1. [consistent-return](#require-consistent-returns-consistent-return)
+1. [consistent-return](#require-return-statements-to-either-always-or-never-specify-values-consistent-return)
 1. [curly](#require-following-curly-brace-conventions-curly)
 1. [default-case](#require-default-case-in-switch-statements-default-case)
 1. [dot-notation](#require-dot-notation-dot-notation)
@@ -70,37 +70,37 @@
 1. [no-dupe-keys](#disallow-duplicate-keys-in-object-literals-no-dupe-keys)
 1. [no-duplicate-case](#rule-to-disallow-a-duplicate-case-label-no-duplicate-case)
 1. [no-empty](#disallow-empty-block-statements-no-empty)
-1. [no-empty-character-class](#disallow-empty-character-classes-no-empty-character-class)
-1. [no-ex-assign](#disallow-assignment-of-the-exception-parameter-no-ex-assign)
-1. [no-extra-boolean-cast](#disallow-extra-boolean-casts-no-extra-boolean-cast)
-1. [no-extra-parens](#disallow-extra-parens-no-extra-parens)
-1. [no-extra-semi](#disallow-extra-semicolons-no-extra-semi)
-1. [no-func-assign](#disallow-function-assignment-no-func-assign)
-1. [no-inner-declarations](#declarations-in-program-or-function-body-no-inner-declarations)
-1. [no-invalid-regexp](#disallow-invalid-regular-expressions-no-invalid-regexp)
-1. [no-irregular-whitespace](#no-irregular-whitespace-no-irregular-whitespace)
-1. [no-negated-in-lhs](#disallow-negated-left-operand-of-in-operator-no-negated-in-lhs)
+1. [no-empty-character-class](#disallow-empty-character-classes-in-regular-expressions-no-empty-character-class)
+1. [no-ex-assign](#disallow-reassigning-exceptions-in-catch-clauses-no-ex-assign)
+1. [no-extra-boolean-cast](#disallow-unnecessary-boolean-casts-no-extra-boolean-cast)
+1. [no-extra-parens](#disallow-unnecessary-parentheses-no-extra-parens)
+1. [no-extra-semi](#disallow-unnecessary-semicolons-no-extra-semi)
+1. [no-func-assign](#disallow-reassigning-function-declarations-no-func-assign)
+1. [no-inner-declarations](#disallow-function-or-var-declarations-in-nested-blocks-no-inner-declarations)
+1. [no-invalid-regexp](#disallow-invalid-regular-expression-strings-in-regexp-constructors-no-invalid-regexp)
+1. [no-irregular-whitespace](#disallow-irregular-whitespace-no-irregular-whitespace)
+1. [no-negated-in-lhs](#disallow-negating-the-left-operand-in-in-expressions-no-negated-in-lhs)
 1. [no-new-require](#disallow-new-require-no-new-require)
-1. [no-obj-calls](#disallow-global-object-function-calls-no-obj-calls)
+1. [no-obj-calls](#disallow-calling-global-object-properties-as-functions-no-obj-calls)
 1. [no-path-concat](#disallow-string-concatenation-when-using-__dirname-and-__filename-no-path-concat)
-1. [no-regex-spaces](#disallow-spaces-in-regular-expressions-no-regex-spaces)
+1. [no-regex-spaces](#disallow-multiple-spaces-in-regular-expression-literals-no-regex-spaces)
 1. [no-sparse-arrays](#disallow-sparse-arrays-no-sparse-arrays)
-1. [no-unreachable](#disallow-unreachable-code-no-unreachable)
-1. [use-isnan](#require-isnan-use-isnan)
-1. [valid-jsdoc](#validates-jsdoc-comments-are-syntactically-correct-valid-jsdoc)
-1. [valid-typeof](#ensures-that-the-results-of-typeof-are-compared-against-a-valid-string-valid-typeof)
-1. [no-unexpected-multiline](#avoid-unexpected-multiline-expressions-no-unexpected-multiline)
+1. [no-unreachable](#disallow-unreachable-code-after-return-throw-continue-and-break-statements-no-unreachable)
+1. [use-isnan](#require-calls-to-isnan-when-checking-for-nan-use-isnan)
+1. [valid-jsdoc](#enforce-valid-jsdoc-comments-valid-jsdoc)
+1. [valid-typeof](#enforce-comparing-typeof-expressions-against-valid-strings-valid-typeof)
+1. [no-unexpected-multiline](#disallow-confusing-multiline-expressions-no-unexpected-multiline)
 1. [max-depth](#enforce-a-maximum-depth-that-blocks-can-be-nested-max-depth)
 1. [max-len](#enforce-a-maximum-line-length-max-len)
 1. [max-params](#enforce-a-maximum-number-of-parameters-in-function-definitions-max-params)
 1. [max-statements](#enforce-a-maximum-number-of-statements-allowed-in-function-blocks-max-statements)
 1. [no-bitwise](#disallow-bitwise-operators-no-bitwise)
-1. [no-plusplus](#disallow--and----no-plusplus)
+1. [no-plusplus](#disallow-the-unary-operators--and----no-plusplus)
 1. [callback-return](#enforce-return-after-callback-callback-return)
 1. [no-mixed-requires](#disallow-mixed-requires-no-mixed-requires)
 1. [no-restricted-modules](#disallow-nodejs-modules-no-restricted-modules)
 1. [no-sync](#disallow-synchronous-methods-no-sync)
-1. [strict](#strict-mode-directives-strict)
+1. [strict](#require-or-disallow-strict-mode-directives-strict)
 1. [array-bracket-spacing](#disallow-or-enforce-spaces-inside-of-brackets-array-bracket-spacing)
 1. [indent](#enforce-consistent-indentation-indent)
 1. [brace-style](#require-brace-style-brace-style)
@@ -110,29 +110,29 @@
 1. [computed-property-spacing](#disallow-or-enforce-spaces-inside-of-computed-properties-computed-property-spacing)
 1. [consistent-this](#require-consistent-this-consistent-this)
 1. [eol-last](#require-file-to-end-with-single-newline-eol-last)
-1. [func-names](#require-function-expressions-to-have-a-name-func-names)
+1. [func-names](#require-or-disallow-named-function-expressions-func-names)
 1. [func-style](#enforce-the-consistent-use-of-either-function-declarations-or-expressions-func-style)
 1. [id-length](#enforce-minimum-and-maximum-identifier-lengths-id-length)
 1. [key-spacing](#enforce-consistent-spacing-between-keys-and-values-in-object-literal-properties-key-spacing)
 1. [lines-around-comment](#require-empty-lines-around-comments-lines-around-comment)
 1. [linebreak-style](#enforce-consistent-linebreak-style-linebreak-style)
 1. [max-nested-callbacks](#enforce-a-maximum-depth-that-callbacks-can-be-nested-max-nested-callbacks)
-1. [new-cap](#require-constructors-to-use-initial-caps-new-cap)
-1. [new-parens](#require-parens-for-constructors-new-parens)
-1. [newline-after-var](#require-or-disallow-an-empty-newline-after-variable-declarations-newline-after-var)
-1. [no-array-constructor](#disallow-creation-of-dense-arrays-using-the-array-constructor-no-array-constructor)
-1. [no-continue](#disallow-continue-no-continue)
-1. [no-inline-comments](#disallows-comments-after-code-comments-must-come-on-their-own-lines-no-inline-comments)
-1. [no-lonely-if](#disallow-if-as-the-only-statement-in-an-else-block-no-lonely-if)
+1. [new-cap](#require-constructor-function-names-to-begin-with-a-capital-letter-new-cap)
+1. [new-parens](#require-parentheses-when-invoking-a-constructor-with-no-arguments-new-parens)
+1. [newline-after-var](#require-or-disallow-an-empty-line-after-var-declarations-newline-after-var)
+1. [no-array-constructor](#disallow-array-constructors-no-array-constructor)
+1. [no-continue](#disallow-continue-statements-no-continue)
+1. [no-inline-comments](#disallow-inline-comments-after-code-no-inline-comments)
+1. [no-lonely-if](#disallow-if-statements-as-the-only-statement-in-else-blocks-no-lonely-if)
 1. [no-mixed-spaces-and-tabs](#disallow-mixed-spaces-and-tabs-for-indentation-no-mixed-spaces-and-tabs)
-1. [no-multiple-empty-lines](#disallows-multiple-blank-lines-no-multiple-empty-lines)
-1. [no-nested-ternary](#disallow-nested-ternaries-no-nested-ternary)
-1. [no-new-object](#disallow-the-use-of-the-object-constructor-no-new-object)
-1. [no-spaced-func](#disallow-spaces-in-function-calls-no-spaced-func)
+1. [no-multiple-empty-lines](#disallow-multiple-empty-lines-no-multiple-empty-lines)
+1. [no-nested-ternary](#disallow-nested-ternary-expressions-no-nested-ternary)
+1. [no-new-object](#disallow-object-constructors-no-new-object)
+1. [no-spaced-func](#disallow-spacing-between-function-identifiers-and-their-applications-no-spaced-func)
 1. [no-ternary](#disallow-ternary-operators-no-ternary)
-1. [no-trailing-spaces](#disallow-trailing-spaces-at-the-end-of-lines-no-trailing-spaces)
+1. [no-trailing-spaces](#disallow-trailing-whitespace-at-the-end-of-lines-no-trailing-spaces)
 1. [no-underscore-dangle](#disallow-dangling-underscores-in-identifiers-no-underscore-dangle)
-1. [no-unneeded-ternary](#disallow-conditional-expressions-that-can-be-expressed-with-simpler-constructs-no-unneeded-ternary)
+1. [no-unneeded-ternary](#disallow-ternary-operators-when-simpler-alternatives-exist-no-unneeded-ternary)
 1. [object-curly-spacing](#disallow-or-enforce-spaces-inside-of-curly-braces-in-objects-object-curly-spacing)
 1. [one-var](#require-or-disallow-one-variable-declaration-per-scope-one-var)
 1. [operator-assignment](#operator-assignment-shorthand-operator-assignment)
@@ -191,7 +191,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Require Consistent Returns (consistent-return)
+## Require `return` statements to either always or never specify values (consistent-return)
 
 **Key:** consistent-return ([docs](http://eslint.org/docs/rules/consistent-return))
 
@@ -751,7 +751,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Empty Character Classes (no-empty-character-class)
+## Disallow empty character classes in regular expressions (no-empty-character-class)
 
 **Key:** no-empty-character-class ([docs](http://eslint.org/docs/rules/no-empty-character-class))
 
@@ -759,7 +759,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Assignment of the Exception Parameter (no-ex-assign)
+## Disallow reassigning exceptions in `catch` clauses (no-ex-assign)
 
 **Key:** no-ex-assign ([docs](http://eslint.org/docs/rules/no-ex-assign))
 
@@ -767,7 +767,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Extra Boolean Casts (no-extra-boolean-cast)
+## Disallow unnecessary boolean casts (no-extra-boolean-cast)
 
 **Key:** no-extra-boolean-cast ([docs](http://eslint.org/docs/rules/no-extra-boolean-cast))
 
@@ -775,7 +775,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Extra Parens (no-extra-parens)
+## Disallow unnecessary parentheses (no-extra-parens)
 
 **Key:** no-extra-parens ([docs](http://eslint.org/docs/rules/no-extra-parens))
 
@@ -789,7 +789,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Extra Semicolons (no-extra-semi)
+## Disallow unnecessary semicolons (no-extra-semi)
 
 **Key:** no-extra-semi ([docs](http://eslint.org/docs/rules/no-extra-semi))
 
@@ -797,7 +797,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Function Assignment (no-func-assign)
+## Disallow reassigning `function` declarations (no-func-assign)
 
 **Key:** no-func-assign ([docs](http://eslint.org/docs/rules/no-func-assign))
 
@@ -805,7 +805,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Declarations in Program or Function Body (no-inner-declarations)
+## Disallow `function` or `var` declarations in nested blocks (no-inner-declarations)
 
 **Key:** no-inner-declarations ([docs](http://eslint.org/docs/rules/no-inner-declarations))
 
@@ -813,7 +813,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Invalid Regular Expressions (no-invalid-regexp)
+## Disallow invalid regular expression strings in `RegExp` constructors (no-invalid-regexp)
 
 **Key:** no-invalid-regexp ([docs](http://eslint.org/docs/rules/no-invalid-regexp))
 
@@ -821,7 +821,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## No irregular whitespace (no-irregular-whitespace)
+## Disallow irregular whitespace (no-irregular-whitespace)
 
 **Key:** no-irregular-whitespace ([docs](http://eslint.org/docs/rules/no-irregular-whitespace))
 
@@ -829,7 +829,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow negated left operand of `in` operator (no-negated-in-lhs)
+## Disallow negating the left operand in `in` expressions (no-negated-in-lhs)
 
 **Key:** no-negated-in-lhs ([docs](http://eslint.org/docs/rules/no-negated-in-lhs))
 
@@ -845,7 +845,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Global Object Function Calls (no-obj-calls)
+## Disallow calling global object properties as functions (no-obj-calls)
 
 **Key:** no-obj-calls ([docs](http://eslint.org/docs/rules/no-obj-calls))
 
@@ -861,7 +861,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Spaces in Regular Expressions (no-regex-spaces)
+## Disallow multiple spaces in regular expression literals (no-regex-spaces)
 
 **Key:** no-regex-spaces ([docs](http://eslint.org/docs/rules/no-regex-spaces))
 
@@ -869,7 +869,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Sparse Arrays (no-sparse-arrays)
+## Disallow sparse arrays (no-sparse-arrays)
 
 **Key:** no-sparse-arrays ([docs](http://eslint.org/docs/rules/no-sparse-arrays))
 
@@ -877,7 +877,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Unreachable Code (no-unreachable)
+## Disallow unreachable code after `return`, `throw`, `continue`, and `break` statements (no-unreachable)
 
 **Key:** no-unreachable ([docs](http://eslint.org/docs/rules/no-unreachable))
 
@@ -885,7 +885,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Require isNaN() (use-isnan)
+## Require calls to `isNaN()` when checking for `NaN` (use-isnan)
 
 **Key:** use-isnan ([docs](http://eslint.org/docs/rules/use-isnan))
 
@@ -893,7 +893,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Validates JSDoc comments are syntactically correct (valid-jsdoc)
+## Enforce valid JSDoc comments (valid-jsdoc)
 
 **Key:** valid-jsdoc ([docs](http://eslint.org/docs/rules/valid-jsdoc))
 
@@ -901,7 +901,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Ensures that the results of typeof are compared against a valid string (valid-typeof)
+## Enforce comparing `typeof` expressions against valid strings (valid-typeof)
 
 **Key:** valid-typeof ([docs](http://eslint.org/docs/rules/valid-typeof))
 
@@ -909,7 +909,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Avoid unexpected multiline expressions (no-unexpected-multiline)
+## Disallow confusing multiline expressions (no-unexpected-multiline)
 
 **Key:** no-unexpected-multiline ([docs](http://eslint.org/docs/rules/no-unexpected-multiline))
 
@@ -974,7 +974,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Bitwise Operators (no-bitwise)
+## Disallow bitwise operators (no-bitwise)
 
 **Key:** no-bitwise ([docs](http://eslint.org/docs/rules/no-bitwise))
 
@@ -982,7 +982,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow ++ and -- (no-plusplus)
+## Disallow the unary operators `++` and `--` (no-plusplus)
 
 **Key:** no-plusplus ([docs](http://eslint.org/docs/rules/no-plusplus))
 
@@ -1028,7 +1028,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Strict Mode Directives (strict)
+## Require or disallow strict mode directives (strict)
 
 **Key:** strict ([docs](http://eslint.org/docs/rules/strict))
 
@@ -1155,7 +1155,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Require Function Expressions to have a Name (func-names)
+## Require or disallow named `function` expressions (func-names)
 
 **Key:** func-names ([docs](http://eslint.org/docs/rules/func-names))
 
@@ -1220,7 +1220,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Require Constructors to Use Initial Caps (new-cap)
+## Require constructor `function` names to begin with a capital letter (new-cap)
 
 **Key:** new-cap ([docs](http://eslint.org/docs/rules/new-cap))
 
@@ -1236,7 +1236,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Require Parens for Constructors (new-parens)
+## Require parentheses when invoking a constructor with no arguments (new-parens)
 
 **Key:** new-parens ([docs](http://eslint.org/docs/rules/new-parens))
 
@@ -1244,7 +1244,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Require or disallow an empty newline after variable declarations (newline-after-var)
+## Require or disallow an empty line after `var` declarations (newline-after-var)
 
 **Key:** newline-after-var ([docs](http://eslint.org/docs/rules/newline-after-var))
 
@@ -1252,7 +1252,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow creation of dense arrays using the `Array` constructor (no-array-constructor)
+## Disallow `Array` constructors (no-array-constructor)
 
 **Key:** no-array-constructor ([docs](http://eslint.org/docs/rules/no-array-constructor))
 
@@ -1260,7 +1260,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow continue (no-continue)
+## Disallow `continue` statements (no-continue)
 
 **Key:** no-continue ([docs](http://eslint.org/docs/rules/no-continue))
 
@@ -1268,7 +1268,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallows comments after code. Comments must come on their own lines (no-inline-comments)
+## Disallow inline comments after code (no-inline-comments)
 
 **Key:** no-inline-comments ([docs](http://eslint.org/docs/rules/no-inline-comments))
 
@@ -1276,7 +1276,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow `if` as the Only Statement in an `else` Block (no-lonely-if)
+## Disallow `if` statements as the only statement in `else` blocks (no-lonely-if)
 
 **Key:** no-lonely-if ([docs](http://eslint.org/docs/rules/no-lonely-if))
 
@@ -1292,7 +1292,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallows multiple blank lines (no-multiple-empty-lines)
+## Disallow multiple empty lines (no-multiple-empty-lines)
 
 **Key:** no-multiple-empty-lines ([docs](http://eslint.org/docs/rules/no-multiple-empty-lines))
 
@@ -1309,7 +1309,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Nested Ternaries (no-nested-ternary)
+## Disallow nested ternary expressions (no-nested-ternary)
 
 **Key:** no-nested-ternary ([docs](http://eslint.org/docs/rules/no-nested-ternary))
 
@@ -1317,7 +1317,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow the use of the Object constructor (no-new-object)
+## Disallow `Object` constructors (no-new-object)
 
 **Key:** no-new-object ([docs](http://eslint.org/docs/rules/no-new-object))
 
@@ -1325,7 +1325,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Spaces in Function Calls (no-spaced-func)
+## Disallow spacing between `function` identifiers and their applications (no-spaced-func)
 
 **Key:** no-spaced-func ([docs](http://eslint.org/docs/rules/no-spaced-func))
 
@@ -1333,7 +1333,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Ternary Operators (no-ternary)
+## Disallow ternary operators (no-ternary)
 
 **Key:** no-ternary ([docs](http://eslint.org/docs/rules/no-ternary))
 
@@ -1341,7 +1341,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow trailing spaces at the end of lines (no-trailing-spaces)
+## Disallow trailing whitespace at the end of lines (no-trailing-spaces)
 
 **Key:** no-trailing-spaces ([docs](http://eslint.org/docs/rules/no-trailing-spaces))
 
@@ -1349,7 +1349,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Dangling Underscores in Identifiers (no-underscore-dangle)
+## Disallow dangling underscores in identifiers (no-underscore-dangle)
 
 **Key:** no-underscore-dangle ([docs](http://eslint.org/docs/rules/no-underscore-dangle))
 
@@ -1357,7 +1357,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow conditional expressions that can be expressed with simpler constructs (no-unneeded-ternary)
+## Disallow ternary operators when simpler alternatives exist (no-unneeded-ternary)
 
 **Key:** no-unneeded-ternary ([docs](http://eslint.org/docs/rules/no-unneeded-ternary))
 
@@ -1647,4 +1647,4 @@
 **[&#8679; back to top](#table-of-contents)**
 
 ## License
-MIT © 2016 Gergely Kovács (gg.kovacs@gmail.com)
+MIT © 2016 Mito (info@mito.hu)

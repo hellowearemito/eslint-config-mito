@@ -7,6 +7,8 @@
   - Add eslint, eslint-plugin-import to devDependencies
   - Remove 0.10, 0.12 from travis.yml
   - Add node 4.x, and latest node version to travis.yml
+  - Update docgen.js
+  - Update documentation
 
 4.1.0 / 2016-05-13
 ==================
