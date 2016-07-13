@@ -28,13 +28,10 @@
     "url": "https://github.com/hellowearemito/eslint-config-mito/issues"
   },
   "homepage": "https://github.com/hellowearemito/eslint-config-mito",
-  "dependencies": {
-    "eslint": "^3.0.1",
-    "eslint-plugin-import": "^1.8.0"
-  },
   "devDependencies": {
     "coveralls": "^2.11.9",
     "eslint": "^3.0.1",
+    "eslint-plugin-import": "^1.8.0",
     "nyc": "^7.0.0",
     "pre-commit": "^1.1.3",
     "progress": "^1.1.8",

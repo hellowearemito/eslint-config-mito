@@ -3,7 +3,10 @@
   - Update README.md
   - Update eslint to version ^3.0.1
   - Update nyc to version ^7.0.0
-  - Move peerDependencies to dependencies
+  - Remove dependencies
+  - Add eslint, eslint-plugin-import to devDependencies
+  - Remove 0.10, 0.12 from travis.yml
+  - Add node 4.x, and latest node version to travis.yml
 
 4.1.0 / 2016-05-13
 ==================
