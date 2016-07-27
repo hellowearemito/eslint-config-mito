@@ -10,13 +10,13 @@ module.exports = {
       'objectLiteralDuplicateProperties': false
     }
   },
-  'plugins': [
-    'import'
-  ],
   'rules': {
     'arrow-body-style': [2, 'as-needed'],
     'arrow-parens': 0,
-    'arrow-spacing': [2, { 'before': true, 'after': true }],
+    'arrow-spacing': [2, {
+      'before': true,
+      'after': true
+    }],
     'constructor-super': 0,
     'generator-star-spacing': 0,
     'no-class-assign': 0,
@@ -46,32 +46,6 @@ module.exports = {
     'require-yield': 0,
     'sort-imports': 0,
     'template-curly-spacing': 2,
-    'yield-star-spacing': [2, 'after'],
-    'import/export': 2,
-    'import/default': 0,
-    'import/extensions': [0, 'never'],
-    'import/named': 0,
-    'import/namespace': 0,
-    'import/no-extraneous-dependencies': [0, { 'devDependencies': false }],
-    'import/no-unresolved': [2, { 'commonjs': true }],
-    'import/no-named-as-default': 0,
-    'import/no-commonjs': 0,
-    'import/no-amd': 0,
-    'import/imports-first': [0, 'absolute-first'],
-    'import/no-duplicates': 0,
-    'import/no-deprecated': 0,
-    'import/no-namespace': 0,
-    'import/no-named-as-default-member': 0,
-    'import/no-nodejs-modules': 0,
-    'import/order': [0, {
-      'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index']
-    }]
-  },
-  'settings': {
-    'import/resolver': {
-      'node': {
-        'extensions': ['.js', '.json']
-      }
-    }
+    'yield-star-spacing': [2, 'after']
   }
 };

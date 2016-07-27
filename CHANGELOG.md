@@ -1,7 +1,10 @@
 6.0.0 / 2016-07-27
 ==================
-  - Add .npmignore
-  
+  - Create .npmignore
+  - Remove eslint-plugin-import from default ruleset
+  - Create mito/standalone ruleset with eslint-plugin-import
+  - Update documentation
+  - Update docgen.js
 
 5.0.0 / 2016-07-13
 ==================

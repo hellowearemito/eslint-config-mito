@@ -7,6 +7,9 @@ var ProgressBar = require('progress');
 var EXTEND_FILES = [{
   name: 'default',
   path: './index.js'
+},{
+  name: 'standalone',
+  path: './standalone.js'
 }, {
   name: 'legacy',
   path: './legacy.js'

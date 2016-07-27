@@ -1,4 +1,4 @@
-# [eslint](http://eslint.org)-config-mito `default` configurations
+# [eslint](http://eslint.org)-config-mito `standalone` configurations
 > Generated: Wed Jul 27 2016 15:36:34 GMT+0200 (CEST)
 
 ## Table of contents
@@ -188,6 +188,23 @@
 1. [sort-imports](#import-sorting-sort-imports)
 1. [template-curly-spacing](#enforce-usage-of-spacing-in-template-strings-template-curly-spacing)
 1. [yield-star-spacing](#enforce-spacing-around-the--in-yield-expressions-yield-star-spacing)
+1. [import/export](#export)
+1. [import/default](#default)
+1. [import/extensions](#extensions---ensure-consistent-use-of-file-extension-within-the-import-path)
+1. [import/named](#named)
+1. [import/namespace](#namespace)
+1. [import/no-extraneous-dependencies](#forbid-the-use-of-extraneous-packages)
+1. [import/no-unresolved](#no-unresolved)
+1. [import/no-named-as-default](#no-named-as-default)
+1. [import/no-commonjs](#no-commonjs)
+1. [import/no-amd](#no-amd)
+1. [import/imports-first](#imports-first)
+1. [import/no-duplicates](#no-duplicates)
+1. [import/no-deprecated](#no-deprecated)
+1. [import/no-namespace](#no-namespace)
+1. [import/no-named-as-default-member](#no-named-as-default-member)
+1. [import/no-nodejs-modules](#no-nodejs-builtin-modules)
+1. [import/order](#enforce-a-convention-in-module-import-order)
 
 ## Enforces getter/setter pairs in objects (accessor-pairs)
 
@@ -1937,6 +1954,185 @@
 [
   2,
   "after"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Export
+
+**Key:** import/export ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/export.md))
+
+**Value:** ``2``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Default
+
+**Key:** import/default ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/default.md))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Extensions - Ensure consistent use of file extension within the import path
+
+**Key:** import/extensions ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md))
+
+**Value:** 
+```javascript
+[
+  0,
+  "never"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Named
+
+**Key:** import/named ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Namespace
+
+**Key:** import/namespace ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/namespace.md))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Forbid the use of extraneous packages
+
+**Key:** import/no-extraneous-dependencies ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md))
+
+**Value:** 
+```javascript
+[
+  0,
+  {
+    "devDependencies": false
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-unresolved
+
+**Key:** import/no-unresolved ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md))
+
+**Value:** 
+```javascript
+[
+  2,
+  {
+    "commonjs": true
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-named-as-default
+
+**Key:** import/no-named-as-default ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-commonjs
+
+**Key:** import/no-commonjs ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-commonjs.md))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-amd
+
+**Key:** import/no-amd ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-amd.md))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Imports-first
+
+**Key:** import/imports-first ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/imports-first.md))
+
+**Value:** 
+```javascript
+[
+  0,
+  "absolute-first"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-duplicates
+
+**Key:** import/no-duplicates ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-deprecated
+
+**Key:** import/no-deprecated ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-deprecated.md))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-namespace
+
+**Key:** import/no-namespace ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace.md))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No-named-as-default-member
+
+**Key:** import/no-named-as-default-member ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## No Node.js builtin modules
+
+**Key:** import/no-nodejs-modules ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-nodejs-modules.md))
+
+**Value:** ``0``
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce a convention in module import order
+
+**Key:** import/order ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md))
+
+**Value:** 
+```javascript
+[
+  0,
+  {
+    "groups": [
+      "builtin",
+      "external",
+      "internal",
+      "parent",
+      "sibling",
+      "index"
+    ]
+  }
 ]
 ```
 

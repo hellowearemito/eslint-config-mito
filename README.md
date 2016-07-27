@@ -1,17 +1,17 @@
 # [eslint](http://eslint.org)-config-mito [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coverage-image]][coverage-url]
-Version: **5.0.0**
+Version: **6.0.0**
 
 This package provides Mito's .eslintrc as an extensible shared config.
 
 ## Usage
 
-We export two ESLint configurations for your usage.
+We export three ESLint configurations for your usage.
 
 ### eslint-config-mito
 
-Lints EcmaScript 6+. Requires `eslint`, `eslint-plugin-import`.
+Lints EcmaScript 6+. Only requires `eslint`.
 
-1. `npm install --save-dev eslint-config-mito eslint-plugin-import eslint`
+1. `npm install --save-dev eslint eslint-config-mito`
 2. add `"extends": "mito"` to your [.eslintrc](http://eslint.org/docs/user-guide/configuring.html#configuration-file-formats)
 ```js
 {
@@ -19,11 +19,23 @@ Lints EcmaScript 6+. Requires `eslint`, `eslint-plugin-import`.
 }
 ```
 
+### eslint-config-mito/standalone
+
+Lints EcmaScript 6+. Requires `eslint`, `eslint-plugin-import`.
+
+1. `npm install --save-dev eslint eslint-plugin-import eslint-config-mito`
+2. add `"extends": "mito/standalone"` to your [.eslintrc](http://eslint.org/docs/user-guide/configuring.html#configuration-file-formats)
+```js
+{
+  "extends": "mito/standalone"
+}
+```
+
 ### eslint-config-mito/legacy
 
 Lints EcmaScript 5 and below. Only requires `eslint`.
 
-1. `npm install --save-dev eslint-config-mito eslint`
+1. `npm install --save-dev eslint eslint-config-mito`
 2. add `"extends": "mito/legacy"` to your [.eslintrc](http://eslint.org/docs/user-guide/configuring.html#configuration-file-formats)
 ```js
 {
