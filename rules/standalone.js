@@ -13,7 +13,7 @@ module.exports = {
     'import/no-named-as-default': 0,
     'import/no-commonjs': 0,
     'import/no-amd': 0,
-    'import/imports-first': [0, 'absolute-first'],
+    'import/first': [0, 'absolute-first'],
     'import/no-duplicates': 0,
     'import/no-deprecated': 0,
     'import/no-namespace': 0,

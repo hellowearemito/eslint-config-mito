@@ -1,5 +1,5 @@
 # [eslint](http://eslint.org)-config-mito `standalone` configurations
-> Generated: Wed Jul 27 2016 15:36:34 GMT+0200 (CEST)
+> Generated: Thu Oct 27 2016 09:39:04 GMT+0200 (CEST)
 
 ## Table of contents
 
@@ -40,7 +40,7 @@
 1. [no-param-reassign](#disallow-reassignment-of-function-parameters-no-param-reassign)
 1. [no-process-exit](#disallow-processexit-no-process-exit)
 1. [no-proto](#disallow-use-of-__proto__-no-proto)
-1. [no-redeclare](#disallow-redeclaring-variables-no-redeclare)
+1. [no-redeclare](#disallow-variable-redeclaration-no-redeclare)
 1. [no-return-assign](#disallow-assignment-in-return-statement-no-return-assign)
 1. [no-script-url](#disallow-script-urls-no-script-url)
 1. [no-self-compare](#disallow-self-compare-no-self-compare)
@@ -76,7 +76,7 @@
 1. [no-extra-parens](#disallow-unnecessary-parentheses-no-extra-parens)
 1. [no-extra-semi](#disallow-unnecessary-semicolons-no-extra-semi)
 1. [no-func-assign](#disallow-reassigning-function-declarations-no-func-assign)
-1. [no-inner-declarations](#disallow-function-or-var-declarations-in-nested-blocks-no-inner-declarations)
+1. [no-inner-declarations](#disallow-variable-or-function-declarations-in-nested-blocks--no-inner-declarations)
 1. [no-invalid-regexp](#disallow-invalid-regular-expression-strings-in-regexp-constructors-no-invalid-regexp)
 1. [no-irregular-whitespace](#disallow-irregular-whitespace-no-irregular-whitespace)
 1. [no-negated-in-lhs](#disallow-negating-the-left-operand-in-in-expressions-no-negated-in-lhs)
@@ -97,7 +97,7 @@
 1. [no-bitwise](#disallow-bitwise-operators-no-bitwise)
 1. [no-plusplus](#disallow-the-unary-operators--and----no-plusplus)
 1. [callback-return](#enforce-return-after-callback-callback-return)
-1. [no-mixed-requires](#disallow-mixed-requires-no-mixed-requires)
+1. [no-mixed-requires](#disallow-require-calls-to-be-mixed-with-regular-variable-declarations-no-mixed-requires)
 1. [no-restricted-modules](#disallow-nodejs-modules-no-restricted-modules)
 1. [no-sync](#disallow-synchronous-methods-no-sync)
 1. [strict](#require-or-disallow-strict-mode-directives-strict)
@@ -109,7 +109,7 @@
 1. [comma-style](#comma-style-comma-style)
 1. [computed-property-spacing](#disallow-or-enforce-spaces-inside-of-computed-properties-computed-property-spacing)
 1. [consistent-this](#require-consistent-this-consistent-this)
-1. [eol-last](#require-file-to-end-with-single-newline-eol-last)
+1. [eol-last](#require-or-disallow-newline-at-the-end-of-files-eol-last)
 1. [func-names](#require-or-disallow-named-function-expressions-func-names)
 1. [func-style](#enforce-the-consistent-use-of-either-function-declarations-or-expressions-func-style)
 1. [id-length](#enforce-minimum-and-maximum-identifier-lengths-id-length)
@@ -117,9 +117,9 @@
 1. [lines-around-comment](#require-empty-lines-around-comments-lines-around-comment)
 1. [linebreak-style](#enforce-consistent-linebreak-style-linebreak-style)
 1. [max-nested-callbacks](#enforce-a-maximum-depth-that-callbacks-can-be-nested-max-nested-callbacks)
-1. [new-cap](#require-constructor-function-names-to-begin-with-a-capital-letter-new-cap)
+1. [new-cap](#require-constructor-names-to-begin-with-a-capital-letter-new-cap)
 1. [new-parens](#require-parentheses-when-invoking-a-constructor-with-no-arguments-new-parens)
-1. [newline-after-var](#require-or-disallow-an-empty-line-after-var-declarations-newline-after-var)
+1. [newline-after-var](#require-or-disallow-an-empty-line-after-variable-declarations-newline-after-var)
 1. [no-array-constructor](#disallow-array-constructors-no-array-constructor)
 1. [no-continue](#disallow-continue-statements-no-continue)
 1. [no-inline-comments](#disallow-inline-comments-after-code-no-inline-comments)
@@ -133,30 +133,30 @@
 1. [no-trailing-spaces](#disallow-trailing-whitespace-at-the-end-of-lines-no-trailing-spaces)
 1. [no-underscore-dangle](#disallow-dangling-underscores-in-identifiers-no-underscore-dangle)
 1. [no-unneeded-ternary](#disallow-ternary-operators-when-simpler-alternatives-exist-no-unneeded-ternary)
-1. [object-curly-spacing](#disallow-or-enforce-spaces-inside-of-curly-braces-in-objects-object-curly-spacing)
-1. [one-var](#require-or-disallow-one-variable-declaration-per-scope-one-var)
-1. [operator-assignment](#operator-assignment-shorthand-operator-assignment)
-1. [operator-linebreak](#operator-linebreak-operator-linebreak)
-1. [quote-props](#quoting-style-for-property-names-quote-props)
-1. [quotes](#enforce-quote-style-quotes)
+1. [object-curly-spacing](#enforce-consistent-spacing-inside-braces-object-curly-spacing)
+1. [one-var](#enforce-variables-to-be-declared-either-together-or-separately-in-functions-one-var)
+1. [operator-assignment](#require-or-disallow-assignment-operator-shorthand-where-possible-operator-assignment)
+1. [operator-linebreak](#enforce-consistent-linebreak-style-for-operators-operator-linebreak)
+1. [quote-props](#require-quotes-around-object-literal-property-names-quote-props)
+1. [quotes](#enforce-the-consistent-use-of-either-backticks-double-or-single-quotes-quotes)
 1. [id-match](#require-identifiers-to-match-a-specified-regular-expression-id-match)
-1. [padded-blocks](#enforce-padding-within-blocks-padded-blocks)
-1. [semi](#enforce-or-disallow-semicolons-semi)
+1. [padded-blocks](#require-or-disallow-padding-within-blocks-padded-blocks)
+1. [semi](#require-or-disallow-semicolons-instead-of-asi-semi)
 1. [semi-spacing](#enforce-spacing-before-and-after-semicolons-semi-spacing)
 1. [sort-vars](#variable-sorting-sort-vars)
 1. [keyword-spacing](#enforce-consistent-spacing-before-and-after-keywords-keyword-spacing)
 1. [space-before-blocks](#require-or-disallow-space-before-blocks-space-before-blocks)
 1. [space-before-function-paren](#require-or-disallow-a-space-before-function-parenthesis-space-before-function-paren)
 1. [space-in-parens](#disallow-or-enforce-spaces-inside-of-parentheses-space-in-parens)
-1. [space-infix-ops](#require-spaces-around-infix-operators-space-infix-ops)
+1. [space-infix-ops](#require-spacing-around-infix-operators-space-infix-ops)
 1. [space-unary-ops](#require-or-disallow-spaces-beforeafter-unary-operators-space-unary-ops)
 1. [spaced-comment](#requires-or-disallows-a-whitespace-space-or-tab-beginning-a-comment-spaced-comment)
 1. [wrap-regex](#require-regex-literals-to-be-wrapped-wrap-regex)
-1. [init-declarations](#enforcedisallow-variable-initializations-init-declarations)
+1. [init-declarations](#require-or-disallow-initialization-in-variable-declarations-init-declarations)
 1. [no-catch-shadow](#disallow-shadowing-of-variables-inside-of-catch-no-catch-shadow)
 1. [no-delete-var](#disallow-deleting-variables-no-delete-var)
 1. [no-label-var](#disallow-labels-that-are-variables-names-no-label-var)
-1. [no-shadow](#disallow-shadowing-no-shadow)
+1. [no-shadow](#disallow-variable-declarations-from-shadowing-variables-declared-in-the-outer-scope-no-shadow)
 1. [no-shadow-restricted-names](#disallow-shadowing-of-restricted-names-no-shadow-restricted-names)
 1. [no-unused-vars](#disallow-unused-variables-no-unused-vars)
 1. [no-use-before-define](#disallow-early-use-no-use-before-define)
@@ -198,7 +198,7 @@
 1. [import/no-named-as-default](#no-named-as-default)
 1. [import/no-commonjs](#no-commonjs)
 1. [import/no-amd](#no-amd)
-1. [import/imports-first](#imports-first)
+1. [import/first](#first)
 1. [import/no-duplicates](#no-duplicates)
 1. [import/no-deprecated](#no-deprecated)
 1. [import/no-namespace](#no-namespace)
@@ -516,7 +516,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Redeclaring Variables (no-redeclare)
+## Disallow variable redeclaration (no-redeclare)
 
 **Key:** no-redeclare ([docs](http://eslint.org/docs/rules/no-redeclare))
 
@@ -850,7 +850,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow `function` or `var` declarations in nested blocks (no-inner-declarations)
+## Disallow variable or `function` declarations in nested blocks  (no-inner-declarations)
 
 **Key:** no-inner-declarations ([docs](http://eslint.org/docs/rules/no-inner-declarations))
 
@@ -991,7 +991,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce a maximum number of parameters in `function` definitions (max-params)
+## Enforce a maximum number of parameters in function definitions (max-params)
 
 **Key:** max-params ([docs](http://eslint.org/docs/rules/max-params))
 
@@ -1005,7 +1005,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce a maximum number of statements allowed in `function` blocks (max-statements)
+## Enforce a maximum number of statements allowed in function blocks (max-statements)
 
 **Key:** max-statements ([docs](http://eslint.org/docs/rules/max-statements))
 
@@ -1043,7 +1043,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Mixed Requires (no-mixed-requires)
+## Disallow `require` calls to be mixed with regular variable declarations (no-mixed-requires)
 
 **Key:** no-mixed-requires ([docs](http://eslint.org/docs/rules/no-mixed-requires))
 
@@ -1192,7 +1192,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Require file to end with single newline (eol-last)
+## Require or disallow newline at the end of files (eol-last)
 
 **Key:** eol-last ([docs](http://eslint.org/docs/rules/eol-last))
 
@@ -1265,7 +1265,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Require constructor `function` names to begin with a capital letter (new-cap)
+## Require constructor names to begin with a capital letter (new-cap)
 
 **Key:** new-cap ([docs](http://eslint.org/docs/rules/new-cap))
 
@@ -1289,7 +1289,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Require or disallow an empty line after `var` declarations (newline-after-var)
+## Require or disallow an empty line after variable declarations (newline-after-var)
 
 **Key:** newline-after-var ([docs](http://eslint.org/docs/rules/newline-after-var))
 
@@ -1370,7 +1370,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow spacing between `function` identifiers and their applications (no-spaced-func)
+## Disallow spacing between function identifiers and their applications (no-spaced-func)
 
 **Key:** no-spaced-func ([docs](http://eslint.org/docs/rules/no-spaced-func))
 
@@ -1410,7 +1410,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow or enforce spaces inside of curly braces in objects. (object-curly-spacing)
+## Enforce consistent spacing inside braces (object-curly-spacing)
 
 **Key:** object-curly-spacing ([docs](http://eslint.org/docs/rules/object-curly-spacing))
 
@@ -1418,7 +1418,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Require or Disallow One Variable Declaration per Scope (one-var)
+## Enforce variables to be declared either together or separately in functions (one-var)
 
 **Key:** one-var ([docs](http://eslint.org/docs/rules/one-var))
 
@@ -1432,7 +1432,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Operator Assignment Shorthand (operator-assignment)
+## Require or disallow assignment operator shorthand where possible (operator-assignment)
 
 **Key:** operator-assignment ([docs](http://eslint.org/docs/rules/operator-assignment))
 
@@ -1440,7 +1440,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Operator Linebreak (operator-linebreak)
+## Enforce consistent linebreak style for operators (operator-linebreak)
 
 **Key:** operator-linebreak ([docs](http://eslint.org/docs/rules/operator-linebreak))
 
@@ -1448,7 +1448,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Quoting Style for Property Names (quote-props)
+## Require quotes around object literal property names (quote-props)
 
 **Key:** quote-props ([docs](http://eslint.org/docs/rules/quote-props))
 
@@ -1456,7 +1456,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce Quote Style (quotes)
+## Enforce the consistent use of either backticks, double, or single quotes (quotes)
 
 **Key:** quotes ([docs](http://eslint.org/docs/rules/quotes))
 
@@ -1479,7 +1479,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce padding within blocks (padded-blocks)
+## Require or disallow padding within blocks (padded-blocks)
 
 **Key:** padded-blocks ([docs](http://eslint.org/docs/rules/padded-blocks))
 
@@ -1493,7 +1493,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce or Disallow Semicolons (semi)
+## Require or disallow semicolons instead of ASI (semi)
 
 **Key:** semi ([docs](http://eslint.org/docs/rules/semi))
 
@@ -1570,7 +1570,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Require Spaces Around Infix Operators (space-infix-ops)
+## Require spacing around infix operators (space-infix-ops)
 
 **Key:** space-infix-ops ([docs](http://eslint.org/docs/rules/space-infix-ops))
 
@@ -1618,7 +1618,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce/Disallow Variable Initializations (init-declarations)
+## Require or disallow initialization in variable declarations (init-declarations)
 
 **Key:** init-declarations ([docs](http://eslint.org/docs/rules/init-declarations))
 
@@ -1650,7 +1650,7 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow Shadowing (no-shadow)
+## Disallow variable declarations from shadowing variables declared in the outer scope (no-shadow)
 
 **Key:** no-shadow ([docs](http://eslint.org/docs/rules/no-shadow))
 
@@ -2061,9 +2061,9 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Imports-first
+## First
 
-**Key:** import/imports-first ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/imports-first.md))
+**Key:** import/first ([docs](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md))
 
 **Value:** 
 ```javascript

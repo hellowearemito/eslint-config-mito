@@ -4,7 +4,7 @@
   "description": "This package provides Mito's .eslintrc as an extensible shared config.",
   "main": "index.js",
   "scripts": {
-    "test": "nyc eslint configurations rules",
+    "test": "eslint docgen.js && nyc eslint configurations rules",
     "docgen": "node ./docgen.js",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
