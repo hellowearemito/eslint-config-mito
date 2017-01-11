@@ -6,7 +6,7 @@ module.exports = {
     'block-scoped-var': 'error',
     'complexity': ['off', 11],
     'class-methods-use-this': ['error', {
-      exceptMethods: [],
+      exceptMethods: []
     }],
     'consistent-return': 'error',
     'curly': 'error',
@@ -27,7 +27,7 @@ module.exports = {
       allow: [
         'arrowFunctions',
         'functions',
-        'methods',
+        'methods'
       ]
     }],
     'no-empty-pattern': 'error',
@@ -52,7 +52,7 @@ module.exports = {
       ignore: [],
       ignoreArrayIndexes: true,
       enforceConst: true,
-      detectObjects: false,
+      detectObjects: false
     }],
     'no-multi-spaces': 'error',
     'no-multi-str': 'error',
