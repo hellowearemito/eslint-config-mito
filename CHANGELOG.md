@@ -1,6 +1,15 @@
-7.0.0 / 2016-10-27
+7.0.0 / xxxx-xx-xx
 ==================
   - Update docgen.js
+  - Upgrade packages in package.json
+  - Add yarn.lock file
+  - Add `array-callback-return` to `error`
+  - Add `class-method-use-this` to `error`, `exceptMethods: []`
+  - Add `no-case-declarations` to `error`
+  - Add `no-empty-function` to `error`, `allow: ['arrowFunctions', 'functions', 'methods']`
+  - Add `no-global-assign` to `error`, `exceptions: []`
+  - Add `no-magic-numbers` to `off`, `ignore: [], ignoreArrayIndexes: true, enforceConst: true, detectObjects: false`
+  - Remove `no-process-exit` from rules/best-practices.js
 
 6.0.0 / 2016-07-27
 ==================
