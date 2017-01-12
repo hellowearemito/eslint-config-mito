@@ -1,4 +1,4 @@
-7.0.0 / xxxx-xx-xx
+7.0.0 / 2017-01-xx
 ==================
   - Update docgen.js
   - Upgrade packages in package.json
@@ -29,6 +29,11 @@
   - Add `no-template-curly-in-string`
   - Add `no-unsafe-finally`
   - Add `no-unsafe-negation`
+  - Add `no-useless-rename`
+  - Add `prefer-destructuring`
+  - Add `prefer-numeric-literals`
+  - Add `rest-spread-spacing`
+  - Add `symbol-description`
 
 6.0.0 / 2016-07-27
 ==================

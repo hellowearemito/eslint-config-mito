@@ -5,14 +5,13 @@
 // node
 // legacy
 // errors
-
-
-
 // es6
+
+
 // standalone
 // style
 
-var module1 = require('./rules/errors.js');
+var module1 = require('./rules/es6.js');
 var module2 = require('./module2.js');
 
 var a = [];
