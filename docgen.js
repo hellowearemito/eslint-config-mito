@@ -27,7 +27,7 @@ const README_START = `
 
 const LICENSE = `
 ## License
-MIT © 2016 Mito (info@mito.hu)
+MIT © ${(new Date()).getFullYear()} Mito (info@mito.hu)
 `;
 
 const ESLINT_DOCS_URL = {
@@ -46,6 +46,12 @@ const RULE_LINKS = {
   }
 };
 
+function loadFile(file) {
+  return fs.readFileSync(file, {
+    encoding: 'utf8'
+  });
+}
+
 function isExists(path) {
   try {
     fs.accessSync(path, fs.F_OK);
@@ -55,24 +61,24 @@ function isExists(path) {
   }
 }
 
-function objectLength(obj) {
-  let size = 0;
+// function objectLength(obj) {
+//   let size = 0;
 
-  for (const key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      size++;
-    }
-  }
+//   for (const key in obj) {
+//     if (obj.hasOwnProperty(key)) {
+//       size++;
+//     }
+//   }
 
-  return size;
-}
+//   return size;
+// }
 
 function parseFile(contents) {
   let rules = contents.rules || {};
 
   if (contents.extends) {
     for (let i = 0, l = contents.extends.length; i < l; i++) {
-      const subrules = parseFile(require(contents.extends[i]));
+      const subrules = parseFile(loadFile(contents.extends[i]));
       rules = xtend(rules, subrules);
     }
   }
@@ -116,8 +122,8 @@ function main() {
 
   let j = EXTEND_FILES.length;
   while (j--) {
-    EXTEND_FILES[j].rules = parseFile(require(EXTEND_FILES[j].path));
-    total += objectLength(EXTEND_FILES[j].rules);
+    EXTEND_FILES[j].rules = parseFile(loadFile(EXTEND_FILES[j].path));
+    total += Object.keys(EXTEND_FILES[j].rules).length;
   }
 
   const bar = new ProgressBar('generate documentation [:bar] :percent :etas', {
@@ -129,8 +135,7 @@ function main() {
 
   for (let i = 0, l = EXTEND_FILES.length; i < l; i++) {
     const item = EXTEND_FILES[i];
-    const name = item.name;
-    const rules = item.rules;
+    const { name, rules } = item;
 
     readme += `
       * [\`${name}\` configurations](' + name + '.md)

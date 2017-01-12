@@ -11,7 +11,7 @@
 // standalone
 // style
 
-var module1 = require('./rules/es6.js');
+var module1 = require('./rules/style.js');
 var module2 = require('./module2.js');
 
 var a = [];
