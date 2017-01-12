@@ -15,6 +15,6 @@ module.exports = {
     'no-undef': 'error',
     'no-undefined': 'off',
     'no-use-before-define': 'error',
-    'no-restricted-globals': 'off',
+    'no-restricted-globals': 'off'
   }
 };

@@ -13,7 +13,7 @@ module.exports = {
   'rules': {
     'arrow-body-style': ['error', 'as-needed'],
     'arrow-parens': ['error', 'as-needed', {
-      requireForBlockBody: true,
+      requireForBlockBody: true
     }],
     'arrow-spacing': ['error', {
       'before': true,
@@ -48,7 +48,7 @@ module.exports = {
     }],
     'prefer-const': ['error', {
       destructuring: 'any',
-      ignoreReadBeforeAssign: true,
+      ignoreReadBeforeAssign: true
     }],
     'prefer-spread': 'error',
     'prefer-reflect': 'off',
@@ -58,20 +58,20 @@ module.exports = {
     'sort-imports': ['off', {
       ignoreCase: false,
       ignoreMemberSort: false,
-      memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+      memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
     }],
     'template-curly-spacing': 'error',
     'yield-star-spacing': ['error', 'after'],
     'no-useless-rename': ['error', {
       ignoreDestructuring: false,
       ignoreImport: false,
-      ignoreExport: false,
+      ignoreExport: false
     }],
     'prefer-destructuring': ['error', {
       array: true,
-      object: true,
+      object: true
     }, {
-      enforceForRenamedProperties: false,
+      enforceForRenamedProperties: false
     }],
     'prefer-numeric-literals': 'error',
     'rest-spread-spacing': ['error', 'never'],

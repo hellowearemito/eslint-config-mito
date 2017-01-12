@@ -12,6 +12,6 @@ module.exports = {
     'no-restricted-modules': 'off',
     'no-sync': 'off',
     'global-require': 'error',
-    'no-process-env': 'off',
+    'no-process-env': 'off'
   }
 };

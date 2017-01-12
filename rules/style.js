@@ -3,7 +3,7 @@ module.exports = {
   'rules': {
     'array-bracket-spacing': ['error', 'never'],
     'indent': ['error', 4, {
-      'SwitchCase': 'warn'
+      'SwitchCase': 1
     }],
     'brace-style': ['error', '1tbs', {
       'allowSingleLine': true
@@ -40,8 +40,8 @@ module.exports = {
     'no-lonely-if': 'warn',
     'no-mixed-spaces-and-tabs': 'error',
     'no-multiple-empty-lines': ['error', {
-      'max': 'error',
-      'maxEOF': 'warn'
+      'max': 2,
+      'maxEOF': 1
     }],
     'no-nested-ternary': 'error',
     'no-new-object': 'error',
