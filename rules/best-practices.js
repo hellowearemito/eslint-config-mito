@@ -65,7 +65,6 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-proto': 'error',
     'no-redeclare': 'error',
-    // Todo continue
     'no-return-assign': 'error',
     'no-script-url': 'error',
     'no-self-compare': 'error',
@@ -88,6 +87,31 @@ module.exports = {
     'wrap-iife': ['error', 'any'],
     'yoda': ['error', 'never', {
       'exceptRange': true
-    }]
+    }],
+    'no-alert': 'warn',
+    'no-extra-label': 'error',
+    'no-return-await': 'error',
+    'no-self-assign': 'error',
+    'no-unmodified-loop-condition': 'off',
+    'no-unused-labels': 'error',
+    'no-useless-concat': 'error',
+    'no-useless-escape': 'error',
+    'no-useless-return': 'error',
+    'require-await': 'error',
+    'no-restricted-properties': ['error', {
+      object: 'arguments',
+      property: 'callee',
+      message: 'arguments.callee is deprecated',
+    }, {
+      property: '__defineGetter__',
+      message: 'Please use Object.defineProperty instead.',
+    }, {
+      property: '__defineSetter__',
+      message: 'Please use Object.defineProperty instead.',
+    }, {
+      object: 'Math',
+      property: 'pow',
+      message: 'Use the exponentiation operator (**) instead.',
+    }],
   }
 };
