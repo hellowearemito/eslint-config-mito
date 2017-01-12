@@ -19,16 +19,9 @@ const EXTEND_FILES = [{
 
 const GENERATED_DATETIME = (new Date()).toString();
 
-const README_START = `
-# [eslint](http://eslint.org)-config-mito documentation
-> Generated: ${GENERATED_DATETIME}
+const README_START = `# [eslint](http://eslint.org)-config-mito documentation\n> Generated: ${GENERATED_DATETIME}\n\n`;
 
-`;
-
-const LICENSE = `
-## License
-MIT © ${(new Date()).getFullYear()} Mito (info@mito.hu)
-`;
+const LICENSE = `\n## License\nMIT © ${(new Date()).getFullYear()} Mito (info@mito.hu)`;
 
 const ESLINT_DOCS_URL = {
   default: 'https://raw.githubusercontent.com/eslint/eslint/master/docs/rules/',
@@ -46,12 +39,6 @@ const RULE_LINKS = {
   }
 };
 
-function loadFile(file) {
-  return fs.readFileSync(file, {
-    encoding: 'utf8'
-  });
-}
-
 function isExists(path) {
   try {
     fs.accessSync(path, fs.F_OK);
@@ -61,24 +48,13 @@ function isExists(path) {
   }
 }
 
-// function objectLength(obj) {
-//   let size = 0;
-
-//   for (const key in obj) {
-//     if (obj.hasOwnProperty(key)) {
-//       size++;
-//     }
-//   }
-
-//   return size;
-// }
-
 function parseFile(contents) {
   let rules = contents.rules || {};
 
   if (contents.extends) {
     for (let i = 0, l = contents.extends.length; i < l; i++) {
-      const subrules = parseFile(loadFile(contents.extends[i]));
+      const module = require(contents.extends[i]); // eslint-disable-line global-require
+      const subrules = parseFile(module);
       rules = xtend(rules, subrules);
     }
   }
@@ -122,7 +98,8 @@ function main() {
 
   let j = EXTEND_FILES.length;
   while (j--) {
-    EXTEND_FILES[j].rules = parseFile(loadFile(EXTEND_FILES[j].path));
+    const module = require(EXTEND_FILES[j].path); // eslint-disable-line global-require
+    EXTEND_FILES[j].rules = parseFile(module);
     total += Object.keys(EXTEND_FILES[j].rules).length;
   }
 
@@ -137,10 +114,7 @@ function main() {
     const item = EXTEND_FILES[i];
     const { name, rules } = item;
 
-    readme += `
-      * [\`${name}\` configurations](' + name + '.md)
-
-    `;
+    readme += `* [\`${name}\` configurations](${name}.md)\n`;
 
     bar.tick();
 

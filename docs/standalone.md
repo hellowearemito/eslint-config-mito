@@ -1,11 +1,13 @@
 # [eslint](http://eslint.org)-config-mito `standalone` configurations
-> Generated: Thu Oct 27 2016 09:39:04 GMT+0200 (CEST)
+> Generated: Thu Jan 12 2017 17:04:29 GMT+0100 (CET)
 
 ## Table of contents
 
 1. [accessor-pairs](#enforces-gettersetter-pairs-in-objects-accessor-pairs)
+1. [array-callback-return](#enforces-return-statements-in-callbacks-of-arrays-methods-array-callback-return)
 1. [block-scoped-var](#treat-var-as-block-scoped-block-scoped-var)
 1. [complexity](#limit-cyclomatic-complexity-complexity)
+1. [class-methods-use-this](#enforce-that-class-methods-utilize-this-class-methods-use-this)
 1. [consistent-return](#require-return-statements-to-either-always-or-never-specify-values-consistent-return)
 1. [curly](#require-following-curly-brace-conventions-curly)
 1. [default-case](#require-default-case-in-switch-statements-default-case)
@@ -14,21 +16,27 @@
 1. [eqeqeq](#require--and-!-eqeqeq)
 1. [guard-for-in](#require-guarding-for-in-guard-for-in)
 1. [no-caller](#disallow-use-of-callercallee-no-caller)
+1. [no-case-declarations](#disallow-lexical-declarations-in-casedefault-clauses-no-case-declarations)
 1. [no-div-regex](#disallow-regexs-that-look-like-division-no-div-regex)
 1. [no-else-return](#disallow-return-before-else-no-else-return)
+1. [no-empty-function](#disallow-empty-functions-no-empty-function)
+1. [no-empty-pattern](#disallow-empty-destructuring-patterns-no-empty-pattern)
 1. [no-eq-null](#disallow-null-comparisons-no-eq-null)
 1. [no-eval](#disallow-eval-no-eval)
 1. [no-extend-native](#disallow-extending-of-native-objects-no-extend-native)
 1. [no-extra-bind](#disallow-unnecessary-function-binding-no-extra-bind)
 1. [no-fallthrough](#disallow-case-statement-fallthrough-no-fallthrough)
 1. [no-floating-decimal](#disallow-floating-decimals-no-floating-decimal)
+1. [no-global-assign](#disallow-assignment-to-native-objects-or-read-only-global-variables-no-global-assign)
 1. [no-implicit-coercion](#disallow-the-type-conversion-with-shorter-notations-no-implicit-coercion)
+1. [no-implicit-globals](#disallow-variable-and-function-declarations-in-the-global-scope-no-implicit-globals)
 1. [no-implied-eval](#disallow-implied-eval-no-implied-eval)
 1. [no-invalid-this](#disallow-this-keywords-outside-of-classes-or-class-like-objects-no-invalid-this)
 1. [no-iterator](#disallow-iterator-no-iterator)
 1. [no-labels](#disallow-labeled-statements-no-labels)
 1. [no-lone-blocks](#disallow-unnecessary-nested-blocks-no-lone-blocks)
 1. [no-loop-func](#disallow-functions-in-loops-no-loop-func)
+1. [no-magic-numbers](#disallow-magic-numbers-no-magic-numbers)
 1. [no-multi-spaces](#disallow-multiple-spaces-no-multi-spaces)
 1. [no-multi-str](#disallow-multiline-strings-no-multi-str)
 1. [no-native-reassign](#disallow-reassignment-of-native-objects-no-native-reassign)
@@ -38,7 +46,6 @@
 1. [no-octal](#disallow-octal-literals-no-octal)
 1. [no-octal-escape](#disallow-octal-escape-sequences-in-string-literals-no-octal-escape)
 1. [no-param-reassign](#disallow-reassignment-of-function-parameters-no-param-reassign)
-1. [no-process-exit](#disallow-processexit-no-process-exit)
 1. [no-proto](#disallow-use-of-__proto__-no-proto)
 1. [no-redeclare](#disallow-variable-redeclaration-no-redeclare)
 1. [no-return-assign](#disallow-assignment-in-return-statement-no-return-assign)
@@ -59,11 +66,21 @@
 1. [vars-on-top](#require-variable-declarations-to-be-at-the-top-of-their-scope-vars-on-top)
 1. [wrap-iife](#require-iifes-to-be-wrapped-wrap-iife)
 1. [yoda](#require-or-disallow-yoda-conditions-yoda)
+1. [no-alert](#disallow-use-of-alert-no-alert)
+1. [no-extra-label](#disallow-unnecessary-labels-no-extra-label)
+1. [no-return-await](#disallows-unnecessary-return-await-no-return-await)
+1. [no-self-assign](#disallow-self-assignment-no-self-assign)
+1. [no-unmodified-loop-condition](#disallow-unmodified-conditions-of-loops-no-unmodified-loop-condition)
+1. [no-unused-labels](#disallow-unused-labels-no-unused-labels)
+1. [no-useless-concat](#disallow-unnecessary-concatenation-of-strings-no-useless-concat)
+1. [no-useless-escape](#disallow-unnecessary-escape-usage-no-useless-escape)
+1. [no-useless-return](#disallow-redundant-return-statements-no-useless-return)
+1. [require-await](#disallow-async-functions-which-have-no-await-expression-require-await)
+1. [no-restricted-properties](#disallow-certain-object-properties-no-restricted-properties)
 1. [comma-dangle](#require-or-disallow-trailing-commas-comma-dangle)
 1. [no-cond-assign](#disallow-assignment-operators-in-conditional-statements-no-cond-assign)
 1. [no-console](#disallow-the-use-of-console-no-console)
 1. [no-debugger](#disallow-the-use-of-debugger-no-debugger)
-1. [no-alert](#disallow-use-of-alert-no-alert)
 1. [no-constant-condition](#disallow-constant-expressions-in-conditions-no-constant-condition)
 1. [no-control-regex](#disallow-control-characters-in-regular-expressions-no-control-regex)
 1. [no-dupe-args](#disallow-duplicate-arguments-in-function-definitions-no-dupe-args)
@@ -90,16 +107,18 @@
 1. [valid-jsdoc](#enforce-valid-jsdoc-comments-valid-jsdoc)
 1. [valid-typeof](#enforce-comparing-typeof-expressions-against-valid-strings-valid-typeof)
 1. [no-unexpected-multiline](#disallow-confusing-multiline-expressions-no-unexpected-multiline)
-1. [max-depth](#enforce-a-maximum-depth-that-blocks-can-be-nested-max-depth)
-1. [max-len](#enforce-a-maximum-line-length-max-len)
-1. [max-params](#enforce-a-maximum-number-of-parameters-in-function-definitions-max-params)
-1. [max-statements](#enforce-a-maximum-number-of-statements-allowed-in-function-blocks-max-statements)
-1. [no-bitwise](#disallow-bitwise-operators-no-bitwise)
-1. [no-plusplus](#disallow-the-unary-operators--and----no-plusplus)
+1. [no-await-in-loop](#disallow-await-inside-of-loops-no-await-in-loop)
+1. [no-prototype-builtins](#disallow-use-of-objectprototypes-builtins-directly-no-prototype-builtins)
+1. [no-template-curly-in-string](#disallow-template-literal-placeholder-syntax-in-regular-strings-no-template-curly-in-string)
+1. [no-unsafe-finally](#disallow-control-flow-statements-in-finally-blocks-no-unsafe-finally)
+1. [no-unsafe-negation](#disallow-negating-the-left-operand-of-relational-operators-no-unsafe-negation)
 1. [callback-return](#enforce-return-after-callback-callback-return)
 1. [no-mixed-requires](#disallow-require-calls-to-be-mixed-with-regular-variable-declarations-no-mixed-requires)
+1. [no-process-exit](#disallow-processexit-no-process-exit)
 1. [no-restricted-modules](#disallow-nodejs-modules-no-restricted-modules)
 1. [no-sync](#disallow-synchronous-methods-no-sync)
+1. [global-require](#enforce-require-on-the-top-level-module-scope-global-require)
+1. [no-process-env](#disallow-processenv-no-process-env)
 1. [strict](#require-or-disallow-strict-mode-directives-strict)
 1. [array-bracket-spacing](#disallow-or-enforce-spaces-inside-of-brackets-array-bracket-spacing)
 1. [indent](#enforce-consistent-indentation-indent)
@@ -152,6 +171,36 @@
 1. [space-unary-ops](#require-or-disallow-spaces-beforeafter-unary-operators-space-unary-ops)
 1. [spaced-comment](#requires-or-disallows-a-whitespace-space-or-tab-beginning-a-comment-spaced-comment)
 1. [wrap-regex](#require-regex-literals-to-be-wrapped-wrap-regex)
+1. [max-depth](#enforce-a-maximum-depth-that-blocks-can-be-nested-max-depth)
+1. [max-len](#enforce-a-maximum-line-length-max-len)
+1. [max-params](#enforce-a-maximum-number-of-parameters-in-function-definitions-max-params)
+1. [max-statements](#enforce-a-maximum-number-of-statements-allowed-in-function-blocks-max-statements)
+1. [no-bitwise](#disallow-bitwise-operators-no-bitwise)
+1. [no-plusplus](#disallow-the-unary-operators--and----no-plusplus)
+1. [block-spacing](#disallow-or-enforce-spaces-inside-of-single-line-blocks-block-spacing)
+1. [capitalized-comments](#enforce-or-disallow-capitalization-of-the-first-letter-of-a-comment-capitalized-comments)
+1. [func-call-spacing](#require-or-disallow-spacing-between-function-identifiers-and-their-invocations-func-call-spacing)
+1. [func-name-matching](#require-function-names-to-match-the-name-of-the-variable-or-property-to-which-they-are-assigned-func-name-matching)
+1. [id-blacklist](#disallow-specified-identifiers-id-blacklist)
+1. [jsx-quotes](#enforce-the-consistent-use-of-either-double-or-single-quotes-in-jsx-attributes-jsx-quotes)
+1. [line-comment-position](#enforce-position-of-line-comments-line-comment-position)
+1. [lines-around-directive](#require-or-disallow-newlines-around-directives-lines-around-directive)
+1. [max-lines](#enforce-a-maximum-file-length-max-lines)
+1. [max-statements-per-line](#enforce-a-maximum-number-of-statements-allowed-per-line-max-statements-per-line)
+1. [multiline-ternary](#enforce-or-disallow-newlines-between-operands-of-ternary-expressions-multiline-ternary)
+1. [newline-before-return](#require-an-empty-line-before-return-statements-newline-before-return)
+1. [newline-per-chained-call](#require-a-newline-after-each-call-in-a-method-chain-newline-per-chained-call)
+1. [no-mixed-operators](#disallow-mixes-of-different-operators-no-mixed-operators)
+1. [no-negated-condition](#disallow-negated-conditions-no-negated-condition)
+1. [no-restricted-syntax](#disallow-specified-syntax-no-restricted-syntax)
+1. [no-tabs](#disallow-all-tabs-no-tabs)
+1. [no-whitespace-before-property](#disallow-whitespace-before-properties-no-whitespace-before-property)
+1. [object-curly-newline](#enforce-consistent-line-breaks-inside-braces-object-curly-newline)
+1. [object-property-newline](#enforce-placing-object-properties-on-separate-lines-object-property-newline)
+1. [one-var-declaration-per-line](#require-or-disallow-newlines-around-variable-declarations-one-var-declaration-per-line)
+1. [require-jsdoc](#require-jsdoc-comments-require-jsdoc)
+1. [sort-keys](#require-object-keys-to-be-sorted-sort-keys)
+1. [unicode-bom](#require-or-disallow-the-unicode-byte-order-mark-bom-unicode-bom)
 1. [init-declarations](#require-or-disallow-initialization-in-variable-declarations-init-declarations)
 1. [no-catch-shadow](#disallow-shadowing-of-variables-inside-of-catch-no-catch-shadow)
 1. [no-delete-var](#disallow-deleting-variables-no-delete-var)
@@ -160,6 +209,7 @@
 1. [no-shadow-restricted-names](#disallow-shadowing-of-restricted-names-no-shadow-restricted-names)
 1. [no-unused-vars](#disallow-unused-variables-no-unused-vars)
 1. [no-use-before-define](#disallow-early-use-no-use-before-define)
+1. [no-restricted-globals](#disallow-specific-global-variables-no-restricted-globals)
 1. [arrow-body-style](#require-braces-in-arrow-function-body-arrow-body-style)
 1. [arrow-parens](#require-parens-in-arrow-function-arguments-arrow-parens)
 1. [arrow-spacing](#require-space-beforeafter-arrow-functions-arrow-arrow-spacing)
@@ -171,7 +221,6 @@
 1. [no-dupe-class-members](#disallow-duplicate-name-in-class-members-no-dupe-class-members)
 1. [no-duplicate-imports](#disallow-duplicate-imports-no-duplicate-imports)
 1. [no-new-symbol](#disallow-symbol-constructor-no-new-symbol)
-1. [no-restricted-globals](#disallow-specific-global-variables-no-restricted-globals)
 1. [no-restricted-imports](#disallow-specific-imports-no-restricted-imports)
 1. [no-this-before-super](#disallow-use-of-thissuper-before-calling-super-in-constructors-no-this-before-super)
 1. [no-var](#require-let-or-const-instead-of-var-no-var)
@@ -188,6 +237,11 @@
 1. [sort-imports](#import-sorting-sort-imports)
 1. [template-curly-spacing](#enforce-usage-of-spacing-in-template-strings-template-curly-spacing)
 1. [yield-star-spacing](#enforce-spacing-around-the--in-yield-expressions-yield-star-spacing)
+1. [no-useless-rename](#disallow-renaming-import-export-and-destructured-assignments-to-the-same-name-no-useless-rename)
+1. [prefer-destructuring](#prefer-destructuring-from-arrays-and-objects-prefer-destructuring)
+1. [prefer-numeric-literals](#disallow-parseint-in-favor-of-binary-octal-and-hexadecimal-literals-prefer-numeric-literals)
+1. [rest-spread-spacing](#enforce-spacing-between-rest-and-spread-operators-and-their-expressions-rest-spread-spacing)
+1. [symbol-description](#require-symbol-description-symbol-description)
 1. [import/export](#export)
 1. [import/default](#default)
 1. [import/extensions](#extensions---ensure-consistent-use-of-file-extension-within-the-import-path)
@@ -210,7 +264,21 @@
 
 **Key:** accessor-pairs ([docs](http://eslint.org/docs/rules/accessor-pairs))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforces return statements in callbacks of array's methods (array-callback-return)
+
+**Key:** array-callback-return ([docs](http://eslint.org/docs/rules/array-callback-return))
+
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -218,7 +286,10 @@
 
 **Key:** block-scoped-var ([docs](http://eslint.org/docs/rules/block-scoped-var))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -229,8 +300,24 @@
 **Value:** 
 ```javascript
 [
-  0,
+  "off",
   11
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce that class methods utilize `this` (class-methods-use-this)
+
+**Key:** class-methods-use-this ([docs](http://eslint.org/docs/rules/class-methods-use-this))
+
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "exceptMethods": []
+  }
 ]
 ```
 
@@ -240,7 +327,10 @@
 
 **Key:** consistent-return ([docs](http://eslint.org/docs/rules/consistent-return))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -248,7 +338,10 @@
 
 **Key:** curly ([docs](http://eslint.org/docs/rules/curly))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -256,7 +349,15 @@
 
 **Key:** default-case ([docs](http://eslint.org/docs/rules/default-case))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "commentPattern": "^no default$"
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -267,7 +368,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   {
     "allowKeywords": true
   }
@@ -280,7 +381,10 @@
 
 **Key:** dot-location ([docs](http://eslint.org/docs/rules/dot-location))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -288,7 +392,10 @@
 
 **Key:** eqeqeq ([docs](http://eslint.org/docs/rules/eqeqeq))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -296,7 +403,10 @@
 
 **Key:** guard-for-in ([docs](http://eslint.org/docs/rules/guard-for-in))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -304,7 +414,21 @@
 
 **Key:** no-caller ([docs](http://eslint.org/docs/rules/no-caller))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow lexical declarations in case/default clauses (no-case-declarations)
+
+**Key:** no-case-declarations ([docs](http://eslint.org/docs/rules/no-case-declarations))
+
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -312,7 +436,10 @@
 
 **Key:** no-div-regex ([docs](http://eslint.org/docs/rules/no-div-regex))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -320,7 +447,41 @@
 
 **Key:** no-else-return ([docs](http://eslint.org/docs/rules/no-else-return))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow empty functions (no-empty-function)
+
+**Key:** no-empty-function ([docs](http://eslint.org/docs/rules/no-empty-function))
+
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "allow": [
+      "arrowFunctions",
+      "functions",
+      "methods"
+    ]
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow empty destructuring patterns (no-empty-pattern)
+
+**Key:** no-empty-pattern ([docs](http://eslint.org/docs/rules/no-empty-pattern))
+
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -328,7 +489,10 @@
 
 **Key:** no-eq-null ([docs](http://eslint.org/docs/rules/no-eq-null))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -336,7 +500,10 @@
 
 **Key:** no-eval ([docs](http://eslint.org/docs/rules/no-eval))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -344,7 +511,10 @@
 
 **Key:** no-extend-native ([docs](http://eslint.org/docs/rules/no-extend-native))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -352,7 +522,10 @@
 
 **Key:** no-extra-bind ([docs](http://eslint.org/docs/rules/no-extra-bind))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -360,7 +533,10 @@
 
 **Key:** no-fallthrough ([docs](http://eslint.org/docs/rules/no-fallthrough))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -368,7 +544,26 @@
 
 **Key:** no-floating-decimal ([docs](http://eslint.org/docs/rules/no-floating-decimal))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow assignment to native objects or read-only global variables (no-global-assign)
+
+**Key:** no-global-assign ([docs](http://eslint.org/docs/rules/no-global-assign))
+
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "exceptions": []
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -376,7 +571,21 @@
 
 **Key:** no-implicit-coercion ([docs](http://eslint.org/docs/rules/no-implicit-coercion))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow variable and `function` declarations in the global scope (no-implicit-globals)
+
+**Key:** no-implicit-globals ([docs](http://eslint.org/docs/rules/no-implicit-globals))
+
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -384,7 +593,10 @@
 
 **Key:** no-implied-eval ([docs](http://eslint.org/docs/rules/no-implied-eval))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -392,7 +604,10 @@
 
 **Key:** no-invalid-this ([docs](http://eslint.org/docs/rules/no-invalid-this))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -400,7 +615,10 @@
 
 **Key:** no-iterator ([docs](http://eslint.org/docs/rules/no-iterator))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -408,7 +626,10 @@
 
 **Key:** no-labels ([docs](http://eslint.org/docs/rules/no-labels))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -416,7 +637,10 @@
 
 **Key:** no-lone-blocks ([docs](http://eslint.org/docs/rules/no-lone-blocks))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -424,7 +648,29 @@
 
 **Key:** no-loop-func ([docs](http://eslint.org/docs/rules/no-loop-func))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow Magic Numbers (no-magic-numbers)
+
+**Key:** no-magic-numbers ([docs](http://eslint.org/docs/rules/no-magic-numbers))
+
+**Value:** 
+```javascript
+[
+  "off",
+  {
+    "ignore": [],
+    "ignoreArrayIndexes": true,
+    "enforceConst": true,
+    "detectObjects": false
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -432,7 +678,10 @@
 
 **Key:** no-multi-spaces ([docs](http://eslint.org/docs/rules/no-multi-spaces))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -440,7 +689,10 @@
 
 **Key:** no-multi-str ([docs](http://eslint.org/docs/rules/no-multi-str))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -448,7 +700,10 @@
 
 **Key:** no-native-reassign ([docs](http://eslint.org/docs/rules/no-native-reassign))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -456,7 +711,10 @@
 
 **Key:** no-new ([docs](http://eslint.org/docs/rules/no-new))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -464,7 +722,10 @@
 
 **Key:** no-new-func ([docs](http://eslint.org/docs/rules/no-new-func))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -472,7 +733,10 @@
 
 **Key:** no-new-wrappers ([docs](http://eslint.org/docs/rules/no-new-wrappers))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -480,7 +744,10 @@
 
 **Key:** no-octal ([docs](http://eslint.org/docs/rules/no-octal))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -488,7 +755,10 @@
 
 **Key:** no-octal-escape ([docs](http://eslint.org/docs/rules/no-octal-escape))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -496,15 +766,10 @@
 
 **Key:** no-param-reassign ([docs](http://eslint.org/docs/rules/no-param-reassign))
 
-**Value:** ``0``
-
-**[&#8679; back to top](#table-of-contents)**
-
-## Disallow process.exit() (no-process-exit)
-
-**Key:** no-process-exit ([docs](http://eslint.org/docs/rules/no-process-exit))
-
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -512,7 +777,10 @@
 
 **Key:** no-proto ([docs](http://eslint.org/docs/rules/no-proto))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -520,7 +788,10 @@
 
 **Key:** no-redeclare ([docs](http://eslint.org/docs/rules/no-redeclare))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -528,7 +799,10 @@
 
 **Key:** no-return-assign ([docs](http://eslint.org/docs/rules/no-return-assign))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -536,7 +810,10 @@
 
 **Key:** no-script-url ([docs](http://eslint.org/docs/rules/no-script-url))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -544,7 +821,10 @@
 
 **Key:** no-self-compare ([docs](http://eslint.org/docs/rules/no-self-compare))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -552,7 +832,10 @@
 
 **Key:** no-sequences ([docs](http://eslint.org/docs/rules/no-sequences))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -560,7 +843,10 @@
 
 **Key:** no-throw-literal ([docs](http://eslint.org/docs/rules/no-throw-literal))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -568,7 +854,10 @@
 
 **Key:** no-unused-expressions ([docs](http://eslint.org/docs/rules/no-unused-expressions))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -576,7 +865,10 @@
 
 **Key:** no-useless-call ([docs](http://eslint.org/docs/rules/no-useless-call))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -584,7 +876,10 @@
 
 **Key:** no-void ([docs](http://eslint.org/docs/rules/no-void))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -595,7 +890,7 @@
 **Value:** 
 ```javascript
 [
-  0,
+  "off",
   {
     "terms": [
       "todo",
@@ -613,7 +908,10 @@
 
 **Key:** no-undef ([docs](http://eslint.org/docs/rules/no-undef))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -621,7 +919,10 @@
 
 **Key:** no-undef-init ([docs](http://eslint.org/docs/rules/no-undef-init))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -629,7 +930,10 @@
 
 **Key:** no-undefined ([docs](http://eslint.org/docs/rules/no-undefined))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -637,7 +941,10 @@
 
 **Key:** no-with ([docs](http://eslint.org/docs/rules/no-with))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -645,7 +952,10 @@
 
 **Key:** handle-callback-err ([docs](http://eslint.org/docs/rules/handle-callback-err))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -653,7 +963,10 @@
 
 **Key:** radix ([docs](http://eslint.org/docs/rules/radix))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -661,7 +974,10 @@
 
 **Key:** vars-on-top ([docs](http://eslint.org/docs/rules/vars-on-top))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -672,7 +988,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "any"
 ]
 ```
@@ -686,10 +1002,151 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "never",
   {
     "exceptRange": true
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow Use of Alert (no-alert)
+
+**Key:** no-alert ([docs](http://eslint.org/docs/rules/no-alert))
+
+**Value:** 
+```javascript
+"warn"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow Unnecessary Labels (no-extra-label)
+
+**Key:** no-extra-label ([docs](http://eslint.org/docs/rules/no-extra-label))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallows unnecessary `return await` (no-return-await)
+
+**Key:** no-return-await ([docs](http://eslint.org/docs/rules/no-return-await))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow Self Assignment (no-self-assign)
+
+**Key:** no-self-assign ([docs](http://eslint.org/docs/rules/no-self-assign))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow unmodified conditions of loops (no-unmodified-loop-condition)
+
+**Key:** no-unmodified-loop-condition ([docs](http://eslint.org/docs/rules/no-unmodified-loop-condition))
+
+**Value:** 
+```javascript
+"off"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow Unused Labels (no-unused-labels)
+
+**Key:** no-unused-labels ([docs](http://eslint.org/docs/rules/no-unused-labels))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow unnecessary concatenation of strings (no-useless-concat)
+
+**Key:** no-useless-concat ([docs](http://eslint.org/docs/rules/no-useless-concat))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow unnecessary escape usage (no-useless-escape)
+
+**Key:** no-useless-escape ([docs](http://eslint.org/docs/rules/no-useless-escape))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow redundant return statements (no-useless-return)
+
+**Key:** no-useless-return ([docs](http://eslint.org/docs/rules/no-useless-return))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow async functions which have no `await` expression (require-await)
+
+**Key:** require-await ([docs](http://eslint.org/docs/rules/require-await))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow certain object properties (no-restricted-properties)
+
+**Key:** no-restricted-properties ([docs](http://eslint.org/docs/rules/no-restricted-properties))
+
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "object": "arguments",
+    "property": "callee",
+    "message": "arguments.callee is deprecated"
+  },
+  {
+    "property": "__defineGetter__",
+    "message": "Please use Object.defineProperty instead."
+  },
+  {
+    "property": "__defineSetter__",
+    "message": "Please use Object.defineProperty instead."
+  },
+  {
+    "object": "Math",
+    "property": "pow",
+    "message": "Use the exponentiation operator (**) instead."
   }
 ]
 ```
@@ -703,7 +1160,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "never"
 ]
 ```
@@ -717,7 +1174,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "always"
 ]
 ```
@@ -728,7 +1185,10 @@
 
 **Key:** no-console ([docs](http://eslint.org/docs/rules/no-console))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"warn"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -736,15 +1196,10 @@
 
 **Key:** no-debugger ([docs](http://eslint.org/docs/rules/no-debugger))
 
-**Value:** ``1``
-
-**[&#8679; back to top](#table-of-contents)**
-
-## Disallow Use of Alert (no-alert)
-
-**Key:** no-alert ([docs](http://eslint.org/docs/rules/no-alert))
-
-**Value:** ``1``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -752,7 +1207,10 @@
 
 **Key:** no-constant-condition ([docs](http://eslint.org/docs/rules/no-constant-condition))
 
-**Value:** ``1``
+**Value:** 
+```javascript
+"warn"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -760,7 +1218,10 @@
 
 **Key:** no-control-regex ([docs](http://eslint.org/docs/rules/no-control-regex))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -768,7 +1229,10 @@
 
 **Key:** no-dupe-args ([docs](http://eslint.org/docs/rules/no-dupe-args))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -776,7 +1240,10 @@
 
 **Key:** no-dupe-keys ([docs](http://eslint.org/docs/rules/no-dupe-keys))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -784,7 +1251,10 @@
 
 **Key:** no-duplicate-case ([docs](http://eslint.org/docs/rules/no-duplicate-case))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -792,7 +1262,10 @@
 
 **Key:** no-empty ([docs](http://eslint.org/docs/rules/no-empty))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -800,7 +1273,10 @@
 
 **Key:** no-empty-character-class ([docs](http://eslint.org/docs/rules/no-empty-character-class))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -808,7 +1284,10 @@
 
 **Key:** no-ex-assign ([docs](http://eslint.org/docs/rules/no-ex-assign))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -816,7 +1295,10 @@
 
 **Key:** no-extra-boolean-cast ([docs](http://eslint.org/docs/rules/no-extra-boolean-cast))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -827,7 +1309,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "functions"
 ]
 ```
@@ -838,7 +1320,10 @@
 
 **Key:** no-extra-semi ([docs](http://eslint.org/docs/rules/no-extra-semi))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -846,7 +1331,10 @@
 
 **Key:** no-func-assign ([docs](http://eslint.org/docs/rules/no-func-assign))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -854,7 +1342,10 @@
 
 **Key:** no-inner-declarations ([docs](http://eslint.org/docs/rules/no-inner-declarations))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -862,7 +1353,10 @@
 
 **Key:** no-invalid-regexp ([docs](http://eslint.org/docs/rules/no-invalid-regexp))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -870,7 +1364,10 @@
 
 **Key:** no-irregular-whitespace ([docs](http://eslint.org/docs/rules/no-irregular-whitespace))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -878,7 +1375,10 @@
 
 **Key:** no-negated-in-lhs ([docs](http://eslint.org/docs/rules/no-negated-in-lhs))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -886,7 +1386,10 @@
 
 **Key:** no-new-require ([docs](http://eslint.org/docs/rules/no-new-require))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -894,7 +1397,10 @@
 
 **Key:** no-obj-calls ([docs](http://eslint.org/docs/rules/no-obj-calls))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -902,7 +1408,10 @@
 
 **Key:** no-path-concat ([docs](http://eslint.org/docs/rules/no-path-concat))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -910,7 +1419,10 @@
 
 **Key:** no-regex-spaces ([docs](http://eslint.org/docs/rules/no-regex-spaces))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -918,7 +1430,10 @@
 
 **Key:** no-sparse-arrays ([docs](http://eslint.org/docs/rules/no-sparse-arrays))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -926,7 +1441,10 @@
 
 **Key:** no-unreachable ([docs](http://eslint.org/docs/rules/no-unreachable))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -934,7 +1452,10 @@
 
 **Key:** use-isnan ([docs](http://eslint.org/docs/rules/use-isnan))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -942,7 +1463,10 @@
 
 **Key:** valid-jsdoc ([docs](http://eslint.org/docs/rules/valid-jsdoc))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -950,7 +1474,15 @@
 
 **Key:** valid-typeof ([docs](http://eslint.org/docs/rules/valid-typeof))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "requireStringLiterals": true
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -958,80 +1490,65 @@
 
 **Key:** no-unexpected-multiline ([docs](http://eslint.org/docs/rules/no-unexpected-multiline))
 
-**Value:** ``2``
-
-**[&#8679; back to top](#table-of-contents)**
-
-## Enforce a maximum depth that blocks can be nested (max-depth)
-
-**Key:** max-depth ([docs](http://eslint.org/docs/rules/max-depth))
-
 **Value:** 
 ```javascript
-[
-  0,
-  4
-]
+"error"
 ```
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce a maximum line length (max-len)
+## Disallow `await` inside of loops (no-await-in-loop)
 
-**Key:** max-len ([docs](http://eslint.org/docs/rules/max-len))
+**Key:** no-await-in-loop ([docs](http://eslint.org/docs/rules/no-await-in-loop))
 
 **Value:** 
 ```javascript
-[
-  0,
-  80,
-  4
-]
+"error"
 ```
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce a maximum number of parameters in function definitions (max-params)
+## Disallow use of Object.prototypes builtins directly (no-prototype-builtins)
 
-**Key:** max-params ([docs](http://eslint.org/docs/rules/max-params))
+**Key:** no-prototype-builtins ([docs](http://eslint.org/docs/rules/no-prototype-builtins))
 
 **Value:** 
 ```javascript
-[
-  0,
-  3
-]
+"error"
 ```
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Enforce a maximum number of statements allowed in function blocks (max-statements)
+## Disallow template literal placeholder syntax in regular strings (no-template-curly-in-string)
 
-**Key:** max-statements ([docs](http://eslint.org/docs/rules/max-statements))
+**Key:** no-template-curly-in-string ([docs](http://eslint.org/docs/rules/no-template-curly-in-string))
 
 **Value:** 
 ```javascript
-[
-  0,
-  10
-]
+"error"
 ```
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow bitwise operators (no-bitwise)
+## Disallow control flow statements in `finally` blocks (no-unsafe-finally)
 
-**Key:** no-bitwise ([docs](http://eslint.org/docs/rules/no-bitwise))
+**Key:** no-unsafe-finally ([docs](http://eslint.org/docs/rules/no-unsafe-finally))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow the unary operators `++` and `--` (no-plusplus)
+## Disallow negating the left operand of relational operators (no-unsafe-negation)
 
-**Key:** no-plusplus ([docs](http://eslint.org/docs/rules/no-plusplus))
+**Key:** no-unsafe-negation ([docs](http://eslint.org/docs/rules/no-unsafe-negation))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1039,7 +1556,10 @@
 
 **Key:** callback-return ([docs](http://eslint.org/docs/rules/callback-return))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1050,9 +1570,20 @@
 **Value:** 
 ```javascript
 [
-  0,
+  "off",
   false
 ]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow process.exit() (no-process-exit)
+
+**Key:** no-process-exit ([docs](http://eslint.org/docs/rules/no-process-exit))
+
+**Value:** 
+```javascript
+"off"
 ```
 
 **[&#8679; back to top](#table-of-contents)**
@@ -1061,7 +1592,10 @@
 
 **Key:** no-restricted-modules ([docs](http://eslint.org/docs/rules/no-restricted-modules))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1069,7 +1603,32 @@
 
 **Key:** no-sync ([docs](http://eslint.org/docs/rules/no-sync))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce require() on the top-level module scope (global-require)
+
+**Key:** global-require ([docs](http://eslint.org/docs/rules/global-require))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow process.env (no-process-env)
+
+**Key:** no-process-env ([docs](http://eslint.org/docs/rules/no-process-env))
+
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1077,7 +1636,10 @@
 
 **Key:** strict ([docs](http://eslint.org/docs/rules/strict))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1088,7 +1650,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "never"
 ]
 ```
@@ -1102,7 +1664,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   4,
   {
     "SwitchCase": 1
@@ -1119,7 +1681,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "1tbs",
   {
     "allowSingleLine": true
@@ -1136,7 +1698,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   {
     "properties": "never"
   }
@@ -1152,7 +1714,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   {
     "before": false,
     "after": true
@@ -1169,7 +1731,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "last"
 ]
 ```
@@ -1180,7 +1742,13 @@
 
 **Key:** computed-property-spacing ([docs](http://eslint.org/docs/rules/computed-property-spacing))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  "error",
+  "never"
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1188,7 +1756,10 @@
 
 **Key:** consistent-this ([docs](http://eslint.org/docs/rules/consistent-this))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1196,7 +1767,13 @@
 
 **Key:** eol-last ([docs](http://eslint.org/docs/rules/eol-last))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+[
+  "error",
+  "always"
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1204,7 +1781,10 @@
 
 **Key:** func-names ([docs](http://eslint.org/docs/rules/func-names))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1212,7 +1792,13 @@
 
 **Key:** func-style ([docs](http://eslint.org/docs/rules/func-style))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  "off",
+  "expression"
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1220,7 +1806,10 @@
 
 **Key:** id-length ([docs](http://eslint.org/docs/rules/id-length))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1231,7 +1820,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   {
     "beforeColon": false,
     "afterColon": true
@@ -1245,7 +1834,10 @@
 
 **Key:** lines-around-comment ([docs](http://eslint.org/docs/rules/lines-around-comment))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1253,7 +1845,13 @@
 
 **Key:** linebreak-style ([docs](http://eslint.org/docs/rules/linebreak-style))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+[
+  "error",
+  "unix"
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1261,7 +1859,10 @@
 
 **Key:** max-nested-callbacks ([docs](http://eslint.org/docs/rules/max-nested-callbacks))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1272,9 +1873,16 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   {
-    "newIsCap": true
+    "newIsCap": true,
+    "newIsCapExceptions": [],
+    "capIsNew": false,
+    "capIsNewExceptions": [
+      "Immutable.Map",
+      "Immutable.Set",
+      "Immutable.List"
+    ]
   }
 ]
 ```
@@ -1285,7 +1893,10 @@
 
 **Key:** new-parens ([docs](http://eslint.org/docs/rules/new-parens))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1293,7 +1904,10 @@
 
 **Key:** newline-after-var ([docs](http://eslint.org/docs/rules/newline-after-var))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1301,7 +1915,10 @@
 
 **Key:** no-array-constructor ([docs](http://eslint.org/docs/rules/no-array-constructor))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1309,7 +1926,10 @@
 
 **Key:** no-continue ([docs](http://eslint.org/docs/rules/no-continue))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1317,7 +1937,10 @@
 
 **Key:** no-inline-comments ([docs](http://eslint.org/docs/rules/no-inline-comments))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1325,7 +1948,10 @@
 
 **Key:** no-lonely-if ([docs](http://eslint.org/docs/rules/no-lonely-if))
 
-**Value:** ``1``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1333,7 +1959,10 @@
 
 **Key:** no-mixed-spaces-and-tabs ([docs](http://eslint.org/docs/rules/no-mixed-spaces-and-tabs))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1344,7 +1973,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   {
     "max": 2,
     "maxEOF": 1
@@ -1358,7 +1987,10 @@
 
 **Key:** no-nested-ternary ([docs](http://eslint.org/docs/rules/no-nested-ternary))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1366,7 +1998,10 @@
 
 **Key:** no-new-object ([docs](http://eslint.org/docs/rules/no-new-object))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1374,7 +2009,10 @@
 
 **Key:** no-spaced-func ([docs](http://eslint.org/docs/rules/no-spaced-func))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1382,7 +2020,10 @@
 
 **Key:** no-ternary ([docs](http://eslint.org/docs/rules/no-ternary))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1390,7 +2031,10 @@
 
 **Key:** no-trailing-spaces ([docs](http://eslint.org/docs/rules/no-trailing-spaces))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1398,7 +2042,15 @@
 
 **Key:** no-underscore-dangle ([docs](http://eslint.org/docs/rules/no-underscore-dangle))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "allowAfterThis": false
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1406,7 +2058,15 @@
 
 **Key:** no-unneeded-ternary ([docs](http://eslint.org/docs/rules/no-unneeded-ternary))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "defaultAssignment": false
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1414,7 +2074,13 @@
 
 **Key:** object-curly-spacing ([docs](http://eslint.org/docs/rules/object-curly-spacing))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  "error",
+  "always"
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1425,7 +2091,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "never"
 ]
 ```
@@ -1436,7 +2102,13 @@
 
 **Key:** operator-assignment ([docs](http://eslint.org/docs/rules/operator-assignment))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  "error",
+  "always"
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1444,7 +2116,10 @@
 
 **Key:** operator-linebreak ([docs](http://eslint.org/docs/rules/operator-linebreak))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1452,7 +2127,18 @@
 
 **Key:** quote-props ([docs](http://eslint.org/docs/rules/quote-props))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  "error",
+  "as-needed",
+  {
+    "keywords": false,
+    "unnecessary": false,
+    "numbers": false
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1463,9 +2149,11 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "single",
-  "avoid-escape"
+  {
+    "avoidEscape": true
+  }
 ]
 ```
 
@@ -1475,7 +2163,10 @@
 
 **Key:** id-match ([docs](http://eslint.org/docs/rules/id-match))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1486,7 +2177,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "never"
 ]
 ```
@@ -1500,7 +2191,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "always"
 ]
 ```
@@ -1514,7 +2205,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   {
     "before": false,
     "after": true
@@ -1528,7 +2219,10 @@
 
 **Key:** sort-vars ([docs](http://eslint.org/docs/rules/sort-vars))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1536,7 +2230,27 @@
 
 **Key:** keyword-spacing ([docs](http://eslint.org/docs/rules/keyword-spacing))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "before": true,
+    "after": true,
+    "overrides": {
+      "return": {
+        "after": true
+      },
+      "throw": {
+        "after": true
+      },
+      "case": {
+        "after": true
+      }
+    }
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1544,7 +2258,10 @@
 
 **Key:** space-before-blocks ([docs](http://eslint.org/docs/rules/space-before-blocks))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1555,7 +2272,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "never"
 ]
 ```
@@ -1566,7 +2283,13 @@
 
 **Key:** space-in-parens ([docs](http://eslint.org/docs/rules/space-in-parens))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  "error",
+  "never"
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1574,7 +2297,10 @@
 
 **Key:** space-infix-ops ([docs](http://eslint.org/docs/rules/space-infix-ops))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1582,7 +2308,17 @@
 
 **Key:** space-unary-ops ([docs](http://eslint.org/docs/rules/space-unary-ops))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "words": true,
+    "nonwords": false,
+    "overrides": {}
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1593,17 +2329,30 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "always",
   {
-    "exceptions": [
-      "-",
-      "+"
-    ],
-    "markers": [
-      "=",
-      "!"
-    ]
+    "line": {
+      "exceptions": [
+        "-",
+        "+"
+      ],
+      "markers": [
+        "=",
+        "!"
+      ]
+    },
+    "block": {
+      "exceptions": [
+        "-",
+        "+"
+      ],
+      "markers": [
+        "=",
+        "!"
+      ],
+      "balanced": false
+    }
   }
 ]
 ```
@@ -1614,7 +2363,499 @@
 
 **Key:** wrap-regex ([docs](http://eslint.org/docs/rules/wrap-regex))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce a maximum depth that blocks can be nested (max-depth)
+
+**Key:** max-depth ([docs](http://eslint.org/docs/rules/max-depth))
+
+**Value:** 
+```javascript
+[
+  "off",
+  4
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce a maximum line length (max-len)
+
+**Key:** max-len ([docs](http://eslint.org/docs/rules/max-len))
+
+**Value:** 
+```javascript
+[
+  "error",
+  100,
+  2,
+  {
+    "ignoreUrls": true,
+    "ignoreComments": false,
+    "ignoreRegExpLiterals": true,
+    "ignoreStrings": true,
+    "ignoreTemplateLiterals": true
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce a maximum number of parameters in function definitions (max-params)
+
+**Key:** max-params ([docs](http://eslint.org/docs/rules/max-params))
+
+**Value:** 
+```javascript
+[
+  "off",
+  3
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce a maximum number of statements allowed in function blocks (max-statements)
+
+**Key:** max-statements ([docs](http://eslint.org/docs/rules/max-statements))
+
+**Value:** 
+```javascript
+[
+  "off",
+  10
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow bitwise operators (no-bitwise)
+
+**Key:** no-bitwise ([docs](http://eslint.org/docs/rules/no-bitwise))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow the unary operators `++` and `--` (no-plusplus)
+
+**Key:** no-plusplus ([docs](http://eslint.org/docs/rules/no-plusplus))
+
+**Value:** 
+```javascript
+"off"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow or enforce spaces inside of single line blocks (block-spacing)
+
+**Key:** block-spacing ([docs](http://eslint.org/docs/rules/block-spacing))
+
+**Value:** 
+```javascript
+[
+  "error",
+  "always"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce or disallow capitalization of the first letter of a comment (capitalized-comments)
+
+**Key:** capitalized-comments ([docs](http://eslint.org/docs/rules/capitalized-comments))
+
+**Value:** 
+```javascript
+[
+  "off",
+  "never",
+  {
+    "line": {
+      "ignorePattern": ".*",
+      "ignoreInlineComments": true,
+      "ignoreConsecutiveComments": true
+    },
+    "block": {
+      "ignorePattern": ".*",
+      "ignoreInlineComments": true,
+      "ignoreConsecutiveComments": true
+    }
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Require or disallow spacing between function identifiers and their invocations (func-call-spacing)
+
+**Key:** func-call-spacing ([docs](http://eslint.org/docs/rules/func-call-spacing))
+
+**Value:** 
+```javascript
+[
+  "error",
+  "never"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Require function names to match the name of the variable or property to which they are assigned (func-name-matching)
+
+**Key:** func-name-matching ([docs](http://eslint.org/docs/rules/func-name-matching))
+
+**Value:** 
+```javascript
+[
+  "off",
+  "always",
+  {
+    "includeCommonJSModuleExports": false
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow specified identifiers (id-blacklist)
+
+**Key:** id-blacklist ([docs](http://eslint.org/docs/rules/id-blacklist))
+
+**Value:** 
+```javascript
+"off"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce the consistent use of either double or single quotes in JSX attributes (jsx-quotes)
+
+**Key:** jsx-quotes ([docs](http://eslint.org/docs/rules/jsx-quotes))
+
+**Value:** 
+```javascript
+[
+  "off",
+  "prefer-double"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce position of line comments (line-comment-position)
+
+**Key:** line-comment-position ([docs](http://eslint.org/docs/rules/line-comment-position))
+
+**Value:** 
+```javascript
+[
+  "off",
+  {
+    "position": "beside",
+    "ignorePattern": "",
+    "applyDefaultPatterns": true
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Require or disallow newlines around directives (lines-around-directive)
+
+**Key:** lines-around-directive ([docs](http://eslint.org/docs/rules/lines-around-directive))
+
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "before": "always",
+    "after": "always"
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce a maximum file length (max-lines)
+
+**Key:** max-lines ([docs](http://eslint.org/docs/rules/max-lines))
+
+**Value:** 
+```javascript
+[
+  "off",
+  {
+    "max": 300,
+    "skipBlankLines": true,
+    "skipComments": true
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce a maximum number of statements allowed per line (max-statements-per-line)
+
+**Key:** max-statements-per-line ([docs](http://eslint.org/docs/rules/max-statements-per-line))
+
+**Value:** 
+```javascript
+[
+  "off",
+  {
+    "max": 1
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce or disallow newlines between operands of ternary expressions (multiline-ternary)
+
+**Key:** multiline-ternary ([docs](http://eslint.org/docs/rules/multiline-ternary))
+
+**Value:** 
+```javascript
+[
+  "off",
+  "never"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Require an empty line before `return` statements (newline-before-return)
+
+**Key:** newline-before-return ([docs](http://eslint.org/docs/rules/newline-before-return))
+
+**Value:** 
+```javascript
+"off"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Require a newline after each call in a method chain (newline-per-chained-call)
+
+**Key:** newline-per-chained-call ([docs](http://eslint.org/docs/rules/newline-per-chained-call))
+
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "ignoreChainWithDepth": 4
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow mixes of different operators (no-mixed-operators)
+
+**Key:** no-mixed-operators ([docs](http://eslint.org/docs/rules/no-mixed-operators))
+
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "groups": [
+      [
+        "+",
+        "-",
+        "*",
+        "/",
+        "%",
+        "**"
+      ],
+      [
+        "&",
+        "|",
+        "^",
+        "~",
+        "<<",
+        ">>",
+        ">>>"
+      ],
+      [
+        "==",
+        "!=",
+        "===",
+        "!==",
+        ">",
+        ">=",
+        "<",
+        "<="
+      ],
+      [
+        "&&",
+        "||"
+      ],
+      [
+        "in",
+        "instanceof"
+      ]
+    ],
+    "allowSamePrecedence": false
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow negated conditions (no-negated-condition)
+
+**Key:** no-negated-condition ([docs](http://eslint.org/docs/rules/no-negated-condition))
+
+**Value:** 
+```javascript
+"off"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow specified syntax (no-restricted-syntax)
+
+**Key:** no-restricted-syntax ([docs](http://eslint.org/docs/rules/no-restricted-syntax))
+
+**Value:** 
+```javascript
+[
+  "error",
+  "LabeledStatement",
+  "WithStatement"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow all tabs (no-tabs)
+
+**Key:** no-tabs ([docs](http://eslint.org/docs/rules/no-tabs))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow whitespace before properties (no-whitespace-before-property)
+
+**Key:** no-whitespace-before-property ([docs](http://eslint.org/docs/rules/no-whitespace-before-property))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce consistent line breaks inside braces (object-curly-newline)
+
+**Key:** object-curly-newline ([docs](http://eslint.org/docs/rules/object-curly-newline))
+
+**Value:** 
+```javascript
+[
+  "off",
+  {
+    "ObjectExpression": {
+      "minProperties": 0,
+      "multiline": true
+    },
+    "ObjectPattern": {
+      "minProperties": 0,
+      "multiline": true
+    }
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce placing object properties on separate lines (object-property-newline)
+
+**Key:** object-property-newline ([docs](http://eslint.org/docs/rules/object-property-newline))
+
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "allowMultiplePropertiesPerLine": false
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Require or disallow newlines around variable declarations (one-var-declaration-per-line)
+
+**Key:** one-var-declaration-per-line ([docs](http://eslint.org/docs/rules/one-var-declaration-per-line))
+
+**Value:** 
+```javascript
+[
+  "error",
+  "always"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Require JSDoc comments (require-jsdoc)
+
+**Key:** require-jsdoc ([docs](http://eslint.org/docs/rules/require-jsdoc))
+
+**Value:** 
+```javascript
+"off"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Require object keys to be sorted (sort-keys)
+
+**Key:** sort-keys ([docs](http://eslint.org/docs/rules/sort-keys))
+
+**Value:** 
+```javascript
+[
+  "off",
+  "asc",
+  {
+    "caseSensitive": false,
+    "natural": true
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Require or disallow the Unicode Byte Order Mark (BOM) (unicode-bom)
+
+**Key:** unicode-bom ([docs](http://eslint.org/docs/rules/unicode-bom))
+
+**Value:** 
+```javascript
+[
+  "error",
+  "never"
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1622,7 +2863,10 @@
 
 **Key:** init-declarations ([docs](http://eslint.org/docs/rules/init-declarations))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1630,7 +2874,10 @@
 
 **Key:** no-catch-shadow ([docs](http://eslint.org/docs/rules/no-catch-shadow))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1638,7 +2885,10 @@
 
 **Key:** no-delete-var ([docs](http://eslint.org/docs/rules/no-delete-var))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1646,7 +2896,10 @@
 
 **Key:** no-label-var ([docs](http://eslint.org/docs/rules/no-label-var))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1654,7 +2907,10 @@
 
 **Key:** no-shadow ([docs](http://eslint.org/docs/rules/no-shadow))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1662,7 +2918,10 @@
 
 **Key:** no-shadow-restricted-names ([docs](http://eslint.org/docs/rules/no-shadow-restricted-names))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1673,7 +2932,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   {
     "vars": "local",
     "args": "after-used"
@@ -1687,7 +2946,21 @@
 
 **Key:** no-use-before-define ([docs](http://eslint.org/docs/rules/no-use-before-define))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow specific global variables (no-restricted-globals)
+
+**Key:** no-restricted-globals ([docs](http://eslint.org/docs/rules/no-restricted-globals))
+
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1698,7 +2971,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "as-needed"
 ]
 ```
@@ -1709,7 +2982,16 @@
 
 **Key:** arrow-parens ([docs](http://eslint.org/docs/rules/arrow-parens))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  "error",
+  "as-needed",
+  {
+    "requireForBlockBody": true
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1720,7 +3002,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   {
     "before": true,
     "after": true
@@ -1734,7 +3016,10 @@
 
 **Key:** constructor-super ([docs](http://eslint.org/docs/rules/constructor-super))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1742,7 +3027,16 @@
 
 **Key:** generator-star-spacing ([docs](http://eslint.org/docs/rules/generator-star-spacing))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "before": false,
+    "after": true
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1750,7 +3044,10 @@
 
 **Key:** no-class-assign ([docs](http://eslint.org/docs/rules/no-class-assign))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1761,7 +3058,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   {
     "allowParens": true
   }
@@ -1774,7 +3071,10 @@
 
 **Key:** no-const-assign ([docs](http://eslint.org/docs/rules/no-const-assign))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1782,7 +3082,10 @@
 
 **Key:** no-dupe-class-members ([docs](http://eslint.org/docs/rules/no-dupe-class-members))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1790,7 +3093,10 @@
 
 **Key:** no-duplicate-imports ([docs](http://eslint.org/docs/rules/no-duplicate-imports))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1798,15 +3104,10 @@
 
 **Key:** no-new-symbol ([docs](http://eslint.org/docs/rules/no-new-symbol))
 
-**Value:** ``2``
-
-**[&#8679; back to top](#table-of-contents)**
-
-## Disallow specific global variables (no-restricted-globals)
-
-**Key:** no-restricted-globals ([docs](http://eslint.org/docs/rules/no-restricted-globals))
-
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1814,7 +3115,10 @@
 
 **Key:** no-restricted-imports ([docs](http://eslint.org/docs/rules/no-restricted-imports))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1822,7 +3126,10 @@
 
 **Key:** no-this-before-super ([docs](http://eslint.org/docs/rules/no-this-before-super))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1830,7 +3137,10 @@
 
 **Key:** no-var ([docs](http://eslint.org/docs/rules/no-var))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1838,7 +3148,10 @@
 
 **Key:** no-useless-computed-key ([docs](http://eslint.org/docs/rules/no-useless-computed-key))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1846,7 +3159,10 @@
 
 **Key:** no-useless-constructor ([docs](http://eslint.org/docs/rules/no-useless-constructor))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1857,8 +3173,12 @@
 **Value:** 
 ```javascript
 [
-  2,
-  "always"
+  "error",
+  "always",
+  {
+    "ignoreConstructors": false,
+    "avoidQuotes": true
+  }
 ]
 ```
 
@@ -1871,7 +3191,7 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   {
     "allowNamedFunctions": false,
     "allowUnboundThis": true
@@ -1885,7 +3205,16 @@
 
 **Key:** prefer-const ([docs](http://eslint.org/docs/rules/prefer-const))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "destructuring": "any",
+    "ignoreReadBeforeAssign": true
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1893,7 +3222,10 @@
 
 **Key:** prefer-spread ([docs](http://eslint.org/docs/rules/prefer-spread))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1901,7 +3233,10 @@
 
 **Key:** prefer-reflect ([docs](http://eslint.org/docs/rules/prefer-reflect))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"off"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1909,7 +3244,10 @@
 
 **Key:** prefer-rest-params ([docs](http://eslint.org/docs/rules/prefer-rest-params))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1917,7 +3255,10 @@
 
 **Key:** prefer-template ([docs](http://eslint.org/docs/rules/prefer-template))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1925,7 +3266,10 @@
 
 **Key:** require-yield ([docs](http://eslint.org/docs/rules/require-yield))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1933,7 +3277,22 @@
 
 **Key:** sort-imports ([docs](http://eslint.org/docs/rules/sort-imports))
 
-**Value:** ``0``
+**Value:** 
+```javascript
+[
+  "off",
+  {
+    "ignoreCase": false,
+    "ignoreMemberSort": false,
+    "memberSyntaxSortOrder": [
+      "none",
+      "all",
+      "multiple",
+      "single"
+    ]
+  }
+]
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1941,7 +3300,10 @@
 
 **Key:** template-curly-spacing ([docs](http://eslint.org/docs/rules/template-curly-spacing))
 
-**Value:** ``2``
+**Value:** 
+```javascript
+"error"
+```
 
 **[&#8679; back to top](#table-of-contents)**
 
@@ -1952,9 +3314,83 @@
 **Value:** 
 ```javascript
 [
-  2,
+  "error",
   "after"
 ]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow renaming import, export, and destructured assignments to the same name (no-useless-rename)
+
+**Key:** no-useless-rename ([docs](http://eslint.org/docs/rules/no-useless-rename))
+
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "ignoreDestructuring": false,
+    "ignoreImport": false,
+    "ignoreExport": false
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Prefer destructuring from arrays and objects (prefer-destructuring)
+
+**Key:** prefer-destructuring ([docs](http://eslint.org/docs/rules/prefer-destructuring))
+
+**Value:** 
+```javascript
+[
+  "error",
+  {
+    "array": true,
+    "object": true
+  },
+  {
+    "enforceForRenamedProperties": false
+  }
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow `parseInt()` in favor of binary, octal, and hexadecimal literals (prefer-numeric-literals)
+
+**Key:** prefer-numeric-literals ([docs](http://eslint.org/docs/rules/prefer-numeric-literals))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Enforce spacing between rest and spread operators and their expressions (rest-spread-spacing)
+
+**Key:** rest-spread-spacing ([docs](http://eslint.org/docs/rules/rest-spread-spacing))
+
+**Value:** 
+```javascript
+[
+  "error",
+  "never"
+]
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Require symbol description (symbol-description)
+
+**Key:** symbol-description ([docs](http://eslint.org/docs/rules/symbol-description))
+
+**Value:** 
+```javascript
+"error"
 ```
 
 **[&#8679; back to top](#table-of-contents)**
@@ -2139,4 +3575,4 @@
 **[&#8679; back to top](#table-of-contents)**
 
 ## License
-MIT © 2016 Mito (info@mito.hu)
+MIT © 2017 Mito (info@mito.hu)
