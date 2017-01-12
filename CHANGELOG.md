@@ -3,13 +3,32 @@
   - Update docgen.js
   - Upgrade packages in package.json
   - Add yarn.lock file
-  - Add `array-callback-return` to `error`
-  - Add `class-method-use-this` to `error`, `exceptMethods: []`
-  - Add `no-case-declarations` to `error`
-  - Add `no-empty-function` to `error`, `allow: ['arrowFunctions', 'functions', 'methods']`
-  - Add `no-global-assign` to `error`, `exceptions: []`
-  - Add `no-magic-numbers` to `off`, `ignore: [], ignoreArrayIndexes: true, enforceConst: true, detectObjects: false`
+  - Add `array-callback-return`
+  - Add `class-method-use-this`
+  - Add `no-case-declarations`
+  - Add `no-empty-function`
+  - Add `no-global-assign`
+  - Add `no-magic-numbers`
   - Remove `no-process-exit` from rules/best-practices.js
+  - Add `no-alert`
+  - Add `no-extra-label`
+  - Add `no-return-await`
+  - Add `no-self-assign`
+  - Add `no-unmodified-loop-condition`
+  - Add `no-unused-labels`
+  - Add `no-useless-concat`
+  - Add `no-useless-escape`
+  - Add `no-useless-return`
+  - Add `require-await`
+  - Add `no-restricted-properties`
+  - Add `no-restricted-globals`
+  - Add `global-require`
+  - Add `no-process-env`
+  - Add `no-await-in-loop`
+  - Add `no-prototype-builtins`
+  - Add `no-template-curly-in-string`
+  - Add `no-unsafe-finally`
+  - Add `no-unsafe-negation`
 
 6.0.0 / 2016-07-27
 ==================
