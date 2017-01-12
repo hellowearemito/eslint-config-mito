@@ -34,6 +34,30 @@
   - Add `prefer-numeric-literals`
   - Add `rest-spread-spacing`
   - Add `symbol-description`
+  - Add `block-spacing`
+  - Add `capitalized-comments`
+  - Add `func-call-spacing`
+  - Add `func-name-matching`
+  - Add `id-blacklist`
+  - Add `jsx-quotes`
+  - Add `line-comment-position`
+  - Add `lines-around-directive`
+  - Add `max-lines`
+  - Add `max-statements-per-line`
+  - Add `multiline-ternary`
+  - Add `newline-before-return`
+  - Add `newline-per-chained-call`
+  - Add `no-mixed-operators`
+  - Add `no-negated-condition`
+  - Add `no-restricted-syntax`
+  - Add `no-tabs`
+  - Add `no-whitespace-before-property`
+  - Add `object-curly-newline`
+  - Add `object-property-newline`
+  - Add `one-var-declaration-per-line`
+  - Add `require-jsdoc`
+  - Add `sort-keys`
+  - Add `unicode-bom`
 
 6.0.0 / 2016-07-27
 ==================
