@@ -1,68 +1,117 @@
 // Best practices
 module.exports = {
   'rules': {
-    'accessor-pairs': 0,
-    'block-scoped-var': 2,
-    'complexity': [0, 11],
-    'consistent-return': 2,
-    'curly': 2,
-    'default-case': 2,
-    'dot-notation': [2, {
+    'accessor-pairs': 'off',
+    'array-callback-return': 'error',
+    'block-scoped-var': 'error',
+    'complexity': ['off', 11],
+    'class-methods-use-this': ['error', {
+      exceptMethods: []
+    }],
+    'consistent-return': 'error',
+    'curly': 'error',
+    'default-case': ['error', {
+      commentPattern: '^no default$'
+    }],
+    'dot-notation': ['error', {
       'allowKeywords': true
     }],
-    'dot-location': 0,
-    'eqeqeq': 2,
-    'guard-for-in': 0,
-    'no-caller': 2,
-    'no-div-regex': 2,
-    'no-else-return': 2,
-    'no-eq-null': 2,
-    'no-eval': 2,
-    'no-extend-native': 2,
-    'no-extra-bind': 2,
-    'no-fallthrough': 2,
-    'no-floating-decimal': 2,
-    'no-implicit-coercion': 0,
-    'no-implied-eval': 2,
-    'no-invalid-this': 0,
-    'no-iterator': 2,
-    'no-labels': 2,
-    'no-lone-blocks': 2,
-    'no-loop-func': 2,
-    'no-multi-spaces': 2,
-    'no-multi-str': 2,
-    'no-native-reassign': 2,
-    'no-new': 2,
-    'no-new-func': 2,
-    'no-new-wrappers': 2,
-    'no-octal': 2,
-    'no-octal-escape': 2,
-    'no-param-reassign': 0,
-    'no-process-exit': 2,
-    'no-proto': 2,
-    'no-redeclare': 2,
-    'no-return-assign': 2,
-    'no-script-url': 2,
-    'no-self-compare': 2,
-    'no-sequences': 2,
-    'no-throw-literal': 2,
-    'no-unused-expressions': 2,
-    'no-useless-call': 2,
-    'no-void': 2,
-    'no-warning-comments': [0, {
+    'dot-location': 'off',
+    'eqeqeq': 'error',
+    'guard-for-in': 'off',
+    'no-caller': 'error',
+    'no-case-declarations': 'error',
+    'no-div-regex': 'error',
+    'no-else-return': 'error',
+    'no-empty-function': ['error', {
+      allow: [
+        'arrowFunctions',
+        'functions',
+        'methods'
+      ]
+    }],
+    'no-empty-pattern': 'error',
+    'no-eq-null': 'error',
+    'no-eval': 'error',
+    'no-extend-native': 'error',
+    'no-extra-bind': 'error',
+    'no-fallthrough': 'error',
+    'no-floating-decimal': 'error',
+    'no-global-assign': ['error', {
+      exceptions: []
+    }],
+    'no-implicit-coercion': 'off',
+    'no-implicit-globals': 'error',
+    'no-implied-eval': 'error',
+    'no-invalid-this': 'off',
+    'no-iterator': 'error',
+    'no-labels': 'error',
+    'no-lone-blocks': 'error',
+    'no-loop-func': 'error',
+    'no-magic-numbers': ['off', {
+      ignore: [],
+      ignoreArrayIndexes: true,
+      enforceConst: true,
+      detectObjects: false
+    }],
+    'no-multi-spaces': 'error',
+    'no-multi-str': 'error',
+    'no-native-reassign': 'error',
+    'no-new': 'error',
+    'no-new-func': 'error',
+    'no-new-wrappers': 'error',
+    'no-octal': 'error',
+    'no-octal-escape': 'error',
+    'no-param-reassign': 'off',
+    'no-proto': 'error',
+    'no-redeclare': 'error',
+    'no-return-assign': 'error',
+    'no-script-url': 'error',
+    'no-self-compare': 'error',
+    'no-sequences': 'error',
+    'no-throw-literal': 'error',
+    'no-unused-expressions': 'error',
+    'no-useless-call': 'error',
+    'no-void': 'error',
+    'no-warning-comments': ['off', {
       'terms': ['todo', 'fixme', 'xxx'],
       'location': 'start'
     }],
-    'no-undef': 2,
-    'no-undef-init': 2,
-    'no-undefined': 1,
-    'no-with': 2,
-    'handle-callback-err': 1,
-    'radix': 2,
-    'vars-on-top': 0,
-    'wrap-iife': [2, 'any'],
-    'yoda': [2, 'never', {
+    'no-undef': 'error',
+    'no-undef-init': 'error',
+    'no-undefined': 'warn',
+    'no-with': 'error',
+    'handle-callback-err': 'warn',
+    'radix': 'error',
+    'vars-on-top': 'off',
+    'wrap-iife': ['error', 'any'],
+    'yoda': ['error', 'never', {
       'exceptRange': true
+    }],
+    'no-alert': 'warn',
+    'no-extra-label': 'error',
+    'no-return-await': 'error',
+    'no-self-assign': 'error',
+    'no-unmodified-loop-condition': 'off',
+    'no-unused-labels': 'error',
+    'no-useless-concat': 'error',
+    'no-useless-escape': 'error',
+    'no-useless-return': 'error',
+    'require-await': 'error',
+    'no-restricted-properties': ['error', {
+      object: 'arguments',
+      property: 'callee',
+      message: 'arguments.callee is deprecated'
+    }, {
+      property: '__defineGetter__',
+      message: 'Please use Object.defineProperty instead.'
+    }, {
+      property: '__defineSetter__',
+      message: 'Please use Object.defineProperty instead.'
+    }, {
+      object: 'Math',
+      property: 'pow',
+      message: 'Use the exponentiation operator (**) instead.'
     }]
   }
 };

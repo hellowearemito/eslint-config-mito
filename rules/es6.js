@@ -11,41 +11,70 @@ module.exports = {
     }
   },
   'rules': {
-    'arrow-body-style': [2, 'as-needed'],
-    'arrow-parens': 0,
-    'arrow-spacing': [2, {
+    'arrow-body-style': ['error', 'as-needed'],
+    'arrow-parens': ['error', 'as-needed', {
+      requireForBlockBody: true
+    }],
+    'arrow-spacing': ['error', {
       'before': true,
       'after': true
     }],
-    'constructor-super': 0,
-    'generator-star-spacing': 0,
-    'no-class-assign': 0,
-    'no-confusing-arrow': [2, {
+    'constructor-super': 'error',
+    'generator-star-spacing': ['error', {
+      before: false,
+      after: true
+    }],
+    'no-class-assign': 'error',
+    'no-confusing-arrow': ['error', {
       'allowParens': true
     }],
-    'no-const-assign': 2,
-    'no-dupe-class-members': 2,
-    'no-duplicate-imports': 2,
-    'no-new-symbol': 2,
-    'no-restricted-globals': 0,
-    'no-restricted-imports': 0,
-    'no-this-before-super': 0,
-    'no-var': 2,
-    'no-useless-computed-key': 2,
-    'no-useless-constructor': 2,
-    'object-shorthand': [2, 'always'],
-    'prefer-arrow-callback': [2, {
+    'no-const-assign': 'error',
+    'no-dupe-class-members': 'error',
+    'no-duplicate-imports': 'error',
+    'no-new-symbol': 'error',
+    'no-restricted-globals': 'off',
+    'no-restricted-imports': 'off',
+    'no-this-before-super': 'error',
+    'no-var': 'error',
+    'no-useless-computed-key': 'error',
+    'no-useless-constructor': 'error',
+    'object-shorthand': ['error', 'always', {
+      ignoreConstructors: false,
+      avoidQuotes: true
+    }],
+    'prefer-arrow-callback': ['error', {
       'allowNamedFunctions': false,
       'allowUnboundThis': true
     }],
-    'prefer-const': 2,
-    'prefer-spread': 0,
-    'prefer-reflect': 0,
-    'prefer-rest-params': 2,
-    'prefer-template': 2,
-    'require-yield': 0,
-    'sort-imports': 0,
-    'template-curly-spacing': 2,
-    'yield-star-spacing': [2, 'after']
+    'prefer-const': ['error', {
+      destructuring: 'any',
+      ignoreReadBeforeAssign: true
+    }],
+    'prefer-spread': 'error',
+    'prefer-reflect': 'off',
+    'prefer-rest-params': 'error',
+    'prefer-template': 'error',
+    'require-yield': 'error',
+    'sort-imports': ['off', {
+      ignoreCase: false,
+      ignoreMemberSort: false,
+      memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
+    }],
+    'template-curly-spacing': 'error',
+    'yield-star-spacing': ['error', 'after'],
+    'no-useless-rename': ['error', {
+      ignoreDestructuring: false,
+      ignoreImport: false,
+      ignoreExport: false
+    }],
+    'prefer-destructuring': ['error', {
+      array: true,
+      object: true
+    }, {
+      enforceForRenamedProperties: false
+    }],
+    'prefer-numeric-literals': 'error',
+    'rest-spread-spacing': ['error', 'never'],
+    'symbol-description': 'error'
   }
 };

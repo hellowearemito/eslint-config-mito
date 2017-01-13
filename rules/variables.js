@@ -1,19 +1,20 @@
 // Variables
 module.exports = {
   'rules': {
-    'init-declarations': 0,
-    'no-catch-shadow': 0,
-    'no-delete-var': 2,
-    'no-label-var': 0,
-    'no-shadow': 0,
-    'no-shadow-restricted-names': 2,
-    'no-unused-vars': [2, {
+    'init-declarations': 'off',
+    'no-catch-shadow': 'off',
+    'no-delete-var': 'error',
+    'no-label-var': 'error',
+    'no-shadow': 'off',
+    'no-shadow-restricted-names': 'error',
+    'no-unused-vars': ['error', {
       'vars': 'local',
       'args': 'after-used'
     }],
-    'no-undef-init': 0,
-    'no-undef': 2,
-    'no-undefined': 0,
-    'no-use-before-define': 2
+    'no-undef-init': 'error',
+    'no-undef': 'error',
+    'no-undefined': 'off',
+    'no-use-before-define': 'error',
+    'no-restricted-globals': 'off'
   }
 };

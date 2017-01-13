@@ -1,28 +1,46 @@
-var xtend = require('xtend');
-var syncRequest = require('sync-request');
-var fs = require('fs');
-var path = require('path');
-var ProgressBar = require('progress');
+'use strict';
 
-var EXTEND_FILES = [{
+const xtend = require('xtend');
+const syncRequest = require('sync-request');
+const fs = require('fs');
+const path = require('path');
+const ProgressBar = require('progress');
+const packageJson = require('./package.json');
+
+const EXTEND_FILES = [{
   name: 'default',
   path: './index.js'
-},{
-  name: 'standalone',
-  path: './standalone.js'
 }, {
   name: 'legacy',
   path: './legacy.js'
 }];
 
-var GENERATED_DATETIME = (new Date()).toString();
-var README_START = '# [eslint](http://eslint.org)-config-mito documentation\n> Generated: ' + GENERATED_DATETIME + '\n\n';
-var LICENSE = '\n## License\nMIT © 2016 Mito (info@mito.hu)\n';
-var ESLINT_DOCS_URL = {
+const now = new Date();
+const yyyy = now.getFullYear();
+
+let dd = now.getDate();
+let mm = now.getMonth() + 1;
+
+if (dd < 10) {
+  dd = `0${dd}`;
+}
+
+if (mm < 10) {
+  mm = `0${mm}`;
+}
+
+const GENERATED_DATETIME = `${yyyy}-${mm}-${dd} (v${packageJson.version})`;
+
+const README_START = `# [eslint](http://eslint.org)-config-mito documentation\n> Generated: ${GENERATED_DATETIME}\n\n`;
+
+const LICENSE = `\n## License\nMIT © ${now.getFullYear()} Mito (info@mito.hu)`;
+
+const ESLINT_DOCS_URL = {
   default: 'https://raw.githubusercontent.com/eslint/eslint/master/docs/rules/',
   import: 'https://raw.githubusercontent.com/benmosher/eslint-plugin-import/master/docs/rules/'
 };
-var RULE_LINKS = {
+
+const RULE_LINKS = {
   default: {
     start: 'http://eslint.org/docs/rules/',
     end: ''
@@ -31,7 +49,7 @@ var RULE_LINKS = {
     start: 'https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/',
     end: '.md'
   }
-}
+};
 
 function isExists(path) {
   try {
@@ -42,24 +60,13 @@ function isExists(path) {
   }
 }
 
-function objectLength(obj) {
-  var size = 0;
-
-  for (var key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      size++;
-    }
-  }
-
-  return size;
-}
-
 function parseFile(contents) {
-  var rules = contents.rules || {};
+  let rules = contents.rules || {};
 
   if (contents.extends) {
-    for (var i = 0, l = contents.extends.length; i < l; i++) {
-      var subrules = parseFile(require(contents.extends[i]));
+    for (let i = 0, l = contents.extends.length; i < l; i++) {
+      const module = require(contents.extends[i]); // eslint-disable-line global-require
+      const subrules = parseFile(module);
       rules = xtend(rules, subrules);
     }
   }
@@ -68,26 +75,26 @@ function parseFile(contents) {
 }
 
 function getMarkdownByRulename(pluginName, rulename) {
-  var cachePath = path.join(__dirname, '.cache');
-  var body = null;
+  const cachePath = path.join(__dirname, '.cache');
+  let body = null;
 
   if (!isExists(cachePath)) {
     fs.mkdirSync(cachePath);
   }
 
-  var pluginDocsPath = path.join(cachePath, pluginName);
+  const pluginDocsPath = path.join(cachePath, pluginName);
 
   if (!isExists(pluginDocsPath)) {
     fs.mkdirSync(pluginDocsPath);
   }
 
-  var filename = rulename + '.md';
-  var filePath = path.join(cachePath, pluginName, filename);
+  const filename = `${rulename}.md`;
+  const filePath = path.join(cachePath, pluginName, filename);
 
   if (isExists(filePath)) {
     body = fs.readFileSync(filePath, 'utf8');
   } else {
-    var res = syncRequest('GET', ESLINT_DOCS_URL[pluginName] + rulename + '.md');
+    const res = syncRequest('GET', `${ESLINT_DOCS_URL[pluginName]}${rulename}.md`);
     body = res.getBody('utf8');
     fs.writeFileSync(filePath, body, 'utf8');
   }
@@ -96,30 +103,30 @@ function getMarkdownByRulename(pluginName, rulename) {
 }
 
 function main() {
-  var md = '';
-  var tableOfContents = '';
-  var readme = README_START;
-  var total = 0;
+  let md = '';
+  let tableOfContents = '';
+  let readme = README_START;
+  let total = 0;
 
-  var j = EXTEND_FILES.length;
+  let j = EXTEND_FILES.length;
   while (j--) {
-    EXTEND_FILES[j].rules = parseFile(require(EXTEND_FILES[j].path));
-    total += objectLength(EXTEND_FILES[j].rules);
+    const module = require(EXTEND_FILES[j].path); // eslint-disable-line global-require
+    EXTEND_FILES[j].rules = parseFile(module);
+    total += Object.keys(EXTEND_FILES[j].rules).length;
   }
 
-  var bar = new ProgressBar('generate documentation [:bar] :percent :etas', {
+  const bar = new ProgressBar('generate documentation [:bar] :percent :etas', {
     complete: '=',
     incomplete: ' ',
     width: 50,
     total: total + 10
   });
 
-  for (var i = 0, l = EXTEND_FILES.length; i < l; i++) {
-    var item = EXTEND_FILES[i];
-    var name = item.name;
-    var rules = item.rules;
+  for (let i = 0, l = EXTEND_FILES.length; i < l; i++) {
+    const item = EXTEND_FILES[i];
+    const { name, rules } = item;
 
-    readme += '* [`' + name + '` configurations](' + name + '.md)\n';
+    readme += `* [\`${name}\` configurations](${name}.md)\n`;
 
     bar.tick();
 
@@ -130,36 +137,34 @@ function main() {
 
     md = '';
 
-    tableOfContents = '# [eslint](http://eslint.org)-config-mito `' + name + '` configurations\n> Generated: ' + GENERATED_DATETIME + '\n\n## Table of contents\n\n';
+    tableOfContents = `# [eslint](http://eslint.org)-config-mito \`${name}\` configurations\n> Generated: ${GENERATED_DATETIME}\n\n## Table of contents\n\n`;
 
     bar.tick();
 
-    for (var rulenameOrig in rules) {
-      var pluginName = 'default';
-      var rulename = rulenameOrig;
+    for (const rulenameOrig in rules) {
+      let pluginName = 'default';
+      let rulename = rulenameOrig;
 
       if (rulename.indexOf('/') !== -1) {
-        rulename = rulename.split('/');
-        pluginName = rulename[0];
-        rulename = rulename[1];
+        [pluginName, rulename] = rulename.split('/');
       }
 
-      var ruleMarkdown = getMarkdownByRulename(pluginName, rulename);
-      var firstLine = /^.?(.*)/g.exec(ruleMarkdown)[0].substr(2);
-      var hash = '#' + firstLine.replace(/[^\w\s!-]/gi, '').replace(/ /g, '-').toLowerCase();
-      var value = JSON.stringify(rules[rulenameOrig], null, 2);
+      const ruleMarkdown = getMarkdownByRulename(pluginName, rulename);
+      const firstLine = /^.?(.*)/g.exec(ruleMarkdown)[0].substr(2);
+      const hash = `#${firstLine.replace(/[^\w\s!-]/gi, '').replace(/ /g, '-').toLowerCase()}`;
+      const value = JSON.stringify(rules[rulenameOrig], null, 2);
 
-      tableOfContents += '1. [' + rulenameOrig + ']' + '(' + hash + ')' + '\n';
+      tableOfContents += `1. [${rulenameOrig}](${hash})\n`;
 
-      md += '\n## ' + firstLine.substr(0, 1).toUpperCase() + firstLine.substr(1) + '\n\n';
-      md += '**Key:** ' + rulenameOrig + ' ([docs](' + RULE_LINKS[pluginName].start + rulename + RULE_LINKS[pluginName].end + '))\n\n';
+      md += `\n## ${firstLine.substr(0, 1).toUpperCase() + firstLine.substr(1)}\n\n`;
+      md += `**Key:** ${rulenameOrig} ([docs](${RULE_LINKS[pluginName].start}${rulename}${RULE_LINKS[pluginName].end}))\n\n`;
       md += '**Value:** ';
 
       if (value.length > 1) {
         md += '\n';
-        md += '```javascript\n' + value + '\n```\n';
+        md += `\`\`\`javascript\n${value}\n\`\`\`\n`;
       } else {
-        md += '``' + value + '``\n';
+        md += `\`\`${value}\`\`\n`;
       }
 
       md += '\n**[&#8679; back to top](#table-of-contents)**\n';
@@ -171,7 +176,7 @@ function main() {
 
     bar.tick();
 
-    fs.writeFileSync(path.join(__dirname, 'docs', name + '.md'), md, 'utf8');
+    fs.writeFileSync(path.join(__dirname, 'docs', `${name}.md`), md, 'utf8');
 
     bar.tick();
   }
