@@ -5,23 +5,35 @@ const syncRequest = require('sync-request');
 const fs = require('fs');
 const path = require('path');
 const ProgressBar = require('progress');
+const packageJson = require('./package.json');
 
 const EXTEND_FILES = [{
   name: 'default',
   path: './index.js'
 }, {
-  name: 'standalone',
-  path: './standalone.js'
-}, {
   name: 'legacy',
   path: './legacy.js'
 }];
 
-const GENERATED_DATETIME = (new Date()).toString();
+const now = new Date();
+const yyyy = now.getFullYear();
+
+let dd = now.getDate();
+let mm = now.getMonth() + 1;
+
+if (dd < 10) {
+  dd = `0${dd}`;
+}
+
+if (mm < 10) {
+  mm = `0${mm}`;
+}
+
+const GENERATED_DATETIME = `${yyyy}-${mm}-${dd} (v${packageJson.version})`;
 
 const README_START = `# [eslint](http://eslint.org)-config-mito documentation\n> Generated: ${GENERATED_DATETIME}\n\n`;
 
-const LICENSE = `\n## License\nMIT © ${(new Date()).getFullYear()} Mito (info@mito.hu)`;
+const LICENSE = `\n## License\nMIT © ${now.getFullYear()} Mito (info@mito.hu)`;
 
 const ESLINT_DOCS_URL = {
   default: 'https://raw.githubusercontent.com/eslint/eslint/master/docs/rules/',

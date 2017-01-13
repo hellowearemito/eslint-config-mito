@@ -3,5 +3,5 @@ language: node_js
 node_js:
   - "4"
   - "node"
-before_install: npm install eslint eslint-plugin-import
+before_install: npm install eslint
 after_success: npm run coveralls

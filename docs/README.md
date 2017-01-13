@@ -1,8 +1,7 @@
 # [eslint](http://eslint.org)-config-mito documentation
-> Generated: Thu Jan 12 2017 17:04:29 GMT+0100 (CET)
+> Generated: 2017-01-13 (v7.0.0)
 
 * [`default` configurations](default.md)
-* [`standalone` configurations](standalone.md)
 * [`legacy` configurations](legacy.md)
 
 ## License

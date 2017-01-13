@@ -19,18 +19,6 @@ Lints EcmaScript 6+. Only requires `eslint`.
 }
 ```
 
-### eslint-config-mito/standalone
-
-Lints EcmaScript 6+. Requires `eslint`, `eslint-plugin-import`.
-
-1. `npm install --save-dev eslint eslint-plugin-import eslint-config-mito`
-2. add `"extends": "mito/standalone"` to your [.eslintrc](http://eslint.org/docs/user-guide/configuring.html#configuration-file-formats)
-```js
-{
-  "extends": "mito/standalone"
-}
-```
-
 ### eslint-config-mito/legacy
 
 Lints EcmaScript 5 and below. Only requires `eslint`.
@@ -48,7 +36,7 @@ the [ESlint config docs](http://eslint.org/docs/user-guide/configuring#extending
 for more information.
 
 ## License
-MIT © 2016 Mito (info@mito.hu)
+MIT © 2017 Mito (info@mito.hu)
 
 [npm-image]: https://badge.fury.io/js/eslint-config-mito.svg
 [npm-url]: https://npmjs.org/package/eslint-config-mito

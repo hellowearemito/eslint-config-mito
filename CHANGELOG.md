@@ -1,8 +1,10 @@
-7.0.0 / 2017-01-xx
+7.0.0 / 2017-01-13
 ==================
   - Update docgen.js
   - Upgrade packages in package.json
   - Add yarn.lock file
+  - Remove standalone version
+  - Update README.md
   - Add `array-callback-return`
   - Add `class-method-use-this`
   - Add `no-case-declarations`
