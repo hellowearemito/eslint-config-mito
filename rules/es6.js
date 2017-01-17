@@ -75,6 +75,8 @@ module.exports = {
     }],
     'prefer-numeric-literals': 'error',
     'rest-spread-spacing': ['error', 'never'],
-    'symbol-description': 'error'
+    'symbol-description': 'error',
+    'require-await': 'error',
+    'no-await-in-loop': 'error'
   }
 };

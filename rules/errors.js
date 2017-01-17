@@ -3,7 +3,7 @@ module.exports = {
   'rules': {
     'comma-dangle': ['error', 'never'],
     'no-cond-assign': ['error', 'always'],
-    'no-console': 'warn',
+    'no-console': 'off',
     'no-debugger': 'error',
     'no-alert': 'warn',
     'no-constant-condition': 'warn',
@@ -34,7 +34,6 @@ module.exports = {
       requireStringLiterals: true
     }],
     'no-unexpected-multiline': 'error',
-    'no-await-in-loop': 'error',
     'no-prototype-builtins': 'error',
     'no-template-curly-in-string': 'error',
     'no-unsafe-finally': 'error',

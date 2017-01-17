@@ -1,3 +1,11 @@
+7.0.1 / 2017-01-xx
+==================
+  - Remove `Math.pow` from `no-restricted-properties`
+  - Move `require-await` from rules/best-practices.js to rules/es6.js
+  - Move `no-await-in-loop` from rules/errors.js to rules/es6.js
+  - Disable `global-require`
+  - Disable `max-len`
+
 7.0.0 / 2017-01-13
 ==================
   - Update docgen.js

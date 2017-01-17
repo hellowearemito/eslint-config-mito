@@ -1,4 +1,5 @@
 .cache
+.docgen_cache
 .nyc_output
 coverage
 node_modules
