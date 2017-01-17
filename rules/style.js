@@ -115,7 +115,7 @@ module.exports = {
     }],
     'wrap-regex': 'off',
     'max-depth': ['off', 4],
-    'max-len': ['error', 100, 2, {
+    'max-len': ['off', 100, 2, {
       ignoreUrls: true,
       ignoreComments: false,
       ignoreRegExpLiterals: true,

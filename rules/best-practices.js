@@ -97,7 +97,6 @@ module.exports = {
     'no-useless-concat': 'error',
     'no-useless-escape': 'error',
     'no-useless-return': 'error',
-    'require-await': 'error',
     'no-restricted-properties': ['error', {
       object: 'arguments',
       property: 'callee',
@@ -108,10 +107,6 @@ module.exports = {
     }, {
       property: '__defineSetter__',
       message: 'Please use Object.defineProperty instead.'
-    }, {
-      object: 'Math',
-      property: 'pow',
-      message: 'Use the exponentiation operator (**) instead.'
     }]
   }
 };
