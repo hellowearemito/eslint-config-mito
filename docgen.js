@@ -75,7 +75,7 @@ function parseFile(contents) {
 }
 
 function getMarkdownByRulename(pluginName, rulename) {
-  const cachePath = path.join(__dirname, '.cache');
+  const cachePath = path.join(__dirname, '.docgen_cache');
   let body = null;
 
   if (!isExists(cachePath)) {

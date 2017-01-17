@@ -3,3 +3,4 @@ npm-debug.log
 .DS_Store
 .cache
 .nyc_output
+.docgen_cache

@@ -1,5 +1,5 @@
 # [eslint](http://eslint.org)-config-mito `default` configurations
-> Generated: 2017-01-13 (v7.0.0)
+> Generated: 2017-01-17 (v7.0.1)
 
 ## Table of contents
 
@@ -75,7 +75,6 @@
 1. [no-useless-concat](#disallow-unnecessary-concatenation-of-strings-no-useless-concat)
 1. [no-useless-escape](#disallow-unnecessary-escape-usage-no-useless-escape)
 1. [no-useless-return](#disallow-redundant-return-statements-no-useless-return)
-1. [require-await](#disallow-async-functions-which-have-no-await-expression-require-await)
 1. [no-restricted-properties](#disallow-certain-object-properties-no-restricted-properties)
 1. [comma-dangle](#require-or-disallow-trailing-commas-comma-dangle)
 1. [no-cond-assign](#disallow-assignment-operators-in-conditional-statements-no-cond-assign)
@@ -107,7 +106,6 @@
 1. [valid-jsdoc](#enforce-valid-jsdoc-comments-valid-jsdoc)
 1. [valid-typeof](#enforce-comparing-typeof-expressions-against-valid-strings-valid-typeof)
 1. [no-unexpected-multiline](#disallow-confusing-multiline-expressions-no-unexpected-multiline)
-1. [no-await-in-loop](#disallow-await-inside-of-loops-no-await-in-loop)
 1. [no-prototype-builtins](#disallow-use-of-objectprototypes-builtins-directly-no-prototype-builtins)
 1. [no-template-curly-in-string](#disallow-template-literal-placeholder-syntax-in-regular-strings-no-template-curly-in-string)
 1. [no-unsafe-finally](#disallow-control-flow-statements-in-finally-blocks-no-unsafe-finally)
@@ -242,6 +240,8 @@
 1. [prefer-numeric-literals](#disallow-parseint-in-favor-of-binary-octal-and-hexadecimal-literals-prefer-numeric-literals)
 1. [rest-spread-spacing](#enforce-spacing-between-rest-and-spread-operators-and-their-expressions-rest-spread-spacing)
 1. [symbol-description](#require-symbol-description-symbol-description)
+1. [require-await](#disallow-async-functions-which-have-no-await-expression-require-await)
+1. [no-await-in-loop](#disallow-await-inside-of-loops-no-await-in-loop)
 
 ## Enforces getter/setter pairs in objects (accessor-pairs)
 
@@ -1094,17 +1094,6 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow async functions which have no `await` expression (require-await)
-
-**Key:** require-await ([docs](http://eslint.org/docs/rules/require-await))
-
-**Value:** 
-```javascript
-"error"
-```
-
-**[&#8679; back to top](#table-of-contents)**
-
 ## Disallow certain object properties (no-restricted-properties)
 
 **Key:** no-restricted-properties ([docs](http://eslint.org/docs/rules/no-restricted-properties))
@@ -1125,11 +1114,6 @@
   {
     "property": "__defineSetter__",
     "message": "Please use Object.defineProperty instead."
-  },
-  {
-    "object": "Math",
-    "property": "pow",
-    "message": "Use the exponentiation operator (**) instead."
   }
 ]
 ```
@@ -1170,7 +1154,7 @@
 
 **Value:** 
 ```javascript
-"warn"
+"off"
 ```
 
 **[&#8679; back to top](#table-of-contents)**
@@ -1480,17 +1464,6 @@
 
 **[&#8679; back to top](#table-of-contents)**
 
-## Disallow `await` inside of loops (no-await-in-loop)
-
-**Key:** no-await-in-loop ([docs](http://eslint.org/docs/rules/no-await-in-loop))
-
-**Value:** 
-```javascript
-"error"
-```
-
-**[&#8679; back to top](#table-of-contents)**
-
 ## Disallow use of Object.prototypes builtins directly (no-prototype-builtins)
 
 **Key:** no-prototype-builtins ([docs](http://eslint.org/docs/rules/no-prototype-builtins))
@@ -1599,7 +1572,7 @@
 
 **Value:** 
 ```javascript
-"error"
+"off"
 ```
 
 **[&#8679; back to top](#table-of-contents)**
@@ -2374,7 +2347,7 @@
 **Value:** 
 ```javascript
 [
-  "error",
+  "off",
   100,
   2,
   {
@@ -3370,6 +3343,28 @@
 ## Require symbol description (symbol-description)
 
 **Key:** symbol-description ([docs](http://eslint.org/docs/rules/symbol-description))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow async functions which have no `await` expression (require-await)
+
+**Key:** require-await ([docs](http://eslint.org/docs/rules/require-await))
+
+**Value:** 
+```javascript
+"error"
+```
+
+**[&#8679; back to top](#table-of-contents)**
+
+## Disallow `await` inside of loops (no-await-in-loop)
+
+**Key:** no-await-in-loop ([docs](http://eslint.org/docs/rules/no-await-in-loop))
 
 **Value:** 
 ```javascript
