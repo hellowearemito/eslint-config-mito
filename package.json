@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-mito",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "This package provides Mito's .eslintrc as an extensible shared config.",
   "main": "index.js",
   "scripts": {

@@ -167,7 +167,7 @@ module.exports = {
     'newline-per-chained-call': ['error', {
       ignoreChainWithDepth: 4
     }],
-    'no-mixed-operators': ['error', {
+    'no-mixed-operators': ['off', {
       groups: [
         ['+', '-', '*', '/', '%', '**'],
         ['&', '|', '^', '~', '<<', '>>', '>>>'],

@@ -1,3 +1,7 @@
+7.0.2 / 2017-01-17
+==================
+  - Disable `no-mixed-operators`
+
 7.0.1 / 2017-01-17
 ==================
   - Remove `Math.pow` from `no-restricted-properties`
