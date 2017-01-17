@@ -1,4 +1,4 @@
-7.0.1 / 2017-01-xx
+7.0.1 / 2017-01-17
 ==================
   - Remove `Math.pow` from `no-restricted-properties`
   - Move `require-await` from rules/best-practices.js to rules/es6.js
