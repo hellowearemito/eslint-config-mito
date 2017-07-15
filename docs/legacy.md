@@ -1,5 +1,5 @@
 # [eslint](http://eslint.org)-config-mito `legacy` configurations
-> Generated: 2017-01-17 (v7.0.1)
+> Generated: 2017-07-15 (v8.0.0)
 
 ## Table of contents
 
@@ -2591,7 +2591,7 @@
 **Value:** 
 ```javascript
 [
-  "error",
+  "off",
   {
     "groups": [
       [

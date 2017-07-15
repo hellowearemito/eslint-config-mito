@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-mito",
-  "version": "7.0.2",
+  "version": "8.0.0",
   "description": "This package provides Mito's .eslintrc as an extensible shared config.",
   "main": "index.js",
   "scripts": {
@@ -30,11 +30,11 @@
   "homepage": "https://github.com/hellowearemito/eslint-config-mito",
   "devDependencies": {
     "coveralls": "^2.11.15",
-    "eslint": "^3.13.1",
-    "nyc": "^10.0.0",
+    "eslint": "^4.2.0",
+    "nyc": "^11.0.3",
     "pre-commit": "^1.2.2",
-    "progress": "^1.1.8",
-    "sync-request": "^3.0.1",
+    "progress": "^2.0.0",
+    "sync-request": "^4.1.0",
     "xtend": "^4.0.1"
   },
   "pre-commit": [

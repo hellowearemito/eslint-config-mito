@@ -1,3 +1,8 @@
+8.0.0 / 2017-07-15
+==================
+  - Upgrade packages in package.json
+  - Moved ecmaFeatures under parserOptions
+
 7.0.2 / 2017-01-17
 ==================
   - Disable `no-mixed-operators`
